@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "settings": {
+    "import/resolver": "webpack"
+  },
+  "globals": {
+  },
+  rules: {
+    "global-require": 1,
+    "comma-dangle": [2, "never"],
+    "quote-props": [2, "consistent-as-needed"],
+    "no-console": 0,
+    "react/wrap-multilines": 0,
+    "react/jsx-no-bind": 0,
+    "react/prefer-stateless-function": 0
+  }
+}
