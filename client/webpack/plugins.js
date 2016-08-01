@@ -20,22 +20,22 @@ export const definePlugin = (options) => {
 //
 //  ASSETS JSON plugin
 //
-export const assetsPlugin = (options) => (
-  new AssetsPlugin(Object.assign({
+export const assetsPlugin = (options) => {
+  return new AssetsPlugin(Object.assign({
     path: PATHS.build,
     filename: 'assets.json'
-  }, options))
-);
+  }, options));
+};
 
 //
 //  HTML plugin
 //
-export const htmlPlugin = (options) => (
-  new HtmlWebpackPlugin(Object.assign({
+export const htmlPlugin = (options) => {
+  return new HtmlWebpackPlugin(Object.assign({
     // title: 'Katalyst',
     template: `${PATHS.src}/index.html`
-  }, options))
-);
+  }, options));
+};
 
 //
 //  CSS plugins
@@ -44,8 +44,9 @@ export const postcss = [
   autoprefixer({ browsers: ['last 2 versions'] })
 ];
 
-export const cssExtractPlugin = (options) =>
-  new ExtractTextPlugin(options);
+export const cssExtractPlugin = (options) => {
+  return new ExtractTextPlugin(options);
+};
 
 //
 //  JS related plugins
@@ -61,5 +62,6 @@ export const uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
   }
 });
 
-export const commonsChunkPlugin = (options) =>
-  new webpack.optimize.CommonsChunkPlugin(options);
+export const commonsChunkPlugin = (options) => {
+  return new webpack.optimize.CommonsChunkPlugin(options);
+};

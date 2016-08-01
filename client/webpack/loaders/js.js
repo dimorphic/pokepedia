@@ -6,7 +6,6 @@ export const jsLoader = (config) => {
     }
   }, config);
 
-
   return {
     test: /\.js$|.jsx$/,
     loader: 'babel',

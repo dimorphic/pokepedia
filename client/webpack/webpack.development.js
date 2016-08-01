@@ -1,12 +1,15 @@
-// base config
-const common = require('./common');
+// deps
+import * as common from './common';
+
+// app global config
+import CONFIG from '../config';
 
 // web / dev server settings
-const HOST = '0.0.0.0'; // bind on all interfaces (use 'localhost' for privacy)
-const PORT = 8080;
+const HOST = CONFIG.get('HOST'); // bind on all interfaces (use 'localhost' for privacy)
+const PORT = CONFIG.get('PORT');
 
 // Add HMR
-common.entry.unshift(
+common.entry.app.unshift(
   'webpack/hot/dev-server',
 	`webpack-dev-server/client?http://${HOST}:${PORT}`
 );
@@ -15,7 +18,7 @@ common.entry.unshift(
 //  DEVELOPMENT config
 //
 module.exports = {
-  // context: common.PATHS.src,
+  context: common.PATHS.src,
 
   entry: common.entry,
   output: common.createOutput(),
@@ -26,7 +29,7 @@ module.exports = {
     port: PORT,
 
     contentBase: common.PATHS.build,
-    historyApIFallback: true,
+    historyApiFallback: true,
 
     hot: true,
     inline: true,
@@ -39,7 +42,21 @@ module.exports = {
     }
   },
 
+  eslint: {
+    configFile: '.eslintrc',
+    failOnWarning: false,
+    failOnError: false
+  },
+
   module: {
+    preLoaders: [
+      {
+        test: /\.js$|.jsx$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      }
+    ],
+
     loaders: [
       common.LOADERS.jsLoader({ include: common.PATHS.src }),
       common.LOADERS.sassLoader(),

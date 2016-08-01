@@ -1,8 +1,6 @@
 // deps
-// import path from 'path';
-// import jsonfile from 'jsonfile';
-const path = require('path');
-const jsonfile = require('jsonfile');
+import path from 'path';
+import jsonfile from 'jsonfile';
 
 // support .env ?
 // import dotenv from 'dotenv';

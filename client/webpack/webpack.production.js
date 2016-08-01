@@ -1,5 +1,5 @@
 // deps
-const common = require('./common');
+import * as common from './common';
 
 //
 //  PRODUCTION config

@@ -1,20 +1,26 @@
-// deps
-import path from 'path';
+// app global config
+import CONFIG from '../config';
 
-// path settings
-export const PATHS = exports.PATHS = {
-  src: path.join(__dirname, '../src'),
-  build: path.join(__dirname, '../dist')
+// helpers
+const UTILS = CONFIG.get('utils');
+
+// path exporter
+const PATHS = exports.PATHS = {
+  src: UTILS.paths.source(),
+  build: UTILS.paths.build()
 };
 
 // loaders & plugins
-export const LOADERS = require('./loaders');
-export const PLUGINS = require('./plugins');
+const LOADERS = exports.LOADERS = require('./loaders');
+const PLUGINS = exports.PLUGINS = require('./plugins');
 
 // entry points
-export const entry = [
-  `${PATHS.src}/index.js`
-];
+export const entry = {
+  app: [
+    `${PATHS.src}/index.js`
+  ],
+  vendor: CONFIG.get('dependencies').vendor
+};
 
 // build output destination
 export const createOutput = (options) => Object.assign({
