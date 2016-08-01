@@ -1,19 +1,31 @@
 {
-  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true,
+    "commonjs": true
+  },
   "extends": "airbnb",
   "parser": "babel-eslint",
-  "settings": {
-    "import/resolver": "webpack"
-  },
-  "globals": {
-  },
+  "globals": {},
   rules: {
-    "global-require": 1,
+    "arrow-body-style": [1, "always"],
     "comma-dangle": [2, "never"],
+    "global-require": 1,
+    "import/no-mutable-exports": 1,
+    "import/no-unresolved": 0,
     "quote-props": [2, "consistent-as-needed"],
     "no-console": 0,
+    "no-unused-vars": [1, { "args": "after-used" }],
     "react/wrap-multilines": 0,
     "react/jsx-no-bind": 0,
     "react/prefer-stateless-function": 0
+  },
+  settings: {
+    "import/parser": "babel-eslint",
+    "import/resolver": {
+      "webpack": {
+        "config": "start.js"
+      }
+    }
   }
 }
