@@ -1,11 +1,27 @@
 // deps
+// import 'babel-core/polyfill';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+
+import Root from './containers';
+import * as LocationActions from './actions/location';
 
 // global style ? (demo)
 import './scss/main.scss';
 
-// root component
-import Root from './root';
+// store & routes
+import setupStore from './store';
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+// setup store
+const store = setupStore();
+const target = document.getElementById('root');
+
+const node = (
+  <Root store={store} />
+);
+
+
+store.dispatch(LocationActions.loadMap('lolz'));
+
+render(node, target);
+// render(<Root />, document.getElementById('root'));

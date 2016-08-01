@@ -18,10 +18,10 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --config start.js --progress --colors",
-    "build": "npm run clean && NODE_ENV=production webpack --config start.js --progress --colors",
+    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config start.js --progress --colors",
+    "build": "npm run clean && NODE_ENV=production ./node_modules/.bin/webpack --config start.js --progress --colors",
     "clean": "rm -rf ./dist",
-    "lint": "eslint src --ext .js --ext .jsx"
+    "lint": "./node_modules/.bin/eslint src --ext .js --ext .jsx"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
@@ -44,6 +44,7 @@
     "eslint": "^3.2.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-import-resolver-webpack": "^0.4.0",
+    "eslint-loader": "^1.5.0",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^5.2.2",
@@ -51,6 +52,7 @@
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
+    "jsonfile": "^2.3.1",
     "node-sass": "^3.8.0",
     "postcss": "^5.1.1",
     "postcss-loader": "^0.9.1",
@@ -63,7 +65,14 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "history": "^3.0.0",
     "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.1",
+    "redux": "^3.5.2",
+    "redux-promise-middleware": "^3.3.2",
+    "redux-router": "^2.1.2",
+    "redux-thunk": "^2.1.0"
   }
 }
