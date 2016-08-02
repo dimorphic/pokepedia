@@ -14,6 +14,7 @@ module.exports = exports = {
   globals: {},
 
   rules: {
+    'global-require': 0,
     'no-console': OFF,
     'arrow-body-style': [WARN, 'always'],
     'comma-dangle': [ERROR, 'never'],

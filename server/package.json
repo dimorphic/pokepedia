@@ -26,8 +26,10 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "jsonfile": "^2.3.1",
     "morgan": "^1.7.0",
-    "nodemon": "^1.10.0"
+    "nodemon": "^1.10.0",
+    "pokemon-go-pokedex": "git+https://github.com/Biuni/PokemonGO-Pokedex.git"
   },
   "devDependencies": {
     "babel": "^6.5.2",
