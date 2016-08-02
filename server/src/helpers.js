@@ -2,6 +2,25 @@
 import fs from 'fs';
 import util from 'util';
 
+// rename object properties
+function renameProp(obj, oldName, newName) {
+  // Do nothing if the names are the same
+  if (oldName == newName) {
+    return obj;
+  }
+
+  // Check for the old property name to
+  // avoid a ReferenceError in strict mode.
+  const hasProp = {}.hasOwnProperty.call(obj, oldName);
+
+  if (hasProp) {
+    obj[newName] = obj[oldName];
+    delete obj[oldName];
+  }
+
+  return obj;
+}
+
 //
 //
 //
@@ -31,5 +50,6 @@ const fillArray = (size, item) => {
 module.exports = {
   inspect,
   fillArray,
-  loadData
+  loadData,
+  renameProp
 };
