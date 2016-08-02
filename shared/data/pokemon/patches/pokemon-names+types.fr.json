@@ -1,0 +1,970 @@
+{
+  "1": {
+    "name": "Bulbizarre",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "2": {
+    "name": "Herbizarre",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "3": {
+    "name": "Florizarre",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "4": {
+    "name": "Salamèche",
+    "type": [
+      "Feu"
+    ]
+  },
+  "5": {
+    "name": "Reptincel",
+    "type": [
+      "Feu"
+    ]
+  },
+  "6": {
+    "name": "Dracaufeu",
+    "type": [
+      "Feu",
+      "Vol"
+    ]
+  },
+  "7": {
+    "name": "Carapuce",
+    "type": [
+      "Eau"
+    ]
+  },
+  "8": {
+    "name": "Carabaffe",
+    "type": [
+      "Eau"
+    ]
+  },
+  "9": {
+    "name": "Tortank",
+    "type": [
+      "Eau"
+    ]
+  },
+  "10": {
+    "name": "Chenipan",
+    "type": [
+      "Insecte"
+    ]
+  },
+  "11": {
+    "name": "Chrysacier",
+    "type": [
+      "Insecte"
+    ]
+  },
+  "12": {
+    "name": "Papilusion",
+    "type": [
+      "Insecte",
+      "Vol"
+    ]
+  },
+  "13": {
+    "name": "Aspicot",
+    "type": [
+      "Insecte",
+      "Poison"
+    ]
+  },
+  "14": {
+    "name": "Coconfort",
+    "type": [
+      "Insecte",
+      "Poison"
+    ]
+  },
+  "15": {
+    "name": "Dardargnan",
+    "type": [
+      "Insecte",
+      "Poison"
+    ]
+  },
+  "16": {
+    "name": "Roucool",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "17": {
+    "name": "Roucoups",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "18": {
+    "name": "Roucarnage",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "19": {
+    "name": "Rattata",
+    "type": [
+      "Normal"
+    ]
+  },
+  "20": {
+    "name": "Rattatac",
+    "type": [
+      "Normal"
+    ]
+  },
+  "21": {
+    "name": "Piafabec",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "22": {
+    "name": "Rapasdepic",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "23": {
+    "name": "Abo",
+    "type": [
+      "Poison"
+    ]
+  },
+  "24": {
+    "name": "Arbok",
+    "type": [
+      "Poison"
+    ]
+  },
+  "25": {
+    "name": "Pikachu",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "26": {
+    "name": "Raichu",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "27": {
+    "name": "Sabelette",
+    "type": [
+      "Sol"
+    ]
+  },
+  "28": {
+    "name": "Sablaireau",
+    "type": [
+      "Sol"
+    ]
+  },
+  "29": {
+    "name": "Nidoran♀",
+    "type": [
+      "Poison"
+    ]
+  },
+  "30": {
+    "name": "Nidorina",
+    "type": [
+      "Poison"
+    ]
+  },
+  "31": {
+    "name": "Nidoqueen",
+    "type": [
+      "Poison",
+      "Sol"
+    ]
+  },
+  "32": {
+    "name": "Nidoran♂",
+    "type": [
+      "Poison"
+    ]
+  },
+  "33": {
+    "name": "Nidorino",
+    "type": [
+      "Poison"
+    ]
+  },
+  "34": {
+    "name": "Nidoking",
+    "type": [
+      "Poison",
+      "Sol"
+    ]
+  },
+  "35": {
+    "name": "Mélofée",
+    "type": [
+      "Normal"
+    ]
+  },
+  "36": {
+    "name": "Mélodelfe",
+    "type": [
+      "Normal"
+    ]
+  },
+  "37": {
+    "name": "Goupix",
+    "type": [
+      "Feu"
+    ]
+  },
+  "38": {
+    "name": "Feunard",
+    "type": [
+      "Feu"
+    ]
+  },
+  "39": {
+    "name": "Rondoudou",
+    "type": [
+      "Normal"
+    ]
+  },
+  "40": {
+    "name": "Grodoudou",
+    "type": [
+      "Normal"
+    ]
+  },
+  "41": {
+    "name": "Nosferapti",
+    "type": [
+      "Poison",
+      "Vol"
+    ]
+  },
+  "42": {
+    "name": "Nosferalto",
+    "type": [
+      "Poison",
+      "Vol"
+    ]
+  },
+  "43": {
+    "name": "Mystherbe",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "44": {
+    "name": "Ortide",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "45": {
+    "name": "Rafflesia",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "46": {
+    "name": "Paras",
+    "type": [
+      "Insecte",
+      "Plante"
+    ]
+  },
+  "47": {
+    "name": "Parasect",
+    "type": [
+      "Insecte",
+      "Plante"
+    ]
+  },
+  "48": {
+    "name": "Mimitoss",
+    "type": [
+      "Insecte",
+      "Poison"
+    ]
+  },
+  "49": {
+    "name": "Aéromite",
+    "type": [
+      "Insecte",
+      "Poison"
+    ]
+  },
+  "50": {
+    "name": "Taupiqueur",
+    "type": [
+      "Sol"
+    ]
+  },
+  "51": {
+    "name": "Triopikeur",
+    "type": [
+      "Sol"
+    ]
+  },
+  "52": {
+    "name": "Miaouss",
+    "type": [
+      "Normal"
+    ]
+  },
+  "53": {
+    "name": "Persian",
+    "type": [
+      "Normal"
+    ]
+  },
+  "54": {
+    "name": "Psykokwak",
+    "type": [
+      "Eau"
+    ]
+  },
+  "55": {
+    "name": "Akwakwak",
+    "type": [
+      "Eau"
+    ]
+  },
+  "56": {
+    "name": "Férosinge",
+    "type": [
+      "Combat"
+    ]
+  },
+  "57": {
+    "name": "Colossinge",
+    "type": [
+      "Combat"
+    ]
+  },
+  "58": {
+    "name": "Caninos",
+    "type": [
+      "Feu"
+    ]
+  },
+  "59": {
+    "name": "Arcanin",
+    "type": [
+      "Feu"
+    ]
+  },
+  "60": {
+    "name": "Ptitard",
+    "type": [
+      "Eau"
+    ]
+  },
+  "61": {
+    "name": "Têtarte",
+    "type": [
+      "Eau"
+    ]
+  },
+  "62": {
+    "name": "Tartard",
+    "type": [
+      "Eau",
+      "Combat"
+    ]
+  },
+  "63": {
+    "name": "Abra",
+    "type": [
+      "Psy"
+    ]
+  },
+  "64": {
+    "name": "Kadabra",
+    "type": [
+      "Psy"
+    ]
+  },
+  "65": {
+    "name": "Alakazam",
+    "type": [
+      "Psy"
+    ]
+  },
+  "66": {
+    "name": "Machoc",
+    "type": [
+      "Combat"
+    ]
+  },
+  "67": {
+    "name": "Machopeur",
+    "type": [
+      "Combat"
+    ]
+  },
+  "68": {
+    "name": "Mackogneur",
+    "type": [
+      "Combat"
+    ]
+  },
+  "69": {
+    "name": "Chétiflor",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "70": {
+    "name": "Boustiflor",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "71": {
+    "name": "Empiflor",
+    "type": [
+      "Plante",
+      "Poison"
+    ]
+  },
+  "72": {
+    "name": "Tentacool",
+    "type": [
+      "Eau",
+      "Poison"
+    ]
+  },
+  "73": {
+    "name": "Tentacruel",
+    "type": [
+      "Eau",
+      "Poison"
+    ]
+  },
+  "74": {
+    "name": "Racaillou",
+    "type": [
+      "Roche",
+      "Sol"
+    ]
+  },
+  "75": {
+    "name": "Gravalanch",
+    "type": [
+      "Roche",
+      "Sol"
+    ]
+  },
+  "76": {
+    "name": "Grolem",
+    "type": [
+      "Roche",
+      "Sol"
+    ]
+  },
+  "77": {
+    "name": "Ponyta",
+    "type": [
+      "Feu"
+    ]
+  },
+  "78": {
+    "name": "Galopa",
+    "type": [
+      "Feu"
+    ]
+  },
+  "79": {
+    "name": "Ramoloss",
+    "type": [
+      "Eau",
+      "Psy"
+    ]
+  },
+  "80": {
+    "name": "Flagadoss",
+    "type": [
+      "Eau",
+      "Psy"
+    ]
+  },
+  "81": {
+    "name": "Magnéti",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "82": {
+    "name": "Magnéton",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "83": {
+    "name": "Canarticho",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "84": {
+    "name": "Doduo",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "85": {
+    "name": "Dodrio",
+    "type": [
+      "Normal",
+      "Vol"
+    ]
+  },
+  "86": {
+    "name": "Otaria",
+    "type": [
+      "Eau"
+    ]
+  },
+  "87": {
+    "name": "Lamantine",
+    "type": [
+      "Eau",
+      "Glace"
+    ]
+  },
+  "88": {
+    "name": "Tadmorv",
+    "type": [
+      "Poison"
+    ]
+  },
+  "89": {
+    "name": "Grotadmorv",
+    "type": [
+      "Poison"
+    ]
+  },
+  "90": {
+    "name": "Kokiyas",
+    "type": [
+      "Eau"
+    ]
+  },
+  "91": {
+    "name": "Crustabri",
+    "type": [
+      "Eau",
+      "Glace"
+    ]
+  },
+  "92": {
+    "name": "Fantominus",
+    "type": [
+      "Spectre",
+      "Poison"
+    ]
+  },
+  "93": {
+    "name": "Spectrum",
+    "type": [
+      "Spectre",
+      "Poison"
+    ]
+  },
+  "94": {
+    "name": "Ectoplasma",
+    "type": [
+      "Spectre",
+      "Poison"
+    ]
+  },
+  "95": {
+    "name": "Onix",
+    "type": [
+      "Roche",
+      "Sol"
+    ]
+  },
+  "96": {
+    "name": "Soporifik",
+    "type": [
+      "Psy"
+    ]
+  },
+  "97": {
+    "name": "Hypnomade",
+    "type": [
+      "Psy"
+    ]
+  },
+  "98": {
+    "name": "Krabby",
+    "type": [
+      "Eau"
+    ]
+  },
+  "99": {
+    "name": "Krabboss",
+    "type": [
+      "Eau"
+    ]
+  },
+  "100": {
+    "name": "Voltorbe",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "101": {
+    "name": "Électrode",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "102": {
+    "name": "Nœunœuf",
+    "type": [
+      "Plante",
+      "Psy"
+    ]
+  },
+  "103": {
+    "name": "Noadkoko",
+    "type": [
+      "Plante",
+      "Psy"
+    ]
+  },
+  "104": {
+    "name": "Osselait",
+    "type": [
+      "Sol"
+    ]
+  },
+  "105": {
+    "name": "Ossatueur",
+    "type": [
+      "Sol"
+    ]
+  },
+  "106": {
+    "name": "Kicklee",
+    "type": [
+      "Combat"
+    ]
+  },
+  "107": {
+    "name": "Tygnon",
+    "type": [
+      "Combat"
+    ]
+  },
+  "108": {
+    "name": "Excelangue",
+    "type": [
+      "Normal"
+    ]
+  },
+  "109": {
+    "name": "Smogo",
+    "type": [
+      "Poison"
+    ]
+  },
+  "110": {
+    "name": "Smogogo",
+    "type": [
+      "Poison"
+    ]
+  },
+  "111": {
+    "name": "Rhinocorne",
+    "type": [
+      "Sol",
+      "Roche"
+    ]
+  },
+  "112": {
+    "name": "Rhinoféros",
+    "type": [
+      "Sol",
+      "Roche"
+    ]
+  },
+  "113": {
+    "name": "Leveinard",
+    "type": [
+      "Normal"
+    ]
+  },
+  "114": {
+    "name": "Saquedeneu",
+    "type": [
+      "Plante"
+    ]
+  },
+  "115": {
+    "name": "Kangourex",
+    "type": [
+      "Normal"
+    ]
+  },
+  "116": {
+    "name": "Hypotrempe",
+    "type": [
+      "Eau"
+    ]
+  },
+  "117": {
+    "name": "Hypocéan",
+    "type": [
+      "Eau"
+    ]
+  },
+  "118": {
+    "name": "Poissirène",
+    "type": [
+      "Eau"
+    ]
+  },
+  "119": {
+    "name": "Poissoroy",
+    "type": [
+      "Eau"
+    ]
+  },
+  "120": {
+    "name": "Stari",
+    "type": [
+      "Eau"
+    ]
+  },
+  "121": {
+    "name": "Staross",
+    "type": [
+      "Eau",
+      "Psy"
+    ]
+  },
+  "122": {
+    "name": "M.Mime",
+    "type": [
+      "Psy"
+    ]
+  },
+  "123": {
+    "name": "Insécateur",
+    "type": [
+      "Insecte",
+      "Vol"
+    ]
+  },
+  "124": {
+    "name": "Lippoutou",
+    "type": [
+      "Glace",
+      "Psy"
+    ]
+  },
+  "125": {
+    "name": "Élektek",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "126": {
+    "name": "Magmar",
+    "type": [
+      "Feu"
+    ]
+  },
+  "127": {
+    "name": "Scarabrute",
+    "type": [
+      "Insecte"
+    ]
+  },
+  "128": {
+    "name": "Tauros",
+    "type": [
+      "Normal"
+    ]
+  },
+  "129": {
+    "name": "Magicarpe",
+    "type": [
+      "Eau"
+    ]
+  },
+  "130": {
+    "name": "Léviator",
+    "type": [
+      "Eau",
+      "Vol"
+    ]
+  },
+  "131": {
+    "name": "Lokhlass",
+    "type": [
+      "Eau",
+      "Glace"
+    ]
+  },
+  "132": {
+    "name": "Métamorph",
+    "type": [
+      "Normal"
+    ]
+  },
+  "133": {
+    "name": "Évoli",
+    "type": [
+      "Normal"
+    ]
+  },
+  "134": {
+    "name": "Aquali",
+    "type": [
+      "Eau"
+    ]
+  },
+  "135": {
+    "name": "Voltali",
+    "type": [
+      "Électrique"
+    ]
+  },
+  "136": {
+    "name": "Pyroli",
+    "type": [
+      "Feu"
+    ]
+  },
+  "137": {
+    "name": "Porygon",
+    "type": [
+      "Normal"
+    ]
+  },
+  "138": {
+    "name": "Amonita",
+    "type": [
+      "Roche",
+      "Eau"
+    ]
+  },
+  "139": {
+    "name": "Amonistar",
+    "type": [
+      "Roche",
+      "Eau"
+    ]
+  },
+  "140": {
+    "name": "Kabuto",
+    "type": [
+      "Roche",
+      "Eau"
+    ]
+  },
+  "141": {
+    "name": "Kabutops",
+    "type": [
+      "Roche",
+      "Eau"
+    ]
+  },
+  "142": {
+    "name": "Ptéra",
+    "type": [
+      "Roche",
+      "Vol"
+    ]
+  },
+  "143": {
+    "name": "Ronflex",
+    "type": [
+      "Normal"
+    ]
+  },
+  "144": {
+    "name": "Artikodin",
+    "type": [
+      "Glace",
+      "Vol"
+    ]
+  },
+  "145": {
+    "name": "Électhor",
+    "type": [
+      "Électrique",
+      "Vol"
+    ]
+  },
+  "146": {
+    "name": "Sulfura",
+    "type": [
+      "Feu",
+      "Vol"
+    ]
+  },
+  "147": {
+    "name": "Minidraco",
+    "type": [
+      "Dragon"
+    ]
+  },
+  "148": {
+    "name": "Draco",
+    "type": [
+      "Dragon"
+    ]
+  },
+  "149": {
+    "name": "Dracolosse",
+    "type": [
+      "Dragon",
+      "Vol"
+    ]
+  },
+  "150": {
+    "name": "Mewtwo",
+    "type": [
+      "Psy"
+    ]
+  },
+  "151": {
+    "name": "Mew",
+    "type": [
+      "Psy"
+    ]
+  }
+}
