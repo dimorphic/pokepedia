@@ -1,7 +1,7 @@
 //
 //  APP INITIAL STATE
 //
-const LOCATION_STATE = {
+export const LOCATION_STATE = {
   lat: null,
   long: null
 };

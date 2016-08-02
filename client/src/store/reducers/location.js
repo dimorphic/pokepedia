@@ -1,25 +1,18 @@
 // deps
-const HANDLERS = [];
-// export default createReducer( new ProductState(), handlers );
+import createReducer from 'utils/createReducer';
 
-// deps
-import initialState from '../initial-state';
+// initial state & constants
+import { LOCATION_STATE } from '../initial-state';
 import { LOCATION_TYPES } from 'constants/action-types';
 
-export default function location(state = initialState.location, action) {
-  // const { payload } = action;
+export default createReducer(LOCATION_STATE, {
+  [LOCATION_TYPES.LOCATION_LOAD_MAP]: (state, action) => {
+    console.log('LOCATION REDUCER @ LOCATION_LOAD_MAP');
 
-  switch (action.type) {
-    case LOCATION_TYPES.LOCATION_LOAD_MAP: {
-      console.log('LOCATION REDUCER @ LOCATION_LOAD_MAP');
-
-      return {
-        lat: 123,
-        long: 456
-      };
-    }
-
-    default:
-      return state;
+    return {
+      ...state,
+      lat: 123,
+      long: 456
+    };
   }
-}
+});
