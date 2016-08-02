@@ -3,23 +3,16 @@
 //  @param  {Array} values
 //  @return {Object} keys of values
 //
-export default function defineConstants(values) {
-  if (!(values instanceof Array)) {
-    throw new TypeError('Need array of values');
-  }
-
-  // map values
-  const constants = {};
-
-  values.forEach((key) => {
-    if (typeof key !== 'string') {
+export default function createConstants(...constants) {
+  return constants.reduce((acc, constant) => {
+    if (typeof constant !== 'string') {
       throw new TypeError('Constant value is not a string');
     }
 
-    // uppercase string
-    const value = key.toUpperCase();
-    constants[value] = value;
-  });
+    // always uppercase
+    const value = constant.toUpperCase();
+    acc[value] = value;
 
-  return constants;
+    return acc;
+  }, {});
 }

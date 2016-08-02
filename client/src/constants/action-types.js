@@ -5,9 +5,9 @@
 //
 
 // deps
-import define from 'utils/constants';
+import createConstants from 'utils/constants';
 
 // website builder
-export const LOCATION_TYPES = define([
+export const LOCATION_TYPES = createConstants(
   'LOCATION_LOAD_MAP'
-]);
+);
