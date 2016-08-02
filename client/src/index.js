@@ -3,25 +3,23 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+// container, store & actions
 import Root from './containers';
+import setupStore from './store';
 import * as LocationActions from './actions/location';
 
 // global style ? (demo)
 import './scss/main.scss';
 
-// store & routes
-import setupStore from './store';
-
 // setup store
 const store = setupStore();
 const target = document.getElementById('root');
-
 const node = (
   <Root store={store} />
 );
 
-
+// test
 store.dispatch(LocationActions.loadMap('lolz'));
 
+// render it!
 render(node, target);
-// render(<Root />, document.getElementById('root'));

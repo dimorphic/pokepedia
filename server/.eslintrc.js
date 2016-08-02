@@ -6,8 +6,7 @@ module.exports = exports = {
 
   env: {
     es6: true,
-    browser: true,
-    commonjs: true
+    node: true
   },
 
   extends: 'airbnb',
@@ -15,26 +14,18 @@ module.exports = exports = {
   globals: {},
 
   rules: {
-    'global-require': WARN,
+    'no-console': OFF,
     'arrow-body-style': [WARN, 'always'],
     'comma-dangle': [ERROR, 'never'],
-    'import/no-mutable-exports': WARN,
-    'import/no-unresolved': OFF,
     'quote-props': [ERROR, 'consistent-as-needed'],
-    'no-console': OFF,
+    'prefer-template': OFF,
     'no-param-reassign': WARN,
-    'no-unused-vars': [WARN, { args: 'after-used' }],
-    'react/wrap-multilines': OFF,
-    'react/jsx-no-bind': OFF,
-    'react/prefer-stateless-function': OFF
+    'no-unused-vars': [WARN, { vars: 'local', args: 'none' }],
+    'no-use-before-define': [ERROR, 'nofunc']
   },
 
   settings: {
     'import/parser': 'babel-eslint',
-    'import/resolver': {
-      webpack: {
-        config: 'start.js'
-      }
-    }
+    'import/resolver': 'node'
   }
 };
