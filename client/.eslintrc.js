@@ -20,6 +20,7 @@ module.exports = exports = {
     'import/no-unresolved': OFF,
     'quote-props': [ERROR, 'consistent-as-needed'],
     'no-console': OFF,
+    'no-param-reassign': WARN,
     'no-unused-vars': [WARN, { args: 'after-used' }],
     'react/wrap-multilines': OFF,
     'react/jsx-no-bind': OFF,
