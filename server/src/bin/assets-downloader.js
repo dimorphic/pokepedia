@@ -26,6 +26,11 @@ function batchDownload() {
     const imageURI = `http://www.serebii.net/pokemongo/pokemon/${pokemon.pokemonId}.png`;
     const savePath = `${saveDir}/${pokemon.pokemonId}.png`;
 
+    if (!IS_LINK.test(imageURI)) {
+      console.log('URI is not valid! ', imageURI);
+      return void 0;
+    }
+
     // go get'em boy!
     downloadFile(imageURI, savePath, (err, file) => {
       if (err) {
