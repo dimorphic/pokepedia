@@ -1,4 +1,6 @@
 // deps
+import '../polyfills';
+
 import jsonfile from 'jsonfile';
 import { pokemon as POKEDEX } from 'pokemon-go-pokedex';
 import CONFIG from '../config';
@@ -11,34 +13,37 @@ const PATHS = UTILS.paths;
 // const LANGUAGES_LOCALE = ['en', 'de', 'fr'];
 const pokemonDir = `${PATHS.data()}/pokemon`;
 const patchName = `${pokemonDir}/patches/pokemon-names+types`;
-const patchResult = `${pokemonDir}/build_pokedex.json`;
 
 // @TODO
-const RENAMES = (item) => {
-  return [
-    renameProp(item, 'num', 'pokemonIdzBro')
+const patchProps = (item) => {
+  const patches = [
+    () => { renameProp(item, 'num', 'pokemonId'); },
+    () => {
+      const { next_evolution = null, prev_evolution = null } = item;
+      const canParse = (array) => { return (Array.isArray(array) && array.length); };
+
+      if (canParse(next_evolution)) {
+        batchRename(next_evolution, 'num', 'pokemonId');
+      }
+
+      if (canParse(prev_evolution)) {
+        batchRename(prev_evolution, 'num', 'pokemonId');
+      }
+    }
   ];
+
+  // just do it!
+  patches.forEach(Function.prototype.call, Function.prototype.call);
 };
 
 function batchRename(list, oldName, newName) {
   if (!Array.isArray(list) || !list.length) { throw new Error('Need array bro!'); }
 
   return list.map((item) => {
-    renameProp(item, 'num', 'pokemonIdzBro');
+    renameProp(item, oldName, newName);
     return item;
   });
 }
-
-const nextEvolutions = [
-  {
-    num: '002',
-    name: 'Ivysaur'
-  },
-  {
-    num: '003',
-    name: 'Venusaur'
-  }
-];
 
 // console.log(batchRename(nextEvolutions));
 // process.exit(0);
@@ -50,13 +55,16 @@ function patchPokedex(languageLocale = 'en') {
   console.log('LOADING PATCH @ ', patchFile);
   const patch = require(patchFile);
 
+  console.time('PATCHING DEX');
   const POKE_PATCH = POKEDEX.map((pokemon) => {
     // update name & type based on language locale
     const { name, type } = patch[pokemon.id];
 
     // da fak am i doing?
-    // RENAMES().forEach(Function.prototype.call, Function.prototype.call);
-    renameProp(pokemon, 'num', 'pokemonId');
+    patchProps(pokemon);
+
+    // clear unwanted keys
+    delete pokemon.img;
 
     return {
       ...pokemon,
@@ -65,17 +73,17 @@ function patchPokedex(languageLocale = 'en') {
     };
   });
 
-  // @TODO: add batch rename of properties to something more meaningful?
-  // renameProp(newPokemon, 'num', 'pokemonId');
-
+  console.timeEnd('PATCHING DEX');
   return POKE_PATCH;
 }
 
 // compose new custom Pokedex DB
-const newPokedex = patchPokedex('en');
-console.log(newPokedex);
+const LOCALE = 'EN';
+const patchResult = `${pokemonDir}/pokedex.${LOCALE.toLowerCase()}.build.json`;
+const newPokedex = patchPokedex(LOCALE);
+// console.log(newPokedex);
 
 // @TODO: write result to file?
 jsonfile.writeFile(patchResult, newPokedex, { spaces: 2 }, (err) => {
-  console.error(err);
+  if (err) console.error(err);
 });
