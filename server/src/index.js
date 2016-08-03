@@ -1,9 +1,10 @@
 // #!/usr/bin/env node
 
 // deps
-import http from 'http';
+import './polyfills';
 
 // magic app!
+import http from 'http';
 import app from './app';
 
 // settings

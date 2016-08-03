@@ -1,0 +1,2 @@
+// deps
+import 'babel-polyfill';

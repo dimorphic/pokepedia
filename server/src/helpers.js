@@ -3,9 +3,12 @@ import fs from 'fs';
 import util from 'util';
 
 // rename object properties
-function renameProp(obj, oldName, newName) {
+function renameProp(obj = {}, oldName = null, newName = null) {
+  // console.log(`Renaming ${oldName} -> ${newName}`);
+
   // Do nothing if the names are the same
   if (oldName == newName) {
+    // console.log('Rename abort. Same names');
     return obj;
   }
 

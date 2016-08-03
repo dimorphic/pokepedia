@@ -14,7 +14,9 @@ module.exports = exports = {
   globals: {},
 
   rules: {
-    'global-require': 0,
+    'global-require': OFF,
+    'camelcase': WARN,
+    'import/imports-first': WARN,
     'no-console': OFF,
     'arrow-body-style': [WARN, 'always'],
     'comma-dangle': [ERROR, 'never'],
