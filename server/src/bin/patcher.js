@@ -4,7 +4,7 @@ import '../polyfills';
 import jsonfile from 'jsonfile';
 import { pokemon as POKEDEX } from 'pokemon-go-pokedex';
 import CONFIG from '../config';
-import { renameProp } from '../helpers';
+import { renameProp } from '../utils/helpers';
 
 // helpers
 const UTILS = CONFIG.get('utils');
