@@ -1,0 +1,3870 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "0.71 m",
+    "weight": "6.9 kg",
+    "candy": "25 Bulbasaur Candy",
+    "egg": "2 km",
+    "multipliers": 1.58,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Ivysaur",
+        "pokemonId": "002"
+      },
+      {
+        "name": "Venusaur",
+        "pokemonId": "003"
+      }
+    ],
+    "pokemonId": "001"
+  },
+  {
+    "id": 2,
+    "name": "Ivysaur",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "0.99 m",
+    "weight": "13.0 kg",
+    "candy": "100 Bulbasaur Candy",
+    "egg": "Not in Eggs",
+    "multipliers": [
+      1.2,
+      1.6
+    ],
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Bulbasaur",
+        "pokemonId": "001"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Venusaur",
+        "pokemonId": "003"
+      }
+    ],
+    "pokemonId": "002"
+  },
+  {
+    "id": 3,
+    "name": "Venusaur",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "2.01 m",
+    "weight": "100.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Bulbasaur",
+        "pokemonId": "001"
+      },
+      {
+        "name": "Ivysaur",
+        "pokemonId": "002"
+      }
+    ],
+    "pokemonId": "003"
+  },
+  {
+    "id": 4,
+    "name": "Charmander",
+    "type": [
+      "Fire"
+    ],
+    "height": "0.61 m",
+    "weight": "8.5 kg",
+    "candy": "25 Charmander Candy",
+    "egg": "2 km",
+    "multipliers": 1.65,
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Charmeleon",
+        "pokemonId": "005"
+      },
+      {
+        "name": "Charizard",
+        "pokemonId": "006"
+      }
+    ],
+    "pokemonId": "004"
+  },
+  {
+    "id": 5,
+    "name": "Charmeleon",
+    "type": [
+      "Fire"
+    ],
+    "height": "1.09 m",
+    "weight": "19.0 kg",
+    "candy": "100 Charmander Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.79,
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Charmander",
+        "pokemonId": "004"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Charizard",
+        "pokemonId": "006"
+      }
+    ],
+    "pokemonId": "005"
+  },
+  {
+    "id": 6,
+    "name": "Charizard",
+    "type": [
+      "Fire",
+      "Flying"
+    ],
+    "height": "1.70 m",
+    "weight": "90.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Electric",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Charmander",
+        "pokemonId": "004"
+      },
+      {
+        "name": "Charmeleon",
+        "pokemonId": "005"
+      }
+    ],
+    "pokemonId": "006"
+  },
+  {
+    "id": 7,
+    "name": "Squirtle",
+    "type": [
+      "Water"
+    ],
+    "height": "0.51 m",
+    "weight": "9.0 kg",
+    "candy": "25 Squirtle Candy",
+    "egg": "2 km",
+    "multipliers": 2.1,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Wartortle",
+        "pokemonId": "008"
+      },
+      {
+        "name": "Blastoise",
+        "pokemonId": "009"
+      }
+    ],
+    "pokemonId": "007"
+  },
+  {
+    "id": 8,
+    "name": "Wartortle",
+    "type": [
+      "Water"
+    ],
+    "height": "0.99 m",
+    "weight": "22.5 kg",
+    "candy": "100 Squirtle Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.4,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Squirtle",
+        "pokemonId": "007"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Blastoise",
+        "pokemonId": "009"
+      }
+    ],
+    "pokemonId": "008"
+  },
+  {
+    "id": 9,
+    "name": "Blastoise",
+    "type": [
+      "Water"
+    ],
+    "height": "1.60 m",
+    "weight": "85.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Squirtle",
+        "pokemonId": "007"
+      },
+      {
+        "name": "Wartortle",
+        "pokemonId": "008"
+      }
+    ],
+    "pokemonId": "009"
+  },
+  {
+    "id": 10,
+    "name": "Caterpie",
+    "type": [
+      "Bug"
+    ],
+    "height": "0.30 m",
+    "weight": "2.9 kg",
+    "candy": "12 Caterpie Candy",
+    "egg": "2 km",
+    "multipliers": 1.05,
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Metapod",
+        "pokemonId": "011"
+      },
+      {
+        "name": "Butterfree",
+        "pokemonId": "012"
+      }
+    ],
+    "pokemonId": "010"
+  },
+  {
+    "id": 11,
+    "name": "Metapod",
+    "type": [
+      "Bug"
+    ],
+    "height": "0.71 m",
+    "weight": "9.9 kg",
+    "candy": "50 Caterpie Candy",
+    "egg": "Not in Eggs",
+    "multipliers": [
+      3.55,
+      3.79
+    ],
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Caterpie",
+        "pokemonId": "010"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Butterfree",
+        "pokemonId": "012"
+      }
+    ],
+    "pokemonId": "011"
+  },
+  {
+    "id": 12,
+    "name": "Butterfree",
+    "type": [
+      "Bug",
+      "Flying"
+    ],
+    "height": "1.09 m",
+    "weight": "32.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Electric",
+      "Ice",
+      "Flying",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Caterpie",
+        "pokemonId": "010"
+      },
+      {
+        "name": "Metapod",
+        "pokemonId": "011"
+      }
+    ],
+    "pokemonId": "012"
+  },
+  {
+    "id": 13,
+    "name": "Weedle",
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "height": "0.30 m",
+    "weight": "3.2 kg",
+    "candy": "12 Weedle Candy",
+    "egg": "2 km",
+    "multipliers": [
+      1.01,
+      1.09
+    ],
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Psychic",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Kakuna",
+        "pokemonId": "014"
+      },
+      {
+        "name": "Beedrill",
+        "pokemonId": "015"
+      }
+    ],
+    "pokemonId": "013"
+  },
+  {
+    "id": 14,
+    "name": "Kakuna",
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "height": "0.61 m",
+    "weight": "10.0 kg",
+    "candy": "50 Weedle Candy",
+    "egg": "Not in Eggs",
+    "multipliers": [
+      3.01,
+      3.41
+    ],
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Psychic",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Weedle",
+        "pokemonId": "013"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Beedrill",
+        "pokemonId": "015"
+      }
+    ],
+    "pokemonId": "014"
+  },
+  {
+    "id": 15,
+    "name": "Beedrill",
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "height": "0.99 m",
+    "weight": "29.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Psychic",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Weedle",
+        "pokemonId": "013"
+      },
+      {
+        "name": "Kakuna",
+        "pokemonId": "014"
+      }
+    ],
+    "pokemonId": "015"
+  },
+  {
+    "id": 16,
+    "name": "Pidgey",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "0.30 m",
+    "weight": "1.8 kg",
+    "candy": "12 Pidgey Candy",
+    "egg": "2 km",
+    "multipliers": [
+      1.71,
+      1.92
+    ],
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Pidgeotto",
+        "pokemonId": "017"
+      },
+      {
+        "name": "Pidgeot",
+        "pokemonId": "018"
+      }
+    ],
+    "pokemonId": "016"
+  },
+  {
+    "id": 17,
+    "name": "Pidgeotto",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "1.09 m",
+    "weight": "30.0 kg",
+    "candy": "50 Pidgey Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.79,
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Pidgey",
+        "pokemonId": "016"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Pidgeot",
+        "pokemonId": "018"
+      }
+    ],
+    "pokemonId": "017"
+  },
+  {
+    "id": 18,
+    "name": "Pidgeot",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "1.50 m",
+    "weight": "39.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Pidgey",
+        "pokemonId": "016"
+      },
+      {
+        "name": "Pidgeotto",
+        "pokemonId": "017"
+      }
+    ],
+    "pokemonId": "018"
+  },
+  {
+    "id": 19,
+    "name": "Rattata",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.30 m",
+    "weight": "3.5 kg",
+    "candy": "25 Rattata Candy",
+    "egg": "2 km",
+    "multipliers": [
+      2.55,
+      2.73
+    ],
+    "weaknesses": [
+      "Fighting"
+    ],
+    "next_evolution": [
+      {
+        "name": "Raticate",
+        "pokemonId": "020"
+      }
+    ],
+    "pokemonId": "019"
+  },
+  {
+    "id": 20,
+    "name": "Raticate",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.71 m",
+    "weight": "18.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Rattata",
+        "pokemonId": "019"
+      }
+    ],
+    "pokemonId": "020"
+  },
+  {
+    "id": 21,
+    "name": "Spearow",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "0.30 m",
+    "weight": "2.0 kg",
+    "candy": "50 Spearow Candy",
+    "egg": "2 km",
+    "multipliers": [
+      2.66,
+      2.68
+    ],
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Fearow",
+        "pokemonId": "022"
+      }
+    ],
+    "pokemonId": "021"
+  },
+  {
+    "id": 22,
+    "name": "Fearow",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "1.19 m",
+    "weight": "38.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Spearow",
+        "pokemonId": "021"
+      }
+    ],
+    "pokemonId": "022"
+  },
+  {
+    "id": 23,
+    "name": "Ekans",
+    "type": [
+      "Poison"
+    ],
+    "height": "2.01 m",
+    "weight": "6.9 kg",
+    "candy": "50 Ekans Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.21,
+      2.27
+    ],
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Arbok",
+        "pokemonId": "024"
+      }
+    ],
+    "pokemonId": "023"
+  },
+  {
+    "id": 24,
+    "name": "Arbok",
+    "type": [
+      "Poison"
+    ],
+    "height": "3.51 m",
+    "weight": "65.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Ekans",
+        "pokemonId": "023"
+      }
+    ],
+    "pokemonId": "024"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "type": [
+      "Electric"
+    ],
+    "height": "0.41 m",
+    "weight": "6.0 kg",
+    "candy": "50 Pikachu Candy",
+    "egg": "2 km",
+    "multipliers": 2.34,
+    "weaknesses": [
+      "Ground"
+    ],
+    "next_evolution": [
+      {
+        "name": "Raichu",
+        "pokemonId": "026"
+      }
+    ],
+    "pokemonId": "025"
+  },
+  {
+    "id": 26,
+    "name": "Raichu",
+    "type": [
+      "Electric"
+    ],
+    "height": "0.79 m",
+    "weight": "30.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Pikachu",
+        "pokemonId": "025"
+      }
+    ],
+    "pokemonId": "026"
+  },
+  {
+    "id": 27,
+    "name": "Sandshrew",
+    "type": [
+      "Ground"
+    ],
+    "height": "0.61 m",
+    "weight": "12.0 kg",
+    "candy": "50 Sandshrew Candy",
+    "egg": "5 km",
+    "multipliers": 2.45,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice"
+    ],
+    "next_evolution": [
+      {
+        "name": "Sandslash",
+        "pokemonId": "028"
+      }
+    ],
+    "pokemonId": "027"
+  },
+  {
+    "id": 28,
+    "name": "Sandslash",
+    "type": [
+      "Ground"
+    ],
+    "height": "0.99 m",
+    "weight": "29.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Sandshrew",
+        "pokemonId": "027"
+      }
+    ],
+    "pokemonId": "028"
+  },
+  {
+    "id": 29,
+    "name": "Nidoran♀",
+    "type": [
+      "Poison"
+    ],
+    "height": "0.41 m",
+    "weight": "7.0 kg",
+    "candy": "25 Nidoran ♀ (Female) Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.63,
+      2.48
+    ],
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Nidorina",
+        "pokemonId": "030"
+      },
+      {
+        "name": "Nidoqueen",
+        "pokemonId": "031"
+      }
+    ],
+    "pokemonId": "029"
+  },
+  {
+    "id": 30,
+    "name": "Nidorina",
+    "type": [
+      "Poison"
+    ],
+    "height": "0.79 m",
+    "weight": "20.0 kg",
+    "candy": "100 Nidoran ♀ Candy",
+    "egg": "Not in Eggs",
+    "multipliers": [
+      1.83,
+      2.48
+    ],
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Nidoran(Female)",
+        "pokemonId": "029"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Nidoqueen",
+        "pokemonId": "031"
+      }
+    ],
+    "pokemonId": "030"
+  },
+  {
+    "id": 31,
+    "name": "Nidoqueen",
+    "type": [
+      "Poison",
+      "Ground"
+    ],
+    "height": "1.30 m",
+    "weight": "60.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Ice",
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Nidoran(Female)",
+        "pokemonId": "029"
+      },
+      {
+        "name": "Nidorina",
+        "pokemonId": "030"
+      }
+    ],
+    "pokemonId": "031"
+  },
+  {
+    "id": 32,
+    "name": "Nidoran♂",
+    "type": [
+      "Poison"
+    ],
+    "height": "0.51 m",
+    "weight": "9.0 kg",
+    "candy": "25 Nidoran ♂ (Male) Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.64,
+      1.7
+    ],
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Nidorino",
+        "pokemonId": "033"
+      },
+      {
+        "name": "Nidoking",
+        "pokemonId": "034"
+      }
+    ],
+    "pokemonId": "032"
+  },
+  {
+    "id": 33,
+    "name": "Nidorino",
+    "type": [
+      "Poison"
+    ],
+    "height": "0.89 m",
+    "weight": "19.5 kg",
+    "candy": "100 Nidoran ♂ Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.83,
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Nidoran(Male)",
+        "pokemonId": "032"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Nidoking",
+        "pokemonId": "034"
+      }
+    ],
+    "pokemonId": "033"
+  },
+  {
+    "id": 34,
+    "name": "Nidoking",
+    "type": [
+      "Poison",
+      "Ground"
+    ],
+    "height": "1.40 m",
+    "weight": "62.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Ice",
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Nidoran(Male)",
+        "pokemonId": "032"
+      },
+      {
+        "name": "Nidorino",
+        "pokemonId": "033"
+      }
+    ],
+    "pokemonId": "034"
+  },
+  {
+    "id": 35,
+    "name": "Clefairy",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.61 m",
+    "weight": "7.5 kg",
+    "candy": "50 Clefairy Candy",
+    "egg": "2 km",
+    "multipliers": [
+      2.03,
+      2.14
+    ],
+    "weaknesses": [
+      "Fighting"
+    ],
+    "next_evolution": [
+      {
+        "name": "Clefable",
+        "pokemonId": "036"
+      }
+    ],
+    "pokemonId": "035"
+  },
+  {
+    "id": 36,
+    "name": "Clefable",
+    "type": [
+      "Normal"
+    ],
+    "height": "1.30 m",
+    "weight": "40.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Clefairy",
+        "pokemonId": "035"
+      }
+    ],
+    "pokemonId": "036"
+  },
+  {
+    "id": 37,
+    "name": "Vulpix",
+    "type": [
+      "Fire"
+    ],
+    "height": "0.61 m",
+    "weight": "9.9 kg",
+    "candy": "50 Vulpix Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.74,
+      2.81
+    ],
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Ninetales",
+        "pokemonId": "038"
+      }
+    ],
+    "pokemonId": "037"
+  },
+  {
+    "id": 38,
+    "name": "Ninetales",
+    "type": [
+      "Fire"
+    ],
+    "height": "1.09 m",
+    "weight": "19.9 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Vulpix",
+        "pokemonId": "037"
+      }
+    ],
+    "pokemonId": "038"
+  },
+  {
+    "id": 39,
+    "name": "Jigglypuff",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.51 m",
+    "weight": "5.5 kg",
+    "candy": "50 Jigglypuff Candy",
+    "egg": "2 km",
+    "multipliers": 1.85,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "next_evolution": [
+      {
+        "name": "Wigglytuff",
+        "pokemonId": "040"
+      }
+    ],
+    "pokemonId": "039"
+  },
+  {
+    "id": 40,
+    "name": "Wigglytuff",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.99 m",
+    "weight": "12.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Jigglypuff",
+        "pokemonId": "039"
+      }
+    ],
+    "pokemonId": "040"
+  },
+  {
+    "id": 41,
+    "name": "Zubat",
+    "type": [
+      "Poison",
+      "Flying"
+    ],
+    "height": "0.79 m",
+    "weight": "7.5 kg",
+    "candy": "50 Zubat Candy",
+    "egg": "2 km",
+    "multipliers": [
+      2.6,
+      3.67
+    ],
+    "weaknesses": [
+      "Electric",
+      "Ice",
+      "Psychic",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Golbat",
+        "pokemonId": "042"
+      }
+    ],
+    "pokemonId": "041"
+  },
+  {
+    "id": 42,
+    "name": "Golbat",
+    "type": [
+      "Poison",
+      "Flying"
+    ],
+    "height": "1.60 m",
+    "weight": "55.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Ice",
+      "Psychic",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Zubat",
+        "pokemonId": "041"
+      }
+    ],
+    "pokemonId": "042"
+  },
+  {
+    "id": 43,
+    "name": "Oddish",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "0.51 m",
+    "weight": "5.4 kg",
+    "candy": "25 Oddish Candy",
+    "egg": "5 km",
+    "multipliers": 1.5,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Gloom",
+        "pokemonId": "044"
+      },
+      {
+        "name": "Vileplume",
+        "pokemonId": "045"
+      }
+    ],
+    "pokemonId": "043"
+  },
+  {
+    "id": 44,
+    "name": "Gloom",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "0.79 m",
+    "weight": "8.6 kg",
+    "candy": "100 Oddish Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.49,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Oddish",
+        "pokemonId": "043"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Vileplume",
+        "pokemonId": "045"
+      }
+    ],
+    "pokemonId": "044"
+  },
+  {
+    "id": 45,
+    "name": "Vileplume",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "1.19 m",
+    "weight": "18.6 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Oddish",
+        "pokemonId": "043"
+      },
+      {
+        "name": "Gloom",
+        "pokemonId": "044"
+      }
+    ],
+    "pokemonId": "045"
+  },
+  {
+    "id": 46,
+    "name": "Paras",
+    "type": [
+      "Bug",
+      "Grass"
+    ],
+    "height": "0.30 m",
+    "weight": "5.4 kg",
+    "candy": "50 Paras Candy",
+    "egg": "5 km",
+    "multipliers": 2.02,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Poison",
+      "Flying",
+      "Bug",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Parasect",
+        "pokemonId": "047"
+      }
+    ],
+    "pokemonId": "046"
+  },
+  {
+    "id": 47,
+    "name": "Parasect",
+    "type": [
+      "Bug",
+      "Grass"
+    ],
+    "height": "0.99 m",
+    "weight": "29.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Poison",
+      "Flying",
+      "Bug",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Paras",
+        "pokemonId": "046"
+      }
+    ],
+    "pokemonId": "047"
+  },
+  {
+    "id": 48,
+    "name": "Venonat",
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "height": "0.99 m",
+    "weight": "30.0 kg",
+    "candy": "50 Venonat Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.86,
+      1.9
+    ],
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Psychic",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Venomoth",
+        "pokemonId": "049"
+      }
+    ],
+    "pokemonId": "048"
+  },
+  {
+    "id": 49,
+    "name": "Venomoth",
+    "type": [
+      "Bug",
+      "Poison"
+    ],
+    "height": "1.50 m",
+    "weight": "12.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Psychic",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Venonat",
+        "pokemonId": "048"
+      }
+    ],
+    "pokemonId": "049"
+  },
+  {
+    "id": 50,
+    "name": "Diglett",
+    "type": [
+      "Ground"
+    ],
+    "height": "0.20 m",
+    "weight": "0.8 kg",
+    "candy": "50 Diglett Candy",
+    "egg": "5 km",
+    "multipliers": 2.69,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice"
+    ],
+    "next_evolution": [
+      {
+        "name": "Dugtrio",
+        "pokemonId": "051"
+      }
+    ],
+    "pokemonId": "050"
+  },
+  {
+    "id": 51,
+    "name": "Dugtrio",
+    "type": [
+      "Ground"
+    ],
+    "height": "0.71 m",
+    "weight": "33.3 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Diglett",
+        "pokemonId": "050"
+      }
+    ],
+    "pokemonId": "051"
+  },
+  {
+    "id": 52,
+    "name": "Meowth",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.41 m",
+    "weight": "4.2 kg",
+    "candy": "50 Meowth Candy",
+    "egg": "5 km",
+    "multipliers": 1.98,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "next_evolution": [
+      {
+        "name": "Persian",
+        "pokemonId": "053"
+      }
+    ],
+    "pokemonId": "052"
+  },
+  {
+    "id": 53,
+    "name": "Persian",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.99 m",
+    "weight": "32.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Meowth",
+        "pokemonId": "052"
+      }
+    ],
+    "pokemonId": "053"
+  },
+  {
+    "id": 54,
+    "name": "Psyduck",
+    "type": [
+      "Water"
+    ],
+    "height": "0.79 m",
+    "weight": "19.6 kg",
+    "candy": "50 Psyduck Candy",
+    "egg": "5 km",
+    "multipliers": 2.27,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Golduck",
+        "pokemonId": "055"
+      }
+    ],
+    "pokemonId": "054"
+  },
+  {
+    "id": 55,
+    "name": "Golduck",
+    "type": [
+      "Water"
+    ],
+    "height": "1.70 m",
+    "weight": "76.6 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Psyduck",
+        "pokemonId": "054"
+      }
+    ],
+    "pokemonId": "055"
+  },
+  {
+    "id": 56,
+    "name": "Mankey",
+    "type": [
+      "Fighting"
+    ],
+    "height": "0.51 m",
+    "weight": "28.0 kg",
+    "candy": "50 Mankey Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.17,
+      2.28
+    ],
+    "weaknesses": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "next_evolution": [
+      {
+        "name": "Primeape",
+        "pokemonId": "057"
+      }
+    ],
+    "pokemonId": "056"
+  },
+  {
+    "id": 57,
+    "name": "Primeape",
+    "type": [
+      "Fighting"
+    ],
+    "height": "0.99 m",
+    "weight": "32.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Mankey",
+        "pokemonId": "056"
+      }
+    ],
+    "pokemonId": "057"
+  },
+  {
+    "id": 58,
+    "name": "Growlithe",
+    "type": [
+      "Fire"
+    ],
+    "height": "0.71 m",
+    "weight": "19.0 kg",
+    "candy": "50 Growlithe Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.31,
+      2.36
+    ],
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Arcanine",
+        "pokemonId": "059"
+      }
+    ],
+    "pokemonId": "058"
+  },
+  {
+    "id": 59,
+    "name": "Arcanine",
+    "type": [
+      "Fire"
+    ],
+    "height": "1.91 m",
+    "weight": "155.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Growlithe",
+        "pokemonId": "058"
+      }
+    ],
+    "pokemonId": "059"
+  },
+  {
+    "id": 60,
+    "name": "Poliwag",
+    "type": [
+      "Water"
+    ],
+    "height": "0.61 m",
+    "weight": "12.4 kg",
+    "candy": "25 Poliwag Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.72,
+      1.73
+    ],
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Poliwhirl",
+        "pokemonId": "061"
+      },
+      {
+        "name": "Poliwrath",
+        "pokemonId": "062"
+      }
+    ],
+    "pokemonId": "060"
+  },
+  {
+    "id": 61,
+    "name": "Poliwhirl",
+    "type": [
+      "Water"
+    ],
+    "height": "0.99 m",
+    "weight": "20.0 kg",
+    "candy": "100 Poliwag Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.95,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Poliwag",
+        "pokemonId": "060"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Poliwrath",
+        "pokemonId": "062"
+      }
+    ],
+    "pokemonId": "061"
+  },
+  {
+    "id": 62,
+    "name": "Poliwrath",
+    "type": [
+      "Water",
+      "Fighting"
+    ],
+    "height": "1.30 m",
+    "weight": "54.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Poliwag",
+        "pokemonId": "060"
+      },
+      {
+        "name": "Poliwhirl",
+        "pokemonId": "061"
+      }
+    ],
+    "pokemonId": "062"
+  },
+  {
+    "id": 63,
+    "name": "Abra",
+    "type": [
+      "Psychic"
+    ],
+    "height": "0.89 m",
+    "weight": "19.5 kg",
+    "candy": "25 Abra Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.36,
+      1.95
+    ],
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "next_evolution": [
+      {
+        "name": "Kadabra",
+        "pokemonId": "064"
+      },
+      {
+        "name": "Alakazam",
+        "pokemonId": "065"
+      }
+    ],
+    "pokemonId": "063"
+  },
+  {
+    "id": 64,
+    "name": "Kadabra",
+    "type": [
+      "Psychic"
+    ],
+    "height": "1.30 m",
+    "weight": "56.5 kg",
+    "candy": "100 Abra Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.4,
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Abra",
+        "pokemonId": "063"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Alakazam",
+        "pokemonId": "065"
+      }
+    ],
+    "pokemonId": "064"
+  },
+  {
+    "id": 65,
+    "name": "Alakazam",
+    "type": [
+      "Psychic"
+    ],
+    "height": "1.50 m",
+    "weight": "48.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Abra",
+        "pokemonId": "063"
+      },
+      {
+        "name": "Kadabra",
+        "pokemonId": "064"
+      }
+    ],
+    "pokemonId": "065"
+  },
+  {
+    "id": 66,
+    "name": "Machop",
+    "type": [
+      "Fighting"
+    ],
+    "height": "0.79 m",
+    "weight": "19.5 kg",
+    "candy": "25 Machop Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.64,
+      1.65
+    ],
+    "weaknesses": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "next_evolution": [
+      {
+        "name": "Machoke",
+        "pokemonId": "067"
+      },
+      {
+        "name": "Machamp",
+        "pokemonId": "068"
+      }
+    ],
+    "pokemonId": "066"
+  },
+  {
+    "id": 67,
+    "name": "Machoke",
+    "type": [
+      "Fighting"
+    ],
+    "height": "1.50 m",
+    "weight": "70.5 kg",
+    "candy": "100 Machop Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.7,
+    "weaknesses": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Machop",
+        "pokemonId": "066"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Machamp",
+        "pokemonId": "068"
+      }
+    ],
+    "pokemonId": "067"
+  },
+  {
+    "id": 68,
+    "name": "Machamp",
+    "type": [
+      "Fighting"
+    ],
+    "height": "1.60 m",
+    "weight": "130.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Machop",
+        "pokemonId": "066"
+      },
+      {
+        "name": "Machoke",
+        "pokemonId": "067"
+      }
+    ],
+    "pokemonId": "068"
+  },
+  {
+    "id": 69,
+    "name": "Bellsprout",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "0.71 m",
+    "weight": "4.0 kg",
+    "candy": "25 Bellsprout Candy",
+    "egg": "5 km",
+    "multipliers": 1.57,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Weepinbell",
+        "pokemonId": "070"
+      },
+      {
+        "name": "Victreebel",
+        "pokemonId": "071"
+      }
+    ],
+    "pokemonId": "069"
+  },
+  {
+    "id": 70,
+    "name": "Weepinbell",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "0.99 m",
+    "weight": "6.4 kg",
+    "candy": "100 Bellsprout Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 1.59,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Bellsprout",
+        "pokemonId": "069"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Victreebel",
+        "pokemonId": "071"
+      }
+    ],
+    "pokemonId": "070"
+  },
+  {
+    "id": 71,
+    "name": "Victreebel",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "height": "1.70 m",
+    "weight": "15.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Flying",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Bellsprout",
+        "pokemonId": "069"
+      },
+      {
+        "name": "Weepinbell",
+        "pokemonId": "070"
+      }
+    ],
+    "pokemonId": "071"
+  },
+  {
+    "id": 72,
+    "name": "Tentacool",
+    "type": [
+      "Water",
+      "Poison"
+    ],
+    "height": "0.89 m",
+    "weight": "45.5 kg",
+    "candy": "50 Tentacool Candy",
+    "egg": "5 km",
+    "multipliers": 2.52,
+    "weaknesses": [
+      "Electric",
+      "Ground",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Tentacruel",
+        "pokemonId": "073"
+      }
+    ],
+    "pokemonId": "072"
+  },
+  {
+    "id": 73,
+    "name": "Tentacruel",
+    "type": [
+      "Water",
+      "Poison"
+    ],
+    "height": "1.60 m",
+    "weight": "55.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Tentacool",
+        "pokemonId": "072"
+      }
+    ],
+    "pokemonId": "073"
+  },
+  {
+    "id": 74,
+    "name": "Geodude",
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "height": "0.41 m",
+    "weight": "20.0 kg",
+    "candy": "25 Geodude Candy",
+    "egg": "2 km",
+    "multipliers": [
+      1.75,
+      1.76
+    ],
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice",
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "next_evolution": [
+      {
+        "name": "Graveler",
+        "pokemonId": "075"
+      },
+      {
+        "name": "Golem",
+        "pokemonId": "076"
+      }
+    ],
+    "pokemonId": "074"
+  },
+  {
+    "id": 75,
+    "name": "Graveler",
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "height": "0.99 m",
+    "weight": "105.0 kg",
+    "candy": "100 Geodude Candy",
+    "egg": "Not in Eggs",
+    "multipliers": [
+      1.64,
+      1.72
+    ],
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice",
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Geodude",
+        "pokemonId": "074"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Golem",
+        "pokemonId": "076"
+      }
+    ],
+    "pokemonId": "075"
+  },
+  {
+    "id": 76,
+    "name": "Golem",
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "height": "1.40 m",
+    "weight": "300.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice",
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Geodude",
+        "pokemonId": "074"
+      },
+      {
+        "name": "Graveler",
+        "pokemonId": "075"
+      }
+    ],
+    "pokemonId": "076"
+  },
+  {
+    "id": 77,
+    "name": "Ponyta",
+    "type": [
+      "Fire"
+    ],
+    "height": "0.99 m",
+    "weight": "30.0 kg",
+    "candy": "50 Ponyta Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.48,
+      1.5
+    ],
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Rapidash",
+        "pokemonId": "078"
+      }
+    ],
+    "pokemonId": "077"
+  },
+  {
+    "id": 78,
+    "name": "Rapidash",
+    "type": [
+      "Fire"
+    ],
+    "height": "1.70 m",
+    "weight": "95.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Ponyta",
+        "pokemonId": "077"
+      }
+    ],
+    "pokemonId": "078"
+  },
+  {
+    "id": 79,
+    "name": "Slowpoke",
+    "type": [
+      "Water",
+      "Psychic"
+    ],
+    "height": "1.19 m",
+    "weight": "36.0 kg",
+    "candy": "50 Slowpoke Candy",
+    "egg": "5 km",
+    "multipliers": 2.21,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "next_evolution": [
+      {
+        "name": "Slowbro",
+        "pokemonId": "080"
+      }
+    ],
+    "pokemonId": "079"
+  },
+  {
+    "id": 80,
+    "name": "Slowbro",
+    "type": [
+      "Water",
+      "Psychic"
+    ],
+    "height": "1.60 m",
+    "weight": "78.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Slowpoke",
+        "pokemonId": "079"
+      }
+    ],
+    "pokemonId": "080"
+  },
+  {
+    "id": 81,
+    "name": "Magnemite",
+    "type": [
+      "Electric"
+    ],
+    "height": "0.30 m",
+    "weight": "6.0 kg",
+    "candy": "50 Magnemite Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.16,
+      2.17
+    ],
+    "weaknesses": [
+      "Fire",
+      "Water",
+      "Ground"
+    ],
+    "next_evolution": [
+      {
+        "name": "Magneton",
+        "pokemonId": "082"
+      }
+    ],
+    "pokemonId": "081"
+  },
+  {
+    "id": 82,
+    "name": "Magneton",
+    "type": [
+      "Electric"
+    ],
+    "height": "0.99 m",
+    "weight": "60.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Water",
+      "Ground"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Magnemite",
+        "pokemonId": "081"
+      }
+    ],
+    "pokemonId": "082"
+  },
+  {
+    "id": 83,
+    "name": "Farfetch'd",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "0.79 m",
+    "weight": "15.0 kg",
+    "candy": "None",
+    "egg": "5 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "pokemonId": "083"
+  },
+  {
+    "id": 84,
+    "name": "Doduo",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "1.40 m",
+    "weight": "39.2 kg",
+    "candy": "50 Doduo Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.19,
+      2.24
+    ],
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "next_evolution": [
+      {
+        "name": "Dodrio",
+        "pokemonId": "085"
+      }
+    ],
+    "pokemonId": "084"
+  },
+  {
+    "id": 85,
+    "name": "Dodrio",
+    "type": [
+      "Normal",
+      "Flying"
+    ],
+    "height": "1.80 m",
+    "weight": "85.2 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Doduo",
+        "pokemonId": "084"
+      }
+    ],
+    "pokemonId": "085"
+  },
+  {
+    "id": 86,
+    "name": "Seel",
+    "type": [
+      "Water"
+    ],
+    "height": "1.09 m",
+    "weight": "90.0 kg",
+    "candy": "50 Seel Candy",
+    "egg": "5 km",
+    "multipliers": [
+      1.04,
+      1.96
+    ],
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Dewgong",
+        "pokemonId": "087"
+      }
+    ],
+    "pokemonId": "086"
+  },
+  {
+    "id": 87,
+    "name": "Dewgong",
+    "type": [
+      "Water",
+      "Ice"
+    ],
+    "height": "1.70 m",
+    "weight": "120.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Fighting",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Seel",
+        "pokemonId": "086"
+      }
+    ],
+    "pokemonId": "087"
+  },
+  {
+    "id": 88,
+    "name": "Grimer",
+    "type": [
+      "Poison"
+    ],
+    "height": "0.89 m",
+    "weight": "30.0 kg",
+    "candy": "50 Grimer Candy",
+    "egg": "5 km",
+    "multipliers": 2.44,
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Muk",
+        "pokemonId": "089"
+      }
+    ],
+    "pokemonId": "088"
+  },
+  {
+    "id": 89,
+    "name": "Muk",
+    "type": [
+      "Poison"
+    ],
+    "height": "1.19 m",
+    "weight": "30.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Grimer",
+        "pokemonId": "088"
+      }
+    ],
+    "pokemonId": "089"
+  },
+  {
+    "id": 90,
+    "name": "Shellder",
+    "type": [
+      "Water"
+    ],
+    "height": "0.30 m",
+    "weight": "4.0 kg",
+    "candy": "50 Shellder Candy",
+    "egg": "5 km",
+    "multipliers": 2.65,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Cloyster",
+        "pokemonId": "091"
+      }
+    ],
+    "pokemonId": "090"
+  },
+  {
+    "id": 91,
+    "name": "Cloyster",
+    "type": [
+      "Water",
+      "Ice"
+    ],
+    "height": "1.50 m",
+    "weight": "132.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Fighting",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Shellder",
+        "pokemonId": "090"
+      }
+    ],
+    "pokemonId": "091"
+  },
+  {
+    "id": 92,
+    "name": "Gastly",
+    "type": [
+      "Ghost",
+      "Poison"
+    ],
+    "height": "1.30 m",
+    "weight": "0.1 kg",
+    "candy": "25 Gastly Candy",
+    "egg": "5 km",
+    "multipliers": 1.78,
+    "weaknesses": [
+      "Ground",
+      "Psychic",
+      "Ghost",
+      "Dark"
+    ],
+    "next_evolution": [
+      {
+        "name": "Haunter",
+        "pokemonId": "093"
+      },
+      {
+        "name": "Gengar",
+        "pokemonId": "094"
+      }
+    ],
+    "pokemonId": "092"
+  },
+  {
+    "id": 93,
+    "name": "Haunter",
+    "type": [
+      "Ghost",
+      "Poison"
+    ],
+    "height": "1.60 m",
+    "weight": "0.1 kg",
+    "candy": "100 Gastly Candy",
+    "egg": "Not in Eggs",
+    "multipliers": [
+      1.56,
+      1.8
+    ],
+    "weaknesses": [
+      "Ground",
+      "Psychic",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Gastly",
+        "pokemonId": "092"
+      }
+    ],
+    "next_evolution": [
+      {
+        "name": "Gengar",
+        "pokemonId": "094"
+      }
+    ],
+    "pokemonId": "093"
+  },
+  {
+    "id": 94,
+    "name": "Gengar",
+    "type": [
+      "Ghost",
+      "Poison"
+    ],
+    "height": "1.50 m",
+    "weight": "40.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground",
+      "Psychic",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Gastly",
+        "pokemonId": "092"
+      },
+      {
+        "name": "Haunter",
+        "pokemonId": "093"
+      }
+    ],
+    "pokemonId": "094"
+  },
+  {
+    "id": 95,
+    "name": "Onix",
+    "type": [
+      "Rock",
+      "Ground"
+    ],
+    "height": "8.79 m",
+    "weight": "210.0 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice",
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "pokemonId": "095"
+  },
+  {
+    "id": 96,
+    "name": "Drowzee",
+    "type": [
+      "Psychic"
+    ],
+    "height": "0.99 m",
+    "weight": "32.4 kg",
+    "candy": "50 Drowzee Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.08,
+      2.09
+    ],
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "next_evolution": [
+      {
+        "name": "Hypno",
+        "pokemonId": "097"
+      }
+    ],
+    "pokemonId": "096"
+  },
+  {
+    "id": 97,
+    "name": "Hypno",
+    "type": [
+      "Psychic"
+    ],
+    "height": "1.60 m",
+    "weight": "75.6 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Drowzee",
+        "pokemonId": "096"
+      }
+    ],
+    "pokemonId": "097"
+  },
+  {
+    "id": 98,
+    "name": "Krabby",
+    "type": [
+      "Water"
+    ],
+    "height": "0.41 m",
+    "weight": "6.5 kg",
+    "candy": "50 Krabby Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.36,
+      2.4
+    ],
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Kingler",
+        "pokemonId": "099"
+      }
+    ],
+    "pokemonId": "098"
+  },
+  {
+    "id": 99,
+    "name": "Kingler",
+    "type": [
+      "Water"
+    ],
+    "height": "1.30 m",
+    "weight": "60.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Krabby",
+        "pokemonId": "098"
+      }
+    ],
+    "pokemonId": "099"
+  },
+  {
+    "id": 100,
+    "name": "Voltorb",
+    "type": [
+      "Electric"
+    ],
+    "height": "0.51 m",
+    "weight": "10.4 kg",
+    "candy": "50 Voltorb Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.01,
+      2.02
+    ],
+    "weaknesses": [
+      "Ground"
+    ],
+    "next_evolution": [
+      {
+        "name": "Electrode",
+        "pokemonId": "101"
+      }
+    ],
+    "pokemonId": "100"
+  },
+  {
+    "id": 101,
+    "name": "Electrode",
+    "type": [
+      "Electric"
+    ],
+    "height": "1.19 m",
+    "weight": "66.6 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Voltorb",
+        "pokemonId": "100"
+      }
+    ],
+    "pokemonId": "101"
+  },
+  {
+    "id": 102,
+    "name": "Exeggcute",
+    "type": [
+      "Grass",
+      "Psychic"
+    ],
+    "height": "0.41 m",
+    "weight": "2.5 kg",
+    "candy": "50 Exeggcute Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.7,
+      3.18
+    ],
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Poison",
+      "Flying",
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "next_evolution": [
+      {
+        "name": "Exeggutor",
+        "pokemonId": "103"
+      }
+    ],
+    "pokemonId": "102"
+  },
+  {
+    "id": 103,
+    "name": "Exeggutor",
+    "type": [
+      "Grass",
+      "Psychic"
+    ],
+    "height": "2.01 m",
+    "weight": "120.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Poison",
+      "Flying",
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Exeggcute",
+        "pokemonId": "102"
+      }
+    ],
+    "pokemonId": "103"
+  },
+  {
+    "id": 104,
+    "name": "Cubone",
+    "type": [
+      "Ground"
+    ],
+    "height": "0.41 m",
+    "weight": "6.5 kg",
+    "candy": "50 Cubone Candy",
+    "egg": "5 km",
+    "multipliers": 1.67,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice"
+    ],
+    "next_evolution": [
+      {
+        "name": "Marowak",
+        "pokemonId": "105"
+      }
+    ],
+    "pokemonId": "104"
+  },
+  {
+    "id": 105,
+    "name": "Marowak",
+    "type": [
+      "Ground"
+    ],
+    "height": "0.99 m",
+    "weight": "45.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Cubone",
+        "pokemonId": "104"
+      }
+    ],
+    "pokemonId": "105"
+  },
+  {
+    "id": 106,
+    "name": "Hitmonlee",
+    "type": [
+      "Fighting"
+    ],
+    "height": "1.50 m",
+    "weight": "49.8 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "pokemonId": "106"
+  },
+  {
+    "id": 107,
+    "name": "Hitmonchan",
+    "type": [
+      "Fighting"
+    ],
+    "height": "1.40 m",
+    "weight": "50.2 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Flying",
+      "Psychic",
+      "Fairy"
+    ],
+    "pokemonId": "107"
+  },
+  {
+    "id": 108,
+    "name": "Lickitung",
+    "type": [
+      "Normal"
+    ],
+    "height": "1.19 m",
+    "weight": "65.5 kg",
+    "candy": "None",
+    "egg": "5 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "pokemonId": "108"
+  },
+  {
+    "id": 109,
+    "name": "Koffing",
+    "type": [
+      "Poison"
+    ],
+    "height": "0.61 m",
+    "weight": "1.0 kg",
+    "candy": "50 Koffing Candy",
+    "egg": "5 km",
+    "multipliers": 1.11,
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "next_evolution": [
+      {
+        "name": "Weezing",
+        "pokemonId": "110"
+      }
+    ],
+    "pokemonId": "109"
+  },
+  {
+    "id": 110,
+    "name": "Weezing",
+    "type": [
+      "Poison"
+    ],
+    "height": "1.19 m",
+    "weight": "9.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground",
+      "Psychic"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Koffing",
+        "pokemonId": "109"
+      }
+    ],
+    "pokemonId": "110"
+  },
+  {
+    "id": 111,
+    "name": "Rhyhorn",
+    "type": [
+      "Ground",
+      "Rock"
+    ],
+    "height": "0.99 m",
+    "weight": "115.0 kg",
+    "candy": "50 Rhyhorn Candy",
+    "egg": "5 km",
+    "multipliers": 1.91,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice",
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "next_evolution": [
+      {
+        "name": "Rhydon",
+        "pokemonId": "112"
+      }
+    ],
+    "pokemonId": "111"
+  },
+  {
+    "id": 112,
+    "name": "Rhydon",
+    "type": [
+      "Ground",
+      "Rock"
+    ],
+    "height": "1.91 m",
+    "weight": "120.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Grass",
+      "Ice",
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Rhyhorn",
+        "pokemonId": "111"
+      }
+    ],
+    "pokemonId": "112"
+  },
+  {
+    "id": 113,
+    "name": "Chansey",
+    "type": [
+      "Normal"
+    ],
+    "height": "1.09 m",
+    "weight": "34.6 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "pokemonId": "113"
+  },
+  {
+    "id": 114,
+    "name": "Tangela",
+    "type": [
+      "Grass"
+    ],
+    "height": "0.99 m",
+    "weight": "35.0 kg",
+    "candy": "None",
+    "egg": "5 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Ice",
+      "Poison",
+      "Flying",
+      "Bug"
+    ],
+    "pokemonId": "114"
+  },
+  {
+    "id": 115,
+    "name": "Kangaskhan",
+    "type": [
+      "Normal"
+    ],
+    "height": "2.21 m",
+    "weight": "80.0 kg",
+    "candy": "None",
+    "egg": "5 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "pokemonId": "115"
+  },
+  {
+    "id": 116,
+    "name": "Horsea",
+    "type": [
+      "Water"
+    ],
+    "height": "0.41 m",
+    "weight": "8.0 kg",
+    "candy": "50 Horsea Candy",
+    "egg": "5 km",
+    "multipliers": 2.23,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Seadra",
+        "pokemonId": "117"
+      }
+    ],
+    "pokemonId": "116"
+  },
+  {
+    "id": 117,
+    "name": "Seadra",
+    "type": [
+      "Water"
+    ],
+    "height": "1.19 m",
+    "weight": "25.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Horsea",
+        "pokemonId": "116"
+      }
+    ],
+    "pokemonId": "117"
+  },
+  {
+    "id": 118,
+    "name": "Goldeen",
+    "type": [
+      "Water"
+    ],
+    "height": "0.61 m",
+    "weight": "15.0 kg",
+    "candy": "50 Goldeen Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.15,
+      2.2
+    ],
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Seaking",
+        "pokemonId": "119"
+      }
+    ],
+    "pokemonId": "118"
+  },
+  {
+    "id": 119,
+    "name": "Seaking",
+    "type": [
+      "Water"
+    ],
+    "height": "1.30 m",
+    "weight": "39.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Goldeen",
+        "pokemonId": "118"
+      }
+    ],
+    "pokemonId": "119"
+  },
+  {
+    "id": 120,
+    "name": "Staryu",
+    "type": [
+      "Water"
+    ],
+    "height": "0.79 m",
+    "weight": "34.5 kg",
+    "candy": "50 Staryu Candy",
+    "egg": "5 km",
+    "multipliers": [
+      2.38,
+      2.41
+    ],
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Starmie",
+        "pokemonId": "121"
+      }
+    ],
+    "pokemonId": "120"
+  },
+  {
+    "id": 121,
+    "name": "Starmie",
+    "type": [
+      "Water",
+      "Psychic"
+    ],
+    "height": "1.09 m",
+    "weight": "80.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Starmie",
+        "pokemonId": "121"
+      }
+    ],
+    "pokemonId": "121"
+  },
+  {
+    "id": 122,
+    "name": "Mr. Mime",
+    "type": [
+      "Psychic"
+    ],
+    "height": "1.30 m",
+    "weight": "54.5 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "pokemonId": "122"
+  },
+  {
+    "id": 123,
+    "name": "Scyther",
+    "type": [
+      "Bug",
+      "Flying"
+    ],
+    "height": "1.50 m",
+    "weight": "56.0 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Electric",
+      "Ice",
+      "Flying",
+      "Rock"
+    ],
+    "pokemonId": "123"
+  },
+  {
+    "id": 124,
+    "name": "Jynx",
+    "type": [
+      "Ice",
+      "Psychic"
+    ],
+    "height": "1.40 m",
+    "weight": "40.6 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Bug",
+      "Rock",
+      "Ghost",
+      "Dark",
+      "Steel"
+    ],
+    "pokemonId": "124"
+  },
+  {
+    "id": 125,
+    "name": "Electabuzz",
+    "type": [
+      "Electric"
+    ],
+    "height": "1.09 m",
+    "weight": "30.0 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground"
+    ],
+    "pokemonId": "125"
+  },
+  {
+    "id": 126,
+    "name": "Magmar",
+    "type": [
+      "Fire"
+    ],
+    "height": "1.30 m",
+    "weight": "44.5 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "pokemonId": "126"
+  },
+  {
+    "id": 127,
+    "name": "Pinsir",
+    "type": [
+      "Bug"
+    ],
+    "height": "1.50 m",
+    "weight": "55.0 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Flying",
+      "Rock"
+    ],
+    "pokemonId": "127"
+  },
+  {
+    "id": 128,
+    "name": "Tauros",
+    "type": [
+      "Normal"
+    ],
+    "height": "1.40 m",
+    "weight": "88.4 kg",
+    "candy": "None",
+    "egg": "5 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "pokemonId": "128"
+  },
+  {
+    "id": 129,
+    "name": "Magikarp",
+    "type": [
+      "Water"
+    ],
+    "height": "0.89 m",
+    "weight": "10.0 kg",
+    "candy": "400 Magikarp Candy",
+    "egg": "2 km",
+    "multipliers": [
+      10.1,
+      11.8
+    ],
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "next_evolution": [
+      {
+        "name": "Gyarados",
+        "pokemonId": "130"
+      }
+    ],
+    "pokemonId": "129"
+  },
+  {
+    "id": 130,
+    "name": "Gyarados",
+    "type": [
+      "Water",
+      "Flying"
+    ],
+    "height": "6.50 m",
+    "weight": "235.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Magikarp",
+        "pokemonId": "129"
+      }
+    ],
+    "pokemonId": "130"
+  },
+  {
+    "id": 131,
+    "name": "Lapras",
+    "type": [
+      "Water",
+      "Ice"
+    ],
+    "height": "2.49 m",
+    "weight": "220.0 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Fighting",
+      "Rock"
+    ],
+    "pokemonId": "131"
+  },
+  {
+    "id": 132,
+    "name": "Ditto",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.30 m",
+    "weight": "4.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "pokemonId": "132"
+  },
+  {
+    "id": 133,
+    "name": "Eevee",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.30 m",
+    "weight": "6.5 kg",
+    "candy": "25 Eevee Candy (Evolution decided at random. Or, for first evolution, rename Eevee: Rainer => Vaporeon, Sparky => Jolteon, Pyro => Flareon)",
+    "egg": "10 km",
+    "multipliers": [
+      2.02,
+      2.64
+    ],
+    "weaknesses": [
+      "Fighting"
+    ],
+    "next_evolution": [
+      {
+        "name": "Vaporeon",
+        "pokemonId": "134"
+      },
+      {
+        "name": "Jolteon",
+        "pokemonId": "135"
+      },
+      {
+        "name": "Flareon",
+        "pokemonId": "136"
+      }
+    ],
+    "pokemonId": "133"
+  },
+  {
+    "id": 134,
+    "name": "Vaporeon",
+    "type": [
+      "Water"
+    ],
+    "height": "0.99 m",
+    "weight": "29.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Eevee",
+        "pokemonId": "133"
+      }
+    ],
+    "pokemonId": "134"
+  },
+  {
+    "id": 135,
+    "name": "Jolteon",
+    "type": [
+      "Electric"
+    ],
+    "height": "0.79 m",
+    "weight": "24.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ground"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Eevee",
+        "pokemonId": "133"
+      }
+    ],
+    "pokemonId": "135"
+  },
+  {
+    "id": 136,
+    "name": "Flareon",
+    "type": [
+      "Fire"
+    ],
+    "height": "0.89 m",
+    "weight": "25.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Ground",
+      "Rock"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Eevee",
+        "pokemonId": "133"
+      }
+    ],
+    "pokemonId": "136"
+  },
+  {
+    "id": 137,
+    "name": "Porygon",
+    "type": [
+      "Normal"
+    ],
+    "height": "0.79 m",
+    "weight": "36.5 kg",
+    "candy": "None",
+    "egg": "5 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "pokemonId": "137"
+  },
+  {
+    "id": 138,
+    "name": "Omanyte",
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "height": "0.41 m",
+    "weight": "7.5 kg",
+    "candy": "50 Omanyte Candy",
+    "egg": "10 km",
+    "multipliers": 2.12,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Fighting",
+      "Ground"
+    ],
+    "next_evolution": [
+      {
+        "name": "Omastar",
+        "pokemonId": "139"
+      }
+    ],
+    "pokemonId": "138"
+  },
+  {
+    "id": 139,
+    "name": "Omastar",
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "height": "0.99 m",
+    "weight": "35.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Fighting",
+      "Ground"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Omanyte",
+        "pokemonId": "138"
+      }
+    ],
+    "pokemonId": "139"
+  },
+  {
+    "id": 140,
+    "name": "Kabuto",
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "height": "0.51 m",
+    "weight": "11.5 kg",
+    "candy": "50 Kabuto Candy",
+    "egg": "10 km",
+    "multipliers": [
+      1.97,
+      2.37
+    ],
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Fighting",
+      "Ground"
+    ],
+    "next_evolution": [
+      {
+        "name": "Kabutops",
+        "pokemonId": "141"
+      }
+    ],
+    "pokemonId": "140"
+  },
+  {
+    "id": 141,
+    "name": "Kabutops",
+    "type": [
+      "Rock",
+      "Water"
+    ],
+    "height": "1.30 m",
+    "weight": "40.5 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Electric",
+      "Grass",
+      "Fighting",
+      "Ground"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Kabuto",
+        "pokemonId": "140"
+      }
+    ],
+    "pokemonId": "141"
+  },
+  {
+    "id": 142,
+    "name": "Aerodactyl",
+    "type": [
+      "Rock",
+      "Flying"
+    ],
+    "height": "1.80 m",
+    "weight": "59.0 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Electric",
+      "Ice",
+      "Rock",
+      "Steel"
+    ],
+    "pokemonId": "142"
+  },
+  {
+    "id": 143,
+    "name": "Snorlax",
+    "type": [
+      "Normal"
+    ],
+    "height": "2.11 m",
+    "weight": "460.0 kg",
+    "candy": "None",
+    "egg": "10 km",
+    "multipliers": null,
+    "weaknesses": [
+      "Fighting"
+    ],
+    "pokemonId": "143"
+  },
+  {
+    "id": 144,
+    "name": "Articuno",
+    "type": [
+      "Ice",
+      "Flying"
+    ],
+    "height": "1.70 m",
+    "weight": "55.4 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Fire",
+      "Electric",
+      "Rock",
+      "Steel"
+    ],
+    "pokemonId": "144"
+  },
+  {
+    "id": 145,
+    "name": "Zapdos",
+    "type": [
+      "Electric",
+      "Flying"
+    ],
+    "height": "1.60 m",
+    "weight": "52.6 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ice",
+      "Rock"
+    ],
+    "pokemonId": "145"
+  },
+  {
+    "id": 146,
+    "name": "Moltres",
+    "type": [
+      "Fire",
+      "Flying"
+    ],
+    "height": "2.01 m",
+    "weight": "60.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Water",
+      "Electric",
+      "Rock"
+    ],
+    "pokemonId": "146"
+  },
+  {
+    "id": 147,
+    "name": "Dratini",
+    "type": [
+      "Dragon"
+    ],
+    "height": "1.80 m",
+    "weight": "3.3 kg",
+    "candy": "25 Dratini Candy",
+    "egg": "10 km",
+    "multipliers": [
+      1.83,
+      1.84
+    ],
+    "weaknesses": [
+      "Ice",
+      "Dragon",
+      "Fairy"
+    ],
+    "next_evolution": [
+      {
+        "name": "Dragonair",
+        "pokemonId": "148"
+      },
+      {
+        "name": "Dragonite",
+        "pokemonId": "149"
+      }
+    ],
+    "pokemonId": "147"
+  },
+  {
+    "id": 148,
+    "name": "Dragonair",
+    "type": [
+      "Dragon"
+    ],
+    "height": "3.99 m",
+    "weight": "16.5 kg",
+    "candy": "100 Dratini Candy",
+    "egg": "Not in Eggs",
+    "multipliers": 2.05,
+    "weaknesses": [
+      "Ice",
+      "Dragon",
+      "Fairy"
+    ],
+    "next_evolution": [
+      {
+        "name": "Dragonite",
+        "pokemonId": "149"
+      }
+    ],
+    "pokemonId": "148"
+  },
+  {
+    "id": 149,
+    "name": "Dragonite",
+    "type": [
+      "Dragon",
+      "Flying"
+    ],
+    "height": "2.21 m",
+    "weight": "210.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Ice",
+      "Rock",
+      "Dragon",
+      "Fairy"
+    ],
+    "prev_evolution": [
+      {
+        "name": "Dragonair",
+        "pokemonId": "148"
+      }
+    ],
+    "pokemonId": "149"
+  },
+  {
+    "id": 150,
+    "name": "Mewtwo",
+    "type": [
+      "Psychic"
+    ],
+    "height": "2.01 m",
+    "weight": "122.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "pokemonId": "150"
+  },
+  {
+    "id": 151,
+    "name": "Mew",
+    "type": [
+      "Psychic"
+    ],
+    "height": "0.41 m",
+    "weight": "4.0 kg",
+    "candy": "None",
+    "egg": "Not in Eggs",
+    "multipliers": null,
+    "weaknesses": [
+      "Bug",
+      "Ghost",
+      "Dark"
+    ],
+    "pokemonId": "151"
+  }
+]
