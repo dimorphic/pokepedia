@@ -1,6 +1,6 @@
 // deps
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, IndexRoute, IndexRedirect } from 'react-router';
 
 // containers
 import App from 'containers/App';
@@ -16,9 +16,10 @@ const onCheckAuth = () => {
 };
 
 const routes = (
-  <Route path="/" component={App}>
-    <IndexRoute component={HomeView} />
+  <Route component={App}>
+    <IndexRedirect to="/" />
 
+    <Route path="/" component={HomeView} />
     <Route path="location" component={LocationView} />
   </Route>
 );

@@ -7,33 +7,28 @@ import { createHistory } from 'history';
 import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
 import logger from './middlewares/logger';
+
+// @TODO: devtools or reactotron ?
+import DevTools from '../containers/DevTools';
 // import Reactotron from 'reactotron';
 
 // routes & reducers
 import STATE from './initial-state';
-import routes from '../routes';
 import rootReducer from './reducers';
-
-// middleware enhancers
-// const middlewares = [
-//   thunkMiddleware,
-//   promiseMiddleware({ promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILED'] }),
-//   reduxReactRouter({ routes, createHistory }),
-//   logger
-//   // Reactotron.reduxMiddleware
-// ];
 
 // middlewares
 const middlewares = applyMiddleware(
   thunkMiddleware,
   promiseMiddleware({ promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILED'] }),
-  logger
+  logger,
+  // Reactotron.reduxMiddleware
 );
 
 // enhance store creator
 const enhanceStore = compose(
+  reduxReactRouter({ createHistory }),
   middlewares,
-  reduxReactRouter({ routes, createHistory })
+  DevTools.instrument()
 );
 
 // expose le store
@@ -47,7 +42,7 @@ export default function setupStore(initialState = STATE) {
     console.log('!!! HOT RELOAD REDUCERS !!!');
 
     module.hot.accept('./reducers', () => {
-      const nextRootReducer = require('./reducers/index');
+      const nextRootReducer = require('./reducers');
       store.replaceReducer(nextRootReducer);
     });
   }
