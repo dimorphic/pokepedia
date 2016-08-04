@@ -1,5 +1,5 @@
 // Vendor libs
-@import 'vendor';
+@import 'vendor'; // @TODO: check why Webpack includes 2x normalize.css
 
 // Toolkit
 @import "tools/mixins";

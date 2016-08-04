@@ -24,6 +24,7 @@ module.exports = exports = {
     'no-console': OFF,
     'no-param-reassign': WARN,
     'no-unused-vars': [WARN, { args: 'after-used' }],
+    'no-underscore-dangle': OFF,
     'react/wrap-multilines': OFF,
     'react/jsx-no-bind': OFF,
     'react/prefer-stateless-function': OFF

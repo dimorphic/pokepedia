@@ -9,12 +9,16 @@ import DevTools from './DevTools';
 // routes
 import routes from '../routes';
 
+const devtoolsActive = (localStorage.getItem('devtools') === 'true');
+
 export default class Root extends Component {
   static propTypes = {
     store: React.PropTypes.object.isRequired
   };
 
   render() {
+    const devTools = devtoolsActive ? <DevTools /> : null;
+
     return (
       <div>
         <Provider store={this.props.store}>
@@ -22,7 +26,7 @@ export default class Root extends Component {
             <ReduxRouter>
                 {routes}
             </ReduxRouter>
-            <DevTools />
+            {devTools}
           </div>
         </Provider>
       </div>

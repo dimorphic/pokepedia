@@ -1,10 +1,5 @@
 // deps
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-// components
-import Test from 'components/test';
 
 export default class App extends Component {
   static propTypes = {
@@ -14,7 +9,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Test />
         {this.props.children}
       </div>
     );
