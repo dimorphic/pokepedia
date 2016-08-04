@@ -1,4 +1,5 @@
 // #!/usr/bin/env node
+// require('babel/register');
 
 // deps
 import './polyfills';

@@ -13,7 +13,7 @@ import Database from './db';
 const UTILS = CONFIG.get('utils');
 
 // @TODO
-const DB = new Database({ path: `${UTILS.paths.data()}/test.json` });
+const DB = new Database({ path: `${UTILS.paths.data()}/pokemon/pokedex.en.build.json` });
 
 // @DEBUG CONFIG
 // console.log(CONFIG.get('paths'));
