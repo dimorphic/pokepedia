@@ -27,7 +27,8 @@ module.exports = exports = {
     'no-underscore-dangle': OFF,
     'react/wrap-multilines': OFF,
     'react/jsx-no-bind': OFF,
-    'react/prefer-stateless-function': OFF
+    'react/prefer-stateless-function': OFF,
+    'quote-props': OFF
   },
 
   settings: {

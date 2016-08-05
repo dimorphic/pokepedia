@@ -4,10 +4,16 @@
 body {
   position: relative;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 
   background: #eee;
+}
+
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .Page {
