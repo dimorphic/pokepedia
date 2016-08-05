@@ -13,7 +13,9 @@ import * as PokedexActions from 'actions/pokedex';
 // console.log('poke api @ ', PokedexAPI);
 
 // map store
-const mapStoreToProps = (store) => ({});
+const mapStoreToProps = (store) => ({
+  pokedex: store.pokedex
+});
 
 // map actions
 const mapDispatchToProps = (dispatch) => ({
@@ -38,13 +40,7 @@ class PokedexContainer extends Component {
   }
 
   fetchData() {
-    console.log('>>> POKEDEX FETCH DATA');
-
     const { actions } = this.props;
-
-    // PokedexAPI.getAllPokemons().then((response) => {
-    //   console.log('API @ ', response.data);
-    // });
 
     // fetch list of available widget components for builder
     actions.getPokemons();
@@ -54,7 +50,7 @@ class PokedexContainer extends Component {
     const { pokedex } = this.props;
 
     return (
-      <PokedexPage pokemons={pokedex} />
+      <PokedexPage pokemons={pokedex.pokemons} />
     );
   }
 }

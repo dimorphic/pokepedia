@@ -2,27 +2,22 @@
 import React, { Component, PropTypes } from 'react';
 
 // components
-// import WidgetSlot from 'components/partials/WidgetSlot';
+import PokeList from 'components/modules/PokeList';
 
 // style
 import './PokedexPage.scss';
 
 export default class PokedexPage extends Component {
   static propTypes = {
-    // pokemons: PropTypes.object.isRequired
-  };
-
-  static defaultProps = {
+    pokemons: PropTypes.array.isRequired
   };
 
   render() {
-    // const { pokemons } = this.props;
+    const { pokemons } = this.props;
 
     return (
       <div className="PokedexPage">
-        <h1>pokepage here</h1>
-
-        poke list map here
+        <PokeList pokemons={pokemons} />
       </div>
     );
   }
