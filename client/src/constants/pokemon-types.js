@@ -44,55 +44,55 @@ import {
 const POKEMON_TYPES = {
   'Normal': {
     avatarColor: grey300,
-    backgroundColor: 'cyan',
+    backgroundColor: '#e7e7e7',
     textColor: '#000'
   },
 
   'Fire': {
     avatarColor: orange700,
-    backgroundColor: orange700,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Water': {
     avatarColor: blue500,
-    backgroundColor: '#ccc',
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Electric': {
     avatarColor: yellow500,
-    backgroundColor: grey300,
-    textColor: '#FFF'
+    backgroundColor: '#e7e7e7',
+    textColor: '#000'
   },
 
   'Grass': {
     avatarColor: green600,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#000'
   },
 
   'Ice': {
     avatarColor: cyanA200,
-    backgroundColor: grey300,
-    textColor: '#FFF'
+    backgroundColor: '#e7e7e7',
+    textColor: '#000'
   },
 
   'Fighting': {
     avatarColor: red700,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Poison': {
     avatarColor: purple500,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Ground': {
     avatarColor: brown400,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
@@ -104,49 +104,49 @@ const POKEMON_TYPES = {
 
   'Psychic': {
     avatarColor: pink600,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Bug': {
     avatarColor: lightGreen500,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Rock': {
     avatarColor: grey600,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Ghost': {
     avatarColor: deepPurple400,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Dragon': {
     avatarColor: red500,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Dark': {
     avatarColor: grey900,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Steel': {
     avatarColor: blueGrey400,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   },
 
   'Fairy': {
     avatarColor: purpleA100,
-    backgroundColor: grey300,
+    backgroundColor: '#e7e7e7',
     textColor: '#FFF'
   }
 };

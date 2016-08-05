@@ -31,7 +31,7 @@ export default class PokeList extends Component {
       pokemons[7]
     ];
 
-    const pokeCards = testList.map((pokemon) => {
+    const pokeCards = pokemons.map((pokemon) => {
       return (
         <GridCell key={pokemon.pokemonId} col={3}>
           <PokeCard key={pokemon.pokemonId} pokemon={pokemon} />
@@ -46,13 +46,13 @@ export default class PokeList extends Component {
     const { pokemons } = this.props;
 
     const pokeCards = pokemons.length ? this.renderPokeCards() : 'No pokemons bro';
-    console.log('POKEMONS @', pokemons);
 
     return (
       <div className="PokeList">
         <Grid
           flow="row"
           withGutter
+          equalHeight
         >
           {pokeCards}
         </Grid>

@@ -15,6 +15,8 @@ import POKEMON_TYPES from 'constants/pokemon-types';
 import { blue50, blue300, blue500 } from 'material-ui/styles/colors';
 import './PokeCard.scss';
 
+// helpers
+const isNumber = /\d+/g;
 
 // [
 //   {
@@ -60,6 +62,34 @@ export default class PokeCard extends Component {
     pokemon: PropTypes.object.isRequired
   };
 
+  getPokemonTypeColors(types) {
+    const pokemonColors = types.map((pokemonType) => {
+      return POKEMON_TYPES[pokemonType].avatarColor;
+    });
+
+    return pokemonColors;
+  }
+
+  getPokemonCandies(candies) {
+    return candies.match(isNumber) || 'None';
+  }
+
+  getHeaderStyle(types = []) {
+    const pokemonColors = this.getPokemonTypeColors(types);
+
+    let headerBackground = pokemonColors[0];
+
+    // generate gradient if more colors
+    if (pokemonColors.length > 1) {
+      const [toColor, fromColor] = pokemonColors;
+      headerBackground = `-webkit-linear-gradient(top, ${toColor} 0%, ${fromColor} 100%)`;
+    }
+
+    return {
+      background: headerBackground
+    };
+  }
+
   renderTypeChips(types) {
     const chips = types.map((type) => {
       // <Chip
@@ -83,8 +113,8 @@ export default class PokeCard extends Component {
 
           backgroundColor={colors.backgroundColor}
         >
-          <Avatar size={32} backgroundColor={colors.avatarColor}>
-            ?
+          <Avatar size={32} color={colors.textColor} backgroundColor={colors.avatarColor}>
+            {type.substr(0, 1)}
           </Avatar>
           {type}
         </Chip>
@@ -96,24 +126,25 @@ export default class PokeCard extends Component {
 
   render() {
     const { pokemon } = this.props;
+    const { pokemonId } = pokemon;
 
-    // if (!pokemon) { return null; }
-    // const { name, pokemonId, type } = pokemon;
-
+    const headerStyle = this.getHeaderStyle(pokemon.type);
     const pokemonTypeChips = this.renderTypeChips(pokemon.type);
+    const pokemonWeaknessesChips = this.renderTypeChips(pokemon.weaknesses);
+    const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemonId}.png`;
 
-    // const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemonId}.png`;
+    const pokemonCandies = this.getPokemonCandies(pokemon.candy);
 
     return (
       <div className="PokeCard">
         <div className="PokeCard-Wrapper">
-          <header className="PokeCard-Header">
-            <img className="PokeCard-Avatar" src={'http://placehold.it/400x20&text=slide1'} alt="foo" />
+          <header className="PokeCard-Header" style={headerStyle}>
+            <img className="PokeCard-Avatar" src={pokemonImage} alt={pokemon.name} />
           </header>
 
           <article className="PokeCard-Content">
             <div className="PokeCard-Identity">
-              <h1 className="PokeCard-Name">Pikachiu</h1>
+              <h1 className="PokeCard-Name">{pokemon.name}</h1>
               {/* <h2 className="PokeCard-Type">#003</h2> */}
 
               <div className="PokeCard-Chips">
@@ -131,17 +162,17 @@ export default class PokeCard extends Component {
               >
                 <GridCell col={4}>
                   <div className="PokeCard-Property-Name">Weight</div>
-                  <div className="PokeCard-Property-Value">9.68 kg</div>
+                  <div className="PokeCard-Property-Value">{pokemon.weight}</div>
                 </GridCell>
 
                 <GridCell col={4}>
                   <div className="PokeCard-Property-Name">Height</div>
-                  <div className="PokeCard-Property-Value">0.84 m</div>
+                  <div className="PokeCard-Property-Value">{pokemon.height}</div>
                 </GridCell>
 
                 <GridCell col={4}>
                   <div className="PokeCard-Property-Name">Candies</div>
-                  <div className="PokeCard-Property-Value">3 (C)</div>
+                  <div className="PokeCard-Property-Value">{pokemonCandies}</div>
                 </GridCell>
               </Grid>
             </div>
@@ -150,7 +181,7 @@ export default class PokeCard extends Component {
 
             <div className="PokeCard-Chips">
               <div className="PokeCard-Property-Name">Weaknesses</div>
-              {pokemonTypeChips}
+              {pokemonWeaknessesChips}
             </div>
           </article>
         </div>
