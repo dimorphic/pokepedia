@@ -13,7 +13,7 @@ export default createReducer(POKEDEX_STATE, {
 
     return {
       ...state,
-      data
+      pokemons: data
     };
   }
 });

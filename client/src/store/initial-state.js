@@ -7,7 +7,7 @@ export const LOCATION_STATE = {
 };
 
 export const POKEDEX_STATE = {
-  data: []
+  pokemons: []
 };
 
 // expose INITIAL state
