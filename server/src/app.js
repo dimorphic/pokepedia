@@ -26,6 +26,17 @@ const DB = new Database({ path: `${UTILS.paths.data()}/pokemon/pokedex.en.build.
 // create Express app <3
 const app = express();
 
+// enable CORS
+app.all('*', (req, res, next) => {
+  console.log('HERE !!!');
+
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+  next();
+});
+
 // add middleware enhancers
 app.use(logger('dev')); // http request logger
 app.use(express.static(UTILS.paths.assets()));

@@ -10,22 +10,21 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/pokemons', (req, res, next) => {
-  console.log('poke @ ');
-  console.log(req.db.data);
+  // get pokemons list
+  const pokemons = req.db.getPokemons();
 
-  res.end('get pokemons');
+  res.json(pokemons);
 });
 
 // get pokemon by id
 // function getPokemonById()
 
 router.get('/pokemon/:id', (req, res, next) => {
+  // find pokemon
   const pokemonId = req.params.id;
-
   const findPokemon = req.db.getPokemonById(pokemonId);
-  console.log(findPokemon);
 
-  res.end(`<pre>${JSON.stringify(findPokemon)}</pre>`);
+  res.json(findPokemon);
 });
 
 // reload local file DB

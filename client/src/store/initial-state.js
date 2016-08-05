@@ -6,7 +6,12 @@ export const LOCATION_STATE = {
   long: null
 };
 
+export const POKEDEX_STATE = {
+  data: []
+};
+
 // expose INITIAL state
 export default {
-  location: LOCATION_STATE
+  location: LOCATION_STATE,
+  pokedex: POKEDEX_STATE
 };

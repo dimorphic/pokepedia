@@ -30,6 +30,10 @@ class Database {
     this.data = this.load();
   }
 
+  getPokemons() {
+    return this.data;
+  }
+
   getPokemonById(pokemonId) {
     return this.data.filter((item) => {
       return item.id == pokemonId;
