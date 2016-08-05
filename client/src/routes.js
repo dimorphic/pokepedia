@@ -5,6 +5,7 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router';
 // containers
 import App from 'containers/App';
 import HomeView from 'views/HomeView';
+import PokedexView from 'views/PokedexView';
 import LocationView from 'views/LocationView';
 
 const onCheckAuth = () => {
@@ -19,7 +20,7 @@ const routes = (
   <Route component={App}>
     <IndexRedirect to="/" />
 
-    <Route path="/" component={HomeView} />
+    <Route path="/" component={PokedexView} />
     <Route path="location" component={LocationView} />
   </Route>
 );
