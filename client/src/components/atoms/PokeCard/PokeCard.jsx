@@ -184,6 +184,10 @@ export default class PokeCard extends Component {
     const headerStyle = this.getHeaderStyle(pokemon.type);
     const pokemonTypeChips = this.renderTypeChips(pokemon.type);
     const pokemonWeaknessesChips = this.renderTypeChips(pokemon.weaknesses);
+
+    // const pokemonImage = `http://www.pokestadium.com/sprites/xy/${pokemon.name.toLowerCase()}.gif`;
+    // const pokemonImage = `http://www.pkparaiso.com/imagenes/xy/sprites/animados/${pokemon.name.toLowerCase()}.gif`;
+    // const pokemonImage = `http://pokemon-online.eu/images/pokemon/x-y/animated/${pokemonId}.gif`;
     const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemonId}.png`;
 
     const pokemonDetails = [

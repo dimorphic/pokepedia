@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 
 // components
-import PokeList from 'components/modules/PokeList';
+import PokedexList from 'components/modules/PokedexList';
 
 // style
 import './PokedexPage.scss';
@@ -17,7 +17,7 @@ export default class PokedexPage extends Component {
 
     return (
       <div className="PokedexPage">
-        <PokeList pokemons={pokemons} />
+        <PokedexList pokemons={pokemons} />
       </div>
     );
   }

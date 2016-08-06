@@ -7,6 +7,8 @@ $pokecard-avatar-border-size: 10px;
   position: relative;
   min-width: 300px;
   width: 20%;
+
+  margin-bottom: 30px;
 }
 
 .PokeCard {
@@ -14,7 +16,6 @@ $pokecard-avatar-border-size: 10px;
   width: 100%;
 
   // padding: 10px 30px;
-  margin-bottom: 30px;
 
   background: #fff;
   border-radius: 10px;
@@ -32,11 +33,11 @@ $pokecard-avatar-border-size: 10px;
   }
 
   //
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-6px);
-    box-shadow: 0px 27px 30px -20px rgba(#000, .3);
-  }
+  // &:hover {
+  //   cursor: pointer;
+  //   transform: translateY(-6px);
+  //   box-shadow: 0px 27px 30px -20px rgba(#000, .3);
+  // }
 }
 
 .PokeCard-Header {

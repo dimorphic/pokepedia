@@ -1,0 +1,80 @@
+@import '~scss/tools/mixins/position.scss';
+
+$pokecard-avatar-size: 100px;
+$pokecard-avatar-border-size: 10px;
+
+.PokedexList {
+  width: 100%;
+  // max-width: 1000px;
+
+  padding: 100px 50px;
+  // margin: 100px auto;
+}
+
+.PokedexItem-Cell {
+  position: relative;
+  width: 270px;
+
+  margin-bottom: 70px;
+}
+
+.PokedexItem {
+  position: relative;
+  width: 100%;
+
+  padding: 70px 0 10px;
+
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+
+  // overflow: hidden;
+  box-shadow: 0px 23px 30px -20px rgba(#000, .2);
+
+  // force HA
+  @include noflicker();
+  transition: all 0.2s ease-in-out;
+
+  //
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-6px);
+    box-shadow: 0px 27px 30px -20px rgba(#000, .3);
+  }
+}
+
+.PokedexItem-Name {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.PokedexItem-Avatar {
+  z-index: 1;
+
+  display: inline-block;
+
+  // width: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
+  // height: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
+
+  background: none;
+}
+
+.PokedexItem-Avatar,
+.PokedexItem-Circle {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
+  height: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
+}
+
+.PokedexItem-Circle {
+  z-index: -1;
+
+  // background: #f00;
+
+  border-radius: 50%;
+  border: $pokecard-avatar-border-size solid rgba(255, 255, 255, 0.7);
+}
