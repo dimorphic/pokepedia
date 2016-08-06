@@ -74,6 +74,21 @@ export default class PokeCard extends Component {
     return candies.match(isNumber) || 'None';
   }
 
+  getPokemonDetails(pokemon) {
+    const { height, weight, candy, egg } = pokemon;
+    const pokeDetails = { height, weight, candy, egg };
+
+    // format poke details keys to [value, type] format
+    // eg: {
+    //  height: ['0.41', 'm'],
+    //  weight: ['4.0', 'kg']
+    // }
+    return Object.keys(pokeDetails).reduce((acc, curr) => {
+      acc[curr] = this.formatPokeDetail(pokeDetails[curr]);
+      return acc;
+    }, {});
+  }
+
   getHeaderStyle(types = []) {
     const pokemonColors = this.getPokemonTypeColors(types);
 
@@ -81,13 +96,21 @@ export default class PokeCard extends Component {
 
     // generate gradient if more colors
     if (pokemonColors.length > 1) {
-      const [toColor, fromColor] = pokemonColors;
+      const [fromColor, toColor] = pokemonColors;
       headerBackground = `-webkit-linear-gradient(top, ${toColor} 0%, ${fromColor} 100%)`;
     }
 
     return {
       background: headerBackground
     };
+  }
+
+  formatPokeDetail(detail) {
+    if (detail.match(isNumber)) {
+      return detail.split(' ');
+    }
+
+    return detail;
   }
 
   renderTypeChips(types) {
@@ -124,6 +147,36 @@ export default class PokeCard extends Component {
     return chips;
   }
 
+  renderPokeDetail(label, detail) {
+    let propValue;
+    let propScale;
+
+    // format poke detail (eg: { height: ['0.41', 'm'] } )
+    const pokeDetail = this.formatPokeDetail(detail);
+
+    if (Array.isArray(pokeDetail)) {
+      [propValue, propScale] = pokeDetail;
+    } else {
+      propValue = pokeDetail;
+    }
+
+    const pokeDetailValue = propScale ? (
+      <div className="PokeCard-Property-Value">
+        {propValue}
+        <span>{propScale}</span>
+      </div>
+    ) : propValue;
+
+    return (
+      <GridCell key={label} col={4}>
+        <div className="PokeCard-Property-Name">{label}</div>
+        <div className="PokeCard-Property-Value">
+          {pokeDetailValue}
+        </div>
+      </GridCell>
+    );
+  }
+
   render() {
     const { pokemon } = this.props;
     const { pokemonId } = pokemon;
@@ -133,13 +186,19 @@ export default class PokeCard extends Component {
     const pokemonWeaknessesChips = this.renderTypeChips(pokemon.weaknesses);
     const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemonId}.png`;
 
-    const pokemonCandies = this.getPokemonCandies(pokemon.candy);
+    const pokemonDetails = [
+      this.renderPokeDetail('Weight', pokemon.weight),
+      this.renderPokeDetail('Height', pokemon.height),
+      this.renderPokeDetail('Candies', pokemon.candy)
+    ];
 
     return (
       <div className="PokeCard">
         <div className="PokeCard-Wrapper">
           <header className="PokeCard-Header" style={headerStyle}>
-            <img className="PokeCard-Avatar" src={pokemonImage} alt={pokemon.name} />
+            <div className="PokeCard-Avatar">
+              <img className="img-fluid" src={pokemonImage} alt={pokemon.name} />
+            </div>
           </header>
 
           <article className="PokeCard-Content">
@@ -160,20 +219,7 @@ export default class PokeCard extends Component {
                 flow="row"
                 withGutter
               >
-                <GridCell col={4}>
-                  <div className="PokeCard-Property-Name">Weight</div>
-                  <div className="PokeCard-Property-Value">{pokemon.weight}</div>
-                </GridCell>
-
-                <GridCell col={4}>
-                  <div className="PokeCard-Property-Name">Height</div>
-                  <div className="PokeCard-Property-Value">{pokemon.height}</div>
-                </GridCell>
-
-                <GridCell col={4}>
-                  <div className="PokeCard-Property-Name">Candies</div>
-                  <div className="PokeCard-Property-Value">{pokemonCandies}</div>
-                </GridCell>
+                {pokemonDetails}
               </Grid>
             </div>
 

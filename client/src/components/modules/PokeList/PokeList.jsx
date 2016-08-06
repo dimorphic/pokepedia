@@ -33,7 +33,7 @@ export default class PokeList extends Component {
 
     const pokeCards = pokemons.map((pokemon) => {
       return (
-        <GridCell key={pokemon.pokemonId} col={3}>
+        <GridCell key={pokemon.pokemonId} fit className="PokeCard-Cell">
           <PokeCard key={pokemon.pokemonId} pokemon={pokemon} />
         </GridCell>
       );

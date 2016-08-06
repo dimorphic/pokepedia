@@ -43,7 +43,7 @@ import {
 
 const POKEMON_TYPES = {
   'Normal': {
-    avatarColor: grey300,
+    avatarColor: '#d8d8d8',
     backgroundColor: '#e7e7e7',
     textColor: '#000'
   },

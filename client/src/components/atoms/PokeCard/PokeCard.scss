@@ -1,6 +1,13 @@
 @import '~scss/tools/mixins/position.scss';
 
 $pokecard-avatar-size: 120px;
+$pokecard-avatar-border-size: 10px;
+
+.PokeCard-Cell {
+  position: relative;
+  min-width: 300px;
+  width: 20%;
+}
 
 .PokeCard {
   position: relative;
@@ -44,36 +51,40 @@ $pokecard-avatar-size: 120px;
 
 .PokeCard-Name {
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
 .PokeCard-Avatar {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 
-  width: $pokecard-avatar-size;
-  height: $pokecard-avatar-size;
+  width: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
+  height: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
 
   background: none;
 
   border-radius: 50%;
-  border: 10px solid rgba(255, 255, 255, 0.2);
+  border: $pokecard-avatar-border-size solid rgba(255, 255, 255, 0.2);
 }
 
 .PokeCard-Content {
-  padding: 55px 20px;
+  padding: 35px 20px;
 
   background: #fff;
   text-align: center;
 }
 
 .PokeCard-Properties {
+  padding: 20px;
   margin: 40px 0;
 
   color: #333;
+  border: 1px dashed #dcdcdc;
+  border-left: 0;
+  border-right: 0;
 }
 
 .PokeCard-Property-Name {
@@ -83,6 +94,13 @@ $pokecard-avatar-size: 120px;
 
 .PokeCard-Property-Value {
   font-size: 20px;
+
+  span {
+    margin-left: 5px;
+
+    font-size: 16px;
+    color: #bbb;
+  }
 }
 
 .PokeCard-Chips {
