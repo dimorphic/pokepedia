@@ -144,16 +144,12 @@ export default class PokedexList extends Component {
 
     if (!hasPokemons) return 'No pokemons to list';
 
-    const pokeCards = hasPokemons ? this.renderPokeCards() : null;
+    // const pokeCards = hasPokemons ? this.renderPokeCards() : null;
     const pokeDex = hasPokemons ? this.renderPokedex() : 'No pokemons bro';
     const pokedexPopover = hasPokemons ? this.renderPokedexPopover() : null;
 
     return (
       <div className="PokedexList">
-        {pokeCards}
-        <br />
-        <br />
-
         <Grid
           flow="row"
           align="center"

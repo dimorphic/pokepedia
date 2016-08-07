@@ -204,12 +204,11 @@ export default class PokeCard extends Component {
           <article className="PokeCard-Content">
             <div className="PokeCard-Identity">
               <h1 className="PokeCard-Name">{pokemon.name}</h1>
-              {/* <h2 className="PokeCard-Type">#003</h2> */}
-
-              <div className="PokeCard-Chips">
-                <div className="PokeCard-Property-Name">Type</div>
-                {pokemonTypeChips}
-              </div>
+              <span className="PokeCard-No">#{pokemon.id}</span>
+            </div>
+            <div className="PokeCard-Chips">
+              <div className="PokeCard-Property-Name">Type</div>
+              {pokemonTypeChips}
             </div>
 
             <div className="PokeCard-Sepa"></div>

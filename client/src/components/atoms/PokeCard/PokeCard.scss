@@ -56,6 +56,15 @@ $pokecard-avatar-border-size: 10px;
   letter-spacing: 1px;
 }
 
+.PokeCard-No {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0, 0.6);
+}
+
 .PokeCard-Avatar {
   position: absolute;
   top: 30%;

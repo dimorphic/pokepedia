@@ -23,6 +23,7 @@ const PokedexItem = (props) => {
           <PokemonIcon pokemon={pokemon} />
         </div>
         <h1 className="PokedexItem-Name">{pokemon.name}</h1>
+        <span className="PokedexItem-No">#{pokemon.id}</span>
       </div>
       <div className="PokedexItem-Circle"></div>
     </div>

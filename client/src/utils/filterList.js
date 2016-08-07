@@ -26,10 +26,10 @@ export function isValidItem(searchQuery, item, sanitize = false) {
     }
   } else if (keyword.length === 1) {
     // check first letter of text node
-    // itemIsValid = (itemMainKey.slice(0, 1).toLowerCase() === keyword.toLowerCase());
+    itemIsValid = (itemMainKey.slice(0, 1).toLowerCase() === keyword.toLowerCase());
 
     // check all body of text node
-    itemIsValid = (keyword !== '' && itemMainKey.indexOf(keyword) !== -1);
+    // itemIsValid = (keyword !== '' && itemMainKey.indexOf(keyword) !== -1);
   } else {
     // if we don't provide any keywords, we return the valid item
     itemIsValid = true;
@@ -38,7 +38,7 @@ export function isValidItem(searchQuery, item, sanitize = false) {
   return itemIsValid;
 }
 
-export default function filterList(searchTerm = null, list = [], sortResults = true) {
+export function filterList(searchTerm = null, list = [], sortResults = true) {
   //
   // if widget has no data, don't show anything
   //

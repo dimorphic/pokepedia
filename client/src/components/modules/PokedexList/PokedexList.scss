@@ -7,7 +7,7 @@ $pokecard-avatar-border-size: 10px;
   width: 100%;
   // max-width: 1000px;
 
-  padding: 100px 50px;
+  padding: 70px 50px;
   // margin: 100px auto;
 }
 
@@ -46,6 +46,14 @@ $pokecard-avatar-border-size: 10px;
 .PokedexItem-Name {
   font-size: 18px;
   font-weight: 300;
+}
+
+.PokedexItem-No {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  color: #bbb;
 }
 
 .PokedexItem-Avatar {
