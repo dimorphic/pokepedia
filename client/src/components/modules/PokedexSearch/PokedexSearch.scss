@@ -2,10 +2,16 @@
   width: 100%;
   max-width: 500px;
 
+  padding: 0px 25px;
   margin: 0 auto 70px;
   text-align: center;;
 }
 
-.PokedexSearch-Input {
+.PokedexSearch-Input {}
 
+.PokedexSearch-Item {
+  margin-right: 5px;
+
+  font-size: 14px;
+  color: #bbb;
 }

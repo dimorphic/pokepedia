@@ -15,7 +15,10 @@ import './PokedexSearch.scss';
 
 export default class PokedexSearch extends Component {
   static propTypes = {
-    pokemons: PropTypes.array
+    pokemons: PropTypes.array,
+
+    onSearch: PropTypes.func,
+    onSelect: PropTypes.func
   };
 
   static defaultProps = {
@@ -25,9 +28,8 @@ export default class PokedexSearch extends Component {
   constructor(props) {
     super(props);
 
+    // build search options
     const searchOptions = this.buildSearchOptions(props);
-
-    console.log('>> PokedexSearch @@ ', searchOptions);
 
     this.state = {
       searchOptions
@@ -35,18 +37,23 @@ export default class PokedexSearch extends Component {
 
     this.onSearchFilter = this.onSearchFilter.bind(this);
     this.onSearchUpdate = this.onSearchUpdate.bind(this);
+    this.onSearchSelect = this.onSearchSelect.bind(this);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     return shallowCompare(this, nextProps, nextState);
   }
 
-  onSearchSelect(chosenItem, index) {
-    console.log('<<< search select ', chosenItem, index);
+  onSearchSelect(chosenItem) {
+    if (this.props.onSelect) {
+      this.props.onSelect(chosenItem);
+    }
   }
 
   onSearchUpdate(searchTerm) {
-    console.log('>>> search term : ', searchTerm);
+    if (this.props.onSearch) {
+      this.props.onSearch(searchTerm);
+    }
   }
 
   onSearchFilter(searchText, key, item) {
@@ -55,8 +62,6 @@ export default class PokedexSearch extends Component {
   }
 
   buildSearchOptions(props) {
-    console.log('>> BUILD SEARCH OPTIONS ');
-
     const { pokemons } = props;
 
     // map Pokemons list
@@ -82,7 +87,7 @@ export default class PokedexSearch extends Component {
       <MenuItem
         rightIcon={<PokemonIcon pokemon={pokemon} />}
       >
-        <span style={{ color: '#ccc' }}>{pokemon.pokemonId}</span> {pokemon.name}
+        <span className="PokedexSearch-Item">#{pokemon.pokemonId}</span> {pokemon.name}
       </MenuItem>
     );
   }
@@ -94,8 +99,8 @@ export default class PokedexSearch extends Component {
       <div className="PokedexSearch-Input">
         <AutoComplete
           fullWidth
-          floatingLabelText="Search Pokedex"
-          hintText="Try a Pokemon name, type or id (eg: electric)"
+          floatingLabelText="Search Pokédex"
+          hintText="Pokemon name, type or id (eg: electric)"
 
           dataSource={searchOptions}
           filter={this.onSearchFilter}
