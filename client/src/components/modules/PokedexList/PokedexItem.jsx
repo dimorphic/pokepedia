@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 
 // components
 import Paper from 'material-ui/Paper';
+import PokemonIcon from 'components/atoms/PokemonIcon';
 
 const paperStyle = {
   // height: 100,
@@ -15,13 +16,11 @@ const paperStyle = {
 const PokedexItem = (props) => {
   const { pokemon, ...otherProps } = props;
 
-  const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemon.pokemonId}.png`;
-
   return (
     <div className="PokedexItem" {...otherProps}>
       <div className="PokedexItem-Wrapper">
         <div className="PokedexItem-Avatar">
-          <img className="img-fluid" src={pokemonImage} alt={pokemon.name} />
+          <PokemonIcon pokemon={pokemon} />
         </div>
         <h1 className="PokedexItem-Name">{pokemon.name}</h1>
       </div>

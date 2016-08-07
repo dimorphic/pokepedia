@@ -6,6 +6,7 @@ import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Grid, GridCell } from 'components/atoms/Grid';
+import PokemonIcon from 'components/atoms/PokemonIcon';
 
 // constants / models (prop types)
 import POKEMON_TYPES from 'constants/pokemon-types';
@@ -185,11 +186,6 @@ export default class PokeCard extends Component {
     const pokemonTypeChips = this.renderTypeChips(pokemon.type);
     const pokemonWeaknessesChips = this.renderTypeChips(pokemon.weaknesses);
 
-    // const pokemonImage = `http://www.pokestadium.com/sprites/xy/${pokemon.name.toLowerCase()}.gif`;
-    // const pokemonImage = `http://www.pkparaiso.com/imagenes/xy/sprites/animados/${pokemon.name.toLowerCase()}.gif`;
-    // const pokemonImage = `http://pokemon-online.eu/images/pokemon/x-y/animated/${pokemonId}.gif`;
-    const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemonId}.png`;
-
     const pokemonDetails = [
       this.renderPokeDetail('Weight', pokemon.weight),
       this.renderPokeDetail('Height', pokemon.height),
@@ -201,7 +197,7 @@ export default class PokeCard extends Component {
         <div className="PokeCard-Wrapper">
           <header className="PokeCard-Header" style={headerStyle}>
             <div className="PokeCard-Avatar">
-              <img className="img-fluid" src={pokemonImage} alt={pokemon.name} />
+              <PokemonIcon pokemon={pokemon} />
             </div>
           </header>
 

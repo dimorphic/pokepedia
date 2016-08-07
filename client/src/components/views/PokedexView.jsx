@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch) => ({
 class PokedexContainer extends Component {
   static propTypes = {
     actions: PropTypes.object.isRequired,
-    pokedex: PropTypes.object // .isRequired
+    pokedex: PropTypes.any.isRequired
   }
 
   // constructor(props) {
@@ -50,7 +50,7 @@ class PokedexContainer extends Component {
     const { pokedex } = this.props;
 
     return (
-      <PokedexPage pokemons={pokedex.pokemons} />
+      <PokedexPage pokedex={pokedex} />
     );
   }
 }

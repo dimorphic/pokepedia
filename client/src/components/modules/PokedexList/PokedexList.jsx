@@ -32,7 +32,7 @@ export default class PokedexList extends Component {
     this.state = {
       pokedexAnchor: null,
       pokedexOpened: false,
-      pokedexPokemon: null
+      pokedexPokemon: null,
     };
 
     this.renderPokedex = this.renderPokedex.bind(this);
@@ -140,10 +140,13 @@ export default class PokedexList extends Component {
 
   render() {
     const { pokemons } = this.props;
+    const hasPokemons = (pokemons && pokemons.length);
 
-    const pokeCards = pokemons.length ? this.renderPokeCards() : null;
-    const pokeDex = pokemons.length ? this.renderPokedex() : 'No pokemons bro';
-    const pokedexPopover = this.renderPokedexPopover();
+    if (!hasPokemons) return 'No pokemons to list';
+
+    const pokeCards = hasPokemons ? this.renderPokeCards() : null;
+    const pokeDex = hasPokemons ? this.renderPokedex() : 'No pokemons bro';
+    const pokedexPopover = hasPokemons ? this.renderPokedexPopover() : null;
 
     return (
       <div className="PokedexList">

@@ -4,9 +4,9 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router';
 
 // containers
 import App from 'containers/App';
-import HomeView from 'views/HomeView';
-import PokedexView from 'views/PokedexView';
-import LocationView from 'views/LocationView';
+import HomeView from 'components/views/HomeView';
+import PokedexView from 'components/views/PokedexView';
+import LocationView from 'components/views/LocationView';
 
 const onCheckAuth = () => {
   console.log('ROUTE CHECK AUTH!!!');
