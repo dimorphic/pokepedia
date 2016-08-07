@@ -1,17 +1,8 @@
 // deps
 import React, { Component, PropTypes } from 'react';
-import shallowCompare from 'react-addons-shallow-compare';
-
-// helpers
-import { isValidItem } from 'utils/filterList';
 
 // components
 import CircularProgress from 'material-ui/CircularProgress';
-
-import AutoComplete from 'material-ui/AutoComplete';
-import MenuItem from 'material-ui/MenuItem';
-
-import PokemonIcon from 'components/atoms/PokemonIcon';
 import PokeLoader from 'components/atoms/PokeLoader';
 import PokedexSearch from 'components/modules/PokedexSearch';
 import PokedexList from 'components/modules/PokedexList';
