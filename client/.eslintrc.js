@@ -17,7 +17,7 @@ module.exports = exports = {
   rules: {
     'global-require': WARN,
     'arrow-body-style': [WARN, 'always'],
-    'comma-dangle': [ERROR, 'never'],
+    'comma-dangle': [WARN, 'never'],
     'import/no-mutable-exports': WARN,
     'import/no-unresolved': OFF,
     'quote-props': [ERROR, 'consistent-as-needed'],

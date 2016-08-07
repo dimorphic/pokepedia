@@ -26,3 +26,9 @@ export const POKEDEX_TYPES = createConstants(
 export const LOCATION_TYPES = createConstants(
   'LOCATION_LOAD_MAP'
 );
+
+// filters
+export const FILTERS_TYPES = createConstants(
+  'FILTERS_RESET',
+  'FILTERS_SEARCH_UPDATE'
+);
