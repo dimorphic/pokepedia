@@ -7,6 +7,7 @@ import { isValidItem } from 'utils/filterList';
 
 // components
 import CircularProgress from 'material-ui/CircularProgress';
+import LinearProgress from 'material-ui/LinearProgress';
 import PokeLoader from 'components/atoms/PokeLoader';
 import PokedexSearch from 'components/modules/PokedexSearch';
 import PokedexList from 'components/modules/PokedexList';
@@ -114,9 +115,10 @@ export default class PokedexPage extends Component {
   renderLoader() {
     return (
       <div className="PokedexPage-Loader">
-        <CircularProgress size={2} />
-        <br />
-        Loading...
+        <CircularProgress color={'#9416ff'} />
+        <div className="PokedexPage-Tip">
+          Tip: Pay attention to the road... :)
+        </div>
       </div>
     );
   }
@@ -136,6 +138,10 @@ export default class PokedexPage extends Component {
           onSelect={this.onSearchSelect}
         />
         {node}
+        <div className="Pokepedia-Footer">
+          All trademarks, product names and logos appearing on the site are
+          the property of their respective owners.
+        </div>
       </div>
     );
   }

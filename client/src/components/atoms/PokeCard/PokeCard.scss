@@ -20,7 +20,7 @@ $pokecard-avatar-border-size: 10px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 23px 30px -20px rgba(#000, .2);
+  box-shadow: 0px 23px 30px -16px rgba(#000, .2);
 
   // force HA
   @include noflicker();

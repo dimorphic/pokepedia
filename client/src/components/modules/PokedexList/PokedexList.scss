@@ -18,6 +18,7 @@
 
   background: none !important;
   box-shadow: none !important;
+  overflow-y: visible !important;
 
   // normal card
   border-radius: 10px !important;
@@ -34,7 +35,7 @@
   border-radius: 9999px !important; // #hacks!
   overflow: hidden !important;
 
-  box-shadow: 0px 23px 30px -20px rgba(#000, .2) !important;
+  box-shadow: 0px 23px 30px -16px rgba(#000, .2) !important;
 
   // adjust Pokemon #no
   .PokeCard-No {
