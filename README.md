@@ -8,8 +8,8 @@ Node `v6.3`
 @TODO
 
 #### Features:
-- [ ] Pokemons card listing
-- [ ] Pokemons search by name, type or id
+- [x] Pokemons card listing
+- [x] Pokemons search by name, type or id
 
 #### TODO:
 - [ ] Better docs!
