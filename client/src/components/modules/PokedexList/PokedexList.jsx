@@ -67,7 +67,7 @@ export default class PokedexList extends Component {
     const pokeType = pokedexPokemon ? pokedexPokemon.type[0] : null;
 
     // pokeball appereance ?! :D
-    const pokeball = false;
+    const pokeball = true;
 
     const cssClasses = cx('PokedexList-Popover', {
       'PokedexList-Popover--Pokeball': pokeball,
