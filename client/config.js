@@ -17,8 +17,8 @@ const CONFIG = new Map();
 
 // environment
 CONFIG.set('env', process.env.NODE_ENV);
-CONFIG.set('HOST', '0.0.0.0');
-CONFIG.set('PORT', 8080);
+CONFIG.set('HOST', '0.0.0.0'); // bind to all interfaces
+CONFIG.set('PORT', 8080); // webpack dev server
 
 // app paths
 CONFIG.set('paths', {

@@ -8,9 +8,11 @@ import { store } from '../store';
 //
 //  Le API
 //
-const IP = '192.168.0.103';
+const API_IP = '192.168.0.104';
+const API_PORT = 9090;
+
 const API = create({
-  baseURL: `http://${IP}:9090`,
+  baseURL: `http://${API_IP}:${API_PORT}`,
   headers: {
     // 'Authorization': TOKEN, // @TODO
     'Content-Type': 'application/json',

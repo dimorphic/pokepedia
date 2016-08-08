@@ -4,20 +4,23 @@ import React, { Component, PropTypes } from 'react';
 // components
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
-import RaisedButton from 'material-ui/RaisedButton';
 import { Grid, GridCell } from 'components/atoms/Grid';
 import PokemonIcon from 'components/atoms/PokemonIcon';
 
 // constants / models (prop types)
 import POKEMON_TYPES from 'constants/pokemon-types';
-// import PokemonModel from 'constants/pokemon.model';
-
-// style
-import { blue50, blue300, blue500 } from 'material-ui/styles/colors';
-import './PokeCard.scss';
 
 // helpers
 const isNumber = /\d+/g;
+
+// style
+import './PokeCard.scss';
+
+const css = {
+  chip: {
+    margin: 4
+  }
+};
 
 // [
 //   {
@@ -51,12 +54,6 @@ const isNumber = /\d+/g;
 //     "pokemonId": "001"
 //   }
 // ]
-
-const css = {
-  chip: {
-    margin: 4
-  }
-};
 
 export default class PokeCard extends Component {
   static propTypes = {
@@ -116,18 +113,6 @@ export default class PokeCard extends Component {
 
   renderTypeChips(types) {
     const chips = types.map((type) => {
-      // <Chip
-      //    backgroundColor={blue300}
-      //    onRequestDelete={handleRequestDelete}
-      //    onTouchTap={handleTouchTap}
-      //    style={styles.chip}
-      //  >
-      //    <Avatar size={32} color={blue300} backgroundColor={indigo900}>
-      //      MB
-      //    </Avatar>
-      //    Colored Chip
-      //  </Chip>
-
       const colors = POKEMON_TYPES[type] || {};
 
       return (
@@ -161,6 +146,8 @@ export default class PokeCard extends Component {
       propValue = pokeDetail;
     }
 
+    propScale = null;
+
     const pokeDetailValue = propScale ? (
       <div className="PokeCard-Property-Value">
         {propValue}
@@ -180,7 +167,6 @@ export default class PokeCard extends Component {
 
   render() {
     const { pokemon } = this.props;
-    const { pokemonId } = pokemon;
 
     const headerStyle = this.getHeaderStyle(pokemon.type);
     const pokemonTypeChips = this.renderTypeChips(pokemon.type);
@@ -221,8 +207,6 @@ export default class PokeCard extends Component {
                 {pokemonDetails}
               </Grid>
             </div>
-
-            {/* <RaisedButton label="Default" /> */}
 
             <div className="PokeCard-Chips">
               <div className="PokeCard-Property-Name">Weaknesses</div>
