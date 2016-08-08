@@ -6,10 +6,10 @@ import { inspect } from '../utils/helpers';
 const router = Router();
 
 router.get('/', (req, res, next) => {
-  res.end('lolzz');
+  res.send(200);
 });
 
-router.get('/pokemons', (req, res, next) => {
+router.get('/pokedex', (req, res, next) => {
   // get pokemons list
   const pokemons = req.db.getPokemons();
 
@@ -17,9 +17,7 @@ router.get('/pokemons', (req, res, next) => {
 });
 
 // get pokemon by id
-// function getPokemonById()
-
-router.get('/pokemon/:id', (req, res, next) => {
+router.get('/pokedex/:id', (req, res, next) => {
   // find pokemon
   const pokemonId = req.params.id;
   const findPokemon = req.db.getPokemonById(pokemonId);

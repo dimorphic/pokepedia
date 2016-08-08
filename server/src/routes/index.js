@@ -1,7 +1,7 @@
 // deps
-import test from './test';
+import pokedex from './pokedex';
 
 // expose
 export default {
-  test
+  pokedex
 };
