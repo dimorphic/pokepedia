@@ -5,6 +5,9 @@ import React, { Component, PropTypes } from 'react';
 import Paper from 'material-ui/Paper';
 import PokemonIcon from 'components/atoms/PokemonIcon';
 
+// style
+import './PokedexItem.scss';
+
 const paperStyle = {
   // height: 100,
   width: '100%',
@@ -22,7 +25,7 @@ const PokedexItem = (props) => {
         <div className="PokedexItem-Avatar">
           <PokemonIcon pokemon={pokemon} />
         </div>
-        <h1 className="PokedexItem-Name">{pokemon.name}</h1>
+        <h2 className="PokedexItem-Name">{pokemon.name}</h2>
         <span className="PokedexItem-No">#{pokemon.id}</span>
       </div>
       <div className="PokedexItem-Circle"></div>

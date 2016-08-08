@@ -22,6 +22,17 @@ const css = {
   }
 };
 
+// fast extract of pokemon types colors for use in SCSS
+// @TODO: make this dynamic
+// const cssColors = Object.keys(POKEMON_TYPES).map((type) => {
+//   console.log(`${type}: ${POKEMON_TYPES[type].avatarColor}`);
+// });
+//
+// console.log('css colors @ ', cssColors);
+
+//
+// @DEBUG: Pokemon sample
+//
 // [
 //   {
 //     "id": 1,

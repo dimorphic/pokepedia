@@ -1,8 +1,3 @@
-@import '~scss/tools/mixins/position.scss';
-
-$pokecard-avatar-size: 100px;
-$pokecard-avatar-border-size: 10px;
-
 .PokedexList {
   width: 100%;
   // max-width: 1000px;
@@ -18,71 +13,62 @@ $pokecard-avatar-border-size: 10px;
   margin-bottom: 70px;
 }
 
-.PokedexItem {
-  position: relative;
-  width: 100%;
+.PokedexList-Popover {
+  width: 300px;
 
-  padding: 70px 0 10px;
+  background: none !important;
+  box-shadow: none !important;
 
-  text-align: center;
-  background: #fff;
-  border-radius: 10px;
+  // normal card
+  border-radius: 10px !important;
 
-  // overflow: hidden;
-  box-shadow: 0px 23px 30px -20px rgba(#000, .2);
-
-  // force HA
-  @include noflicker();
-  transition: all 0.2s ease-in-out;
-
-  //
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-6px);
-    box-shadow: 0px 27px 30px -20px rgba(#000, .3);
+  > div {
+    border-radius: 10px !important;
+    background: none;
+    overflow-y: visible !important;
   }
 }
 
-.PokedexItem-Name {
-  font-size: 18px;
-  font-weight: 300;
+// Pokeball card appereance!
+.PokedexList-Popover--Pokeball {
+  border-radius: 9999px !important; // #hacks!
+  overflow: hidden !important;
+
+  box-shadow: 0px 23px 30px -20px rgba(#000, .2) !important;
+
+  // adjust Pokemon #no
+  .PokeCard-No {
+    top: 140px;
+
+    color: #bbb;
+    text-shadow: none;
+  }
+
+  .PokeCard-Content {
+    padding-bottom: 45px;
+  }
 }
 
-.PokedexItem-No {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-
-  color: #bbb;
-}
-
-.PokedexItem-Avatar {
-  z-index: 1;
-
-  display: inline-block;
-
-  // width: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
-  // height: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
-
-  background: none;
-}
-
-.PokedexItem-Avatar,
-.PokedexItem-Circle {
-  position: absolute;
-  top: -30%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
-  height: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
-}
-
-.PokedexItem-Circle {
-  z-index: -1;
-
-  // background: #f00;
-
-  border-radius: 50%;
-  border: $pokecard-avatar-border-size solid rgba(255, 255, 255, 0.7);
-}
+//
+//  Popover theming
+//  @TODO: create dynamic colors extractor from constants/pokemon-types.js
+//  ...and inject here ?
+//
+.PokedexList-Popover--Pokeball--Normal > div { background: #d8d8d8; }
+.PokedexList-Popover--Pokeball--Fire > div { background: #f57c00; }
+.PokedexList-Popover--Pokeball--Water > div { background: #2196f3; }
+.PokedexList-Popover--Pokeball--Electric > div { background: #ffeb3b; }
+.PokedexList-Popover--Pokeball--Grass > div { background: #43a047; }
+.PokedexList-Popover--Pokeball--Ice > div { background: #18ffff; }
+.PokedexList-Popover--Pokeball--Fighting > div { background: #d32f2f; }
+.PokedexList-Popover--Pokeball--Poison > div { background: #9c27b0; }
+.PokedexList-Popover--Pokeball--Ground > div { background: #8d6e63; }
+.PokedexList-Popover--Pokeball--Flying > div { background: #5c6bc0; }
+.PokedexList-Popover--Pokeball--Psychic > div { background: #d81b60; }
+.PokedexList-Popover--Pokeball--Bug > div { background: #8bc34a; }
+.PokedexList-Popover--Pokeball--Rock > div { background: #757575; }
+.PokedexList-Popover--Pokeball--Ghost > div { background: #7e57c2; }
+.PokedexList-Popover--Pokeball--Dragon > div { background: #f44336; }
+.PokedexList-Popover--Pokeball--Dark > div { background: #212121; }
+.PokedexList-Popover--Pokeball--Steel > div { background: #78909c; }
+.PokedexList-Popover--Pokeball--Fairy > div { background: #ea80fc; }

@@ -1,5 +1,6 @@
 // deps
 import React, { Component, PropTypes } from 'react';
+import cx from 'classnames';
 
 // components
 import Popover from 'material-ui/Popover';
@@ -9,13 +10,6 @@ import PokeCard from 'components/atoms/PokeCard';
 
 // style
 import './PokedexList.scss';
-
-const popoverStyle = {
-  width: 300,
-  background: 0,
-  borderRadius: 10
-  // boxShadow: 0
-};
 
 export default class PokedexList extends Component {
   static propTypes = {
@@ -32,7 +26,7 @@ export default class PokedexList extends Component {
     this.state = {
       pokedexAnchor: null,
       pokedexOpened: false,
-      pokedexPokemon: null,
+      pokedexPokemon: null
     };
 
     this.renderPokedex = this.renderPokedex.bind(this);
@@ -45,15 +39,15 @@ export default class PokedexList extends Component {
     // console.log('!!! OPEN pokedex @ ', pokemonId, event.currentTarget);
     const { pokemons } = this.props;
 
-    // find pokemon
-    const pokemonDex = pokemons.filter((pokemon) => { return pokemon.id === pokemonId; })[0];
+    // find pokemon in Pokedex
+    const pokemonData = pokemons.filter((pokemon) => { return pokemon.id === pokemonId; })[0];
 
     // prevent ghost click
     event.preventDefault();
 
     this.setState({
       pokedexAnchor: event.currentTarget,
-      pokedexPokemon: pokemonDex,
+      pokedexPokemon: pokemonData,
       pokedexOpened: true
     });
   }
@@ -70,13 +64,22 @@ export default class PokedexList extends Component {
     const { pokedexOpened, pokedexAnchor, pokedexPokemon } = this.state;
 
     const pokeCard = pokedexPokemon ? (<PokeCard pokemon={pokedexPokemon} />) : null;
+    const pokeType = pokedexPokemon ? pokedexPokemon.type[0] : null;
+
+    // pokeball appereance ?! :D
+    const pokeball = true;
+
+    const cssClasses = cx('PokedexList-Popover', {
+      'PokedexList-Popover--Pokeball': pokeball,
+      [`PokedexList-Popover--Pokeball--${pokeType}`]: pokeball
+    });
 
     return (
       <Popover
+        className={cssClasses}
         open={pokedexOpened}
         onRequestClose={::this.closeDex}
 
-        style={popoverStyle}
         anchorEl={pokedexAnchor}
         anchorOrigin={{ horizontal: 'middle', vertical: 'bottom' }}
         targetOrigin={{ horizontal: 'middle', vertical: 'center' }}

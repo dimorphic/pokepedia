@@ -149,9 +149,12 @@ export default class PokedexPage extends Component {
 
     return (
       <div className="PokedexPage">
-        <div className="Pokepedia-Logo">
+        <div className="Pokepedia-Header">
           <PokeLoader />
-          <h1 className="Pokepedia-Greet">PokéPedia</h1>
+          <div className="Pokepedia-Logo">
+            <h1 className="Pokepedia-Name">PokéPedia</h1>
+            <span className="Pokepedia-Version">Beta</span>
+          </div>
         </div>
         {node}
       </div>

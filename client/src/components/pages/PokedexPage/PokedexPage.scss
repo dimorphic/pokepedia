@@ -2,15 +2,30 @@
   text-align: center;
 }
 
-.Pokepedia-Logo {
+.Pokepedia-Header {
   margin: 70px 0 50px;
 }
 
-.Pokepedia-Greet {
-  margin: 0px;
-  padding: 0px;
+.Pokepedia-Logo {
+  position: relative;
+  display: inline-block;
 
-  color: magenta;
-  font-size: 40px;
-  font-weight: 300;
+  .Pokepedia-Name {
+    margin: 0;
+    padding: 0;
+
+    font-size: 34px;
+    font-weight: 300;
+  }
+
+  .Pokepedia-Version {
+    position: absolute;
+    top: 0;
+    right: -20px;
+
+    color: magenta;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+  }
 }

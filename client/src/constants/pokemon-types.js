@@ -6,7 +6,6 @@ import {
   cyanA200,
   deepPurple400,
   green600,
-  grey300,
   grey600,
   grey900,
   indigo400,
