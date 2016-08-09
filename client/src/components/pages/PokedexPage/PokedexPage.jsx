@@ -255,7 +255,7 @@ export default class PokedexPage extends Component {
         <div className="Pokepedia-Header">
           <PokeLoader />
           <div className="Pokepedia-Logo">
-            <h1 className="Pokepedia-Name">PokéPedia</h1>
+            <h1 className="Pokepedia-Name">Poképedia</h1>
             <span className="Pokepedia-Version">Beta</span>
           </div>
 
