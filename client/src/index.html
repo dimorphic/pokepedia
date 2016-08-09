@@ -5,28 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-    <title>pokepedia.club</title>
+    <title>Poképedia.fyi (BETA) - your only Pokemon GO stop</title>
 
     <!-- SITE: INFO -->
-    <meta name="description" content="">
-    <meta name="keywords" content="" />
+    <meta name="description" content="Discover Pokémons stats, weaknesses, evolution chances, trainer level rewards and more. Coming soon: Evolve Calculator, Battle Simulator and live map of Pokémons locations! Stay tuned!">
+    <meta name="keywords" content="pokepedia, pokemon, pokémon, pokèmon, pokemon database, searchable database, poke find, pokemon map, pokemon go, pokemon go location, pokemon live map, pokemon live, pokemon location, pokemon stats, pokemon weaknesses, pokemon evolution" />
 
-    <meta name="Owner" content="pokepedia.club">
-    <meta name="Copyright" content="pokepedia.club">
-    <meta name="Author" content="pokepedia.club">
+    <meta name="Owner" content="pokepedia.fyi">
+    <meta name="Copyright" content="pokepedia.fyi">
+    <meta name="Author" content="pokepedia.fyi">
     <meta name="Robots" content="index,follow">
+
+    <meta name="theme-color" content="#e617df">
+    <meta name="apple-mobile-web-app-capable" content=yes>
+    <link rel="shortcut icon" type="image/png" href="assets/pokepedia-favicon.png">
+    <link rel="icon" type="image/png" href="assets/pokepedia-favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/pokepedia-icon-196.png">
+    <link rel="apple-touch-icon" href="assets/pokepedia-icon-196.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/pokepedia-icon-196.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/pokepedia-icon-196.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/pokepedia-icon-196.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="assets/pokepedia-icon-196.png">
+
+    <meta property="og:url" content="http://pokepedia.fyi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Poképedia (BETA) - your only Pokemon GO stop" />
+    <meta property="og:description" content="Discover Pokémons stats, weaknesses, evolution chances, trainer level rewards and more. Coming soon: Evolve Calculator, Battle Simulator and live map of Pokémons locations! Stay tuned!" />
+    <meta property="og:image" content="http://pokepedia.fyi/assets/social-card-01.png" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@PokepediaFYI">
+    <meta name="twitter:title" content="Poképedia (BETA) - your only Pokemon GO stop">
+    <meta name="twitter:description" content="Discover Pokémons stats, weaknesses, evolution chances, trainer level rewards and more. Coming soon: Evolve Calculator, Battle Simulator and live map of Pokémons locations! Stay tuned!">
+    <meta name="twitter:image" content="http://pokepedia.fyi/assets/social-card-01.png">
 
     <!-- FONT -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-    <!-- CSS -->
-    <link href="/main.css" rel="stylesheet" type="text/css" />
-
     <!-- Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-82198830-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
   <body>
     <!-- FB SDK -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1346689985360467";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
+    <!-- FB LIKE -->
+    <div class="FBLike">
+      <div class="fb-like" data-href="https://pokepedia.fyi" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+    </div>
+
+    <!-- ROOTz -->
     <div id="root"></div>
   </body>
 </html>
