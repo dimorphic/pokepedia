@@ -2,24 +2,16 @@
   text-align: center;
 }
 
+.Pokepedia-Header {
+  padding: 70px 0 50px;
+}
+
 .PokedexPage-Tip {
   margin-top: 30px;
 
   font-size: 14px;
   font-style: italic;
   color: #bbb;
-}
-
-.Pokepedia-Header {
-  padding: 70px 0 50px;
-}
-
-.Pokepedia-Footer {
-  padding: 30px;
-
-  font-size: 12px;
-  font-style: italic;
-  color: #ccc;
 }
 
 .Pokepedia-Logo {
@@ -44,4 +36,90 @@
     font-size: 10px;
     font-weight: 500;
   }
+}
+
+.Pokepedia-Info {
+  padding: 20px;
+}
+
+.Pokepedia-Sepa {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+  border-bottom: 1px dashed #ccc;
+}
+
+.Pokepedia-About {
+  // padding-bottom: 10px;
+  // margin-bottom: 10px;
+
+  // border-bottom: 1px dashed #ccc;
+
+  // h4 { margin: 15px 0; }
+  h4 { font-style: italic; }
+}
+
+.Pokepedia-Info-Content {
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+.Pokepedia-InfoButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  border: 1px dashed transparent;
+  border-radius: 50%;
+
+  transition: border-color 0.2s ease-in-out;
+
+  &:hover {
+    border-color: #bbb;
+
+    .Pokepedia-InfoButton-Icon {
+      fill: #000 !important;
+    }
+  }
+}
+
+.Pokepedia-InfoButton-Icon {
+  fill: #ccc !important;
+}
+
+.Pokepedia-Soon {
+  color: magenta;
+}
+
+.Pokepedia-Social {
+  margin: 30px 0;
+}
+
+.Pokepedia-SocialOr {
+  display: block;
+
+  margin: 5px 0;
+
+  font-style: italic;
+  color: #bbb;
+}
+
+.Coded {
+  padding: 20px;
+
+  font-size: 12px;
+
+  .fa { margin: 0 5px; }
+  .fa.fa-heart { color: #e74c3c; }
+}
+
+.Pokepedia-Footer {
+  padding: 10px 0;
+
+  font-size: 12px;
+  font-style: italic;
+  color: #ccc;
+  // text-align: left;
 }
