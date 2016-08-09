@@ -8,7 +8,7 @@ import { store } from '../store';
 //
 //  Le API
 //
-const API_IP = '0.0.0.0'; // bind to local interfaces (assuming API server is up)
+const API_IP = 'api.pokepedia.fyi'; // '0.0.0.0';
 const API_PORT = 9090;
 
 const API = create({
