@@ -4,6 +4,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // paths
 const PATHS = require('./common').PATHS;
@@ -64,4 +65,8 @@ export const uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
 
 export const commonsChunkPlugin = (options) => {
   return new webpack.optimize.CommonsChunkPlugin(options);
+};
+
+export const copyPlugin = (options) => {
+  return new CopyWebpackPlugin(options);
 };

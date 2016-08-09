@@ -35,6 +35,13 @@ module.exports = {
     }),
 
     common.PLUGINS.cssExtractPlugin('[name].bundle-[hash].css'),
+    common.PLUGINS.copyPlugin([
+      {
+        from: `${common.PATHS.src}/assets/`,
+        to: 'assets/'
+      }
+    ]),
+
     common.PLUGINS.assetsPlugin(),
     common.PLUGINS.htmlPlugin()
   ],
