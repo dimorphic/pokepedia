@@ -39,8 +39,8 @@ app.all('*', (req, res, next) => {
 
 // add middleware enhancers
 app.use(logger('dev')); // http request logger
-app.use(express.static(UTILS.paths.assets()));
-app.use('/assets', express.static(UTILS.paths.assets()));
+// app.use(express.static(UTILS.paths.assets()));
+// app.use('/assets', express.static(UTILS.paths.assets()));
 
 // make DB accesible to router
 app.use((req, res, next) => {

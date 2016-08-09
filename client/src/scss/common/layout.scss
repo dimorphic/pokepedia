@@ -22,6 +22,11 @@ body {
 
 .FBLike {
   position: relative;
+
+  max-width: 300px;
+  max-height: 70px;
+  overflow: hidden;
+
   margin: 20px;
 
   @include fromWidth(600px) {
