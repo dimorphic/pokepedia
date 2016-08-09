@@ -30,7 +30,7 @@ body {
   margin: 20px;
 
   @include fromWidth(600px) {
-    position: absolute;
+    // position: absolute;
     top: 10px;
     left: 10px;
 
