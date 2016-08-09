@@ -1,3 +1,5 @@
+@import '~scss/tools/mixins/responsive.scss';
+
 .PokedexPage {
   text-align: center;
 }
@@ -67,9 +69,9 @@
 }
 
 .Pokepedia-InfoButton {
-  position: absolute;
-  top: 10px;
+  position: fixed;
   right: 10px;
+  top: 60px;
 
   border: 1px dashed transparent;
   border-radius: 50%;
@@ -82,6 +84,11 @@
     .Pokepedia-InfoButton-Icon {
       fill: #000 !important;
     }
+  }
+
+  // reponsiveness
+  @include fromWidth(600px) {
+    top: 10px;
   }
 }
 

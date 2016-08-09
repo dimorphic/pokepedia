@@ -21,7 +21,14 @@ body {
 }
 
 .FBLike {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: relative;
+  margin: 20px;
+
+  @include fromWidth(600px) {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    margin: 0;
+  }
 }
