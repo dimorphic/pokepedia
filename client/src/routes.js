@@ -1,11 +1,12 @@
 // deps
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, IndexRoute, IndexRedirect } from 'react-router';
 
 // containers
 import App from 'containers/App';
-import HomeView from 'views/HomeView';
-import LocationView from 'views/LocationView';
+import HomeView from 'components/views/HomeView';
+import PokedexView from 'components/views/PokedexView';
+import LocationView from 'components/views/LocationView';
 
 const onCheckAuth = () => {
   console.log('ROUTE CHECK AUTH!!!');
@@ -16,9 +17,10 @@ const onCheckAuth = () => {
 };
 
 const routes = (
-  <Route path="/" component={App}>
-    <IndexRoute component={HomeView} />
+  <Route component={App}>
+    <IndexRedirect to="/" />
 
+    <Route path="/" component={PokedexView} />
     <Route path="location" component={LocationView} />
   </Route>
 );

@@ -17,14 +17,18 @@ const CONFIG = new Map();
 
 // environment
 CONFIG.set('env', process.env.NODE_ENV);
-CONFIG.set('HOST', '0.0.0.0');
-CONFIG.set('PORT', 8080);
+CONFIG.set('HOST', '0.0.0.0'); // bind to all interfaces
+CONFIG.set('PORT', 8080); // webpack dev server
 
 // app paths
 CONFIG.set('paths', {
   project: path.resolve(__dirname, './'),
   source: 'src',
-  build: 'dist'
+  build: 'build',
+
+  shared: '../shared',
+  assets: '../shared/assets',
+  data: '../shared/data'
 });
 
 // app dependencies
@@ -55,7 +59,12 @@ const paths = (() => {
   return {
     project,
     source: project.bind(null, CONFIG.get('paths').source),
-    build: project.bind(null, CONFIG.get('paths').build)
+    build: project.bind(null, CONFIG.get('paths').build),
+
+    // @TODO: time to make this more dynamic?
+    shared: project.bind(null, CONFIG.get('paths').shared),
+    assets: project.bind(null, CONFIG.get('paths').assets),
+    data: project.bind(null, CONFIG.get('paths').data)
   };
 })();
 

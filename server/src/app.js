@@ -13,7 +13,7 @@ import Database from './db';
 const UTILS = CONFIG.get('utils');
 
 // @TODO
-const DB = new Database({ path: `${UTILS.paths.data()}/test.json` });
+const DB = new Database({ path: `${UTILS.paths.data()}/pokemon/pokedex.en.build.json` });
 
 // @DEBUG CONFIG
 // console.log(CONFIG.get('paths'));
@@ -26,10 +26,19 @@ const DB = new Database({ path: `${UTILS.paths.data()}/test.json` });
 // create Express app <3
 const app = express();
 
+// enable CORS
+app.all('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+  next();
+});
+
 // add middleware enhancers
 app.use(logger('dev')); // http request logger
-app.use(express.static(UTILS.paths.assets()));
-app.use('/assets', express.static(UTILS.paths.assets()));
+// app.use(express.static(UTILS.paths.assets()));
+// app.use('/assets', express.static(UTILS.paths.assets()));
 
 // make DB accesible to router
 app.use((req, res, next) => {

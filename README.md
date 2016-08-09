@@ -2,10 +2,12 @@
 Poke all the way!
 
 ### Requirements
-Node `v6.3`
+Node `v6.3.1`
+Npm `v3.10`
 
 ### Getting started
-@TODO
+`$ npm i` (both in /client and /server)
+`$ npm start`
 
 #### Features:
 - [x] Pokemons card listing

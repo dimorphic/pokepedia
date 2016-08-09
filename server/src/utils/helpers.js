@@ -27,8 +27,8 @@ export const logger = tracer.colorConsole({
 //	Get URI file name helper
 //
 export const getFileName = (uri) => {
-    var fileName = url.parse(uri).pathname.split('/').pop().split('?').shift();
-    return fileName;
+  var fileName = url.parse(uri).pathname.split('/').pop().split('?').shift();
+  return fileName;
 };
 
 //
@@ -58,14 +58,14 @@ export const downloadFile = (uri, filename, callback) => {
     .on('close', () => {
       callback(null, filename);
     });
-}
+};
 
 // rename object properties
 export const renameProp = (obj = {}, oldName = null, newName = null) => {
   // console.log(`Renaming ${oldName} -> ${newName}`);
 
   // Do nothing if the names are the same
-  if (oldName == newName) {
+  if (oldName === newName) {
     // console.log('Rename abort. Same names');
     return obj;
   }
@@ -80,14 +80,14 @@ export const renameProp = (obj = {}, oldName = null, newName = null) => {
   }
 
   return obj;
-}
+};
 
 //
 // @TODO: ??
 //
 export const loadData = (path) => {
   return JSON.parse(fs.readFileSync(path, 'utf8'));
-}
+};
 
 //
 //  object representation / stringify

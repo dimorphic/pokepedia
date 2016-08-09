@@ -17,7 +17,6 @@ export const sassLoader = (config) => {
 
   return {
     test: /\.(scss|css)$/,
-    loader,
-    exclude: /node_modules/
+    loader
   };
 };

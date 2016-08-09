@@ -1,0 +1,39 @@
+//
+//  App common layout
+//
+body {
+  position: relative;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+
+  background: #eee;
+}
+
+.Page {
+  position: relative;
+}
+
+.img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.FBLike {
+  position: relative;
+
+  max-width: 300px;
+  max-height: 70px;
+  overflow: hidden;
+
+  margin: 20px;
+
+  @include fromWidth(600px) {
+    // position: absolute;
+    top: 10px;
+    left: 10px;
+
+    margin: 0;
+  }
+}

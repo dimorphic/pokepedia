@@ -1,3 +1,10 @@
-body {
-  background: #ccc;
-}
+// Vendor libs
+@import 'vendor'; // @TODO: check why Webpack includes 2x normalize.css
+
+// Toolkit
+@import "tools/mixins";
+@import "tools/helpers";
+
+// Common global + layout
+@import 'common/global';
+@import 'common/layout';

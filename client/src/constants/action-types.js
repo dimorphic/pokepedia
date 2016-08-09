@@ -7,7 +7,28 @@
 // deps
 import createConstants from 'utils/constants';
 
-// website builder
+// export const PROGRESS_TYPES = createConstants(
+//   'PROGRESS'
+// );
+
+// pokedex
+export const POKEDEX_TYPES = createConstants(
+  'POKEDEX_GET_POKEMONS',
+  'POKEDEX_GET_POKEMONS_PENDING',
+  'POKEDEX_GET_POKEMONS_SUCCESS',
+
+  'POKEDEX_GET_POKEMON_BY_ID',
+  'POKEDEX_GET_POKEMON_BY_ID_PENDING',
+  'POKEDEX_GET_POKEMON_BY_ID_SUCCESS'
+);
+
+// location
 export const LOCATION_TYPES = createConstants(
   'LOCATION_LOAD_MAP'
+);
+
+// filters
+export const FILTERS_TYPES = createConstants(
+  'FILTERS_RESET',
+  'FILTERS_SEARCH_UPDATE'
 );

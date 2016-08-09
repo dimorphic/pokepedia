@@ -1,5 +1,5 @@
 // deps
-import { loadData } from './helpers';
+import { loadData } from './utils/helpers';
 // const DEBUG = require('debug')('pokepedia:wtf');
 
 // DB
@@ -28,6 +28,16 @@ class Database {
   reload() {
     console.log('[DB] Reloading data...');
     this.data = this.load();
+  }
+
+  getPokemons() {
+    return this.data;
+  }
+
+  getPokemonById(pokemonId) {
+    return this.data.filter((item) => {
+      return item.id == pokemonId;
+    });
   }
 }
 

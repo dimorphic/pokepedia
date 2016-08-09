@@ -24,6 +24,7 @@ module.exports = exports = {
     'import/no-mutable-exports': WARN,
     'import/newline-after-import': WARN,
     'import/imports-first': OFF,
+    'import/no-extraneous-dependencies': WARN,
     'quote-props': [ERROR, 'consistent-as-needed'],
     'prefer-template': OFF,
     'no-param-reassign': WARN,

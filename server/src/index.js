@@ -1,4 +1,5 @@
 // #!/usr/bin/env node
+// require('babel/register');
 
 // deps
 import './polyfills';
@@ -8,7 +9,10 @@ import http from 'http';
 import app from './app';
 
 // settings
-const PORT = (process.env.PORT || 9090);
+import CONFIG from './config';
+
+// settings
+const PORT = (process.env.PORT || CONFIG.get('PORT'));
 
 // save port in app locals
 app.set('port', PORT);

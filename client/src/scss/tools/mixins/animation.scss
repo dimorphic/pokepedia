@@ -1,0 +1,27 @@
+@mixin animation($value) {
+  -webkit-animation: unquote($value);
+     -moz-animation: unquote($value);
+       -o-animation: unquote($value);
+          animation: unquote($value);
+}
+
+@mixin animation-direction($value) {
+  -webkit-animation-direction: unquote($value);
+     -moz-animation-direction: unquote($value);
+       -o-animation-direction: unquote($value);
+          animation-direction: unquote($value);
+}
+
+@mixin animation-duration($value) {
+  -webkit-animation-duration: unquote($value);
+     -moz-animation-duration: unquote($value);
+       -o-animation-duration: unquote($value);
+          animation-duration: unquote($value);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+     @-moz-keyframes #{$name} { @content; }
+       @-o-keyframes #{$name} { @content; }
+          @keyframes #{$name} { @content; }
+}

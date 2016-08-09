@@ -1,0 +1,75 @@
+.PokedexList {
+  width: 100%;
+  // max-width: 1000px;
+
+  padding: 70px 50px;
+  // margin: 100px auto;
+}
+
+.PokedexItem-Cell {
+  position: relative;
+  width: 270px;
+
+  margin-bottom: 70px;
+}
+
+.PokedexList-Popover {
+  width: 300px;
+
+  background: none !important;
+  box-shadow: none !important;
+  overflow-y: visible !important;
+
+  // normal card
+  border-radius: 10px !important;
+
+  > div {
+    border-radius: 10px !important;
+    background: none;
+    overflow-y: visible !important;
+  }
+}
+
+// Pokeball card appereance!
+.PokedexList-Popover--Pokeball {
+  border-radius: 9999px !important; // #hacks!
+  overflow: hidden !important;
+
+  box-shadow: 0px 23px 30px -16px rgba(#000, .2) !important;
+
+  // adjust Pokemon #no
+  .PokeCard-No {
+    top: 140px;
+
+    color: #bbb;
+    text-shadow: none;
+  }
+
+  .PokeCard-Content {
+    padding-bottom: 45px;
+  }
+}
+
+//
+//  Popover theming
+//  @TODO: create dynamic colors extractor from constants/pokemon-types.js
+//  ...and inject here ?
+//
+.PokedexList-Popover--Pokeball--Normal > div { background: #d8d8d8; }
+.PokedexList-Popover--Pokeball--Fire > div { background: #f57c00; }
+.PokedexList-Popover--Pokeball--Water > div { background: #2196f3; }
+.PokedexList-Popover--Pokeball--Electric > div { background: #ffeb3b; }
+.PokedexList-Popover--Pokeball--Grass > div { background: #43a047; }
+.PokedexList-Popover--Pokeball--Ice > div { background: #18ffff; }
+.PokedexList-Popover--Pokeball--Fighting > div { background: #d32f2f; }
+.PokedexList-Popover--Pokeball--Poison > div { background: #9c27b0; }
+.PokedexList-Popover--Pokeball--Ground > div { background: #8d6e63; }
+.PokedexList-Popover--Pokeball--Flying > div { background: #5c6bc0; }
+.PokedexList-Popover--Pokeball--Psychic > div { background: #d81b60; }
+.PokedexList-Popover--Pokeball--Bug > div { background: #8bc34a; }
+.PokedexList-Popover--Pokeball--Rock > div { background: #757575; }
+.PokedexList-Popover--Pokeball--Ghost > div { background: #7e57c2; }
+.PokedexList-Popover--Pokeball--Dragon > div { background: #f44336; }
+.PokedexList-Popover--Pokeball--Dark > div { background: #212121; }
+.PokedexList-Popover--Pokeball--Steel > div { background: #78909c; }
+.PokedexList-Popover--Pokeball--Fairy > div { background: #ea80fc; }

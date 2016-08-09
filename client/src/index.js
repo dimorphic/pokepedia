@@ -19,7 +19,7 @@ const node = (
 );
 
 // test
-store.dispatch(LocationActions.loadMap('lolz'));
+// store.dispatch(LocationActions.loadMap('lolz'));
 
 // render it!
 render(node, target);
