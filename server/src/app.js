@@ -28,8 +28,6 @@ const app = express();
 
 // enable CORS
 app.all('*', (req, res, next) => {
-  console.log('HERE !!!');
-
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
