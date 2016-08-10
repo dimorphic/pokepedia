@@ -104,7 +104,7 @@
     "weight": "8.5 kg",
     "candy": "25 Charmander Candy",
     "egg": "2 km",
-    "multipliers": 1.65,
+    "multipliers": [1.65],
     "weaknesses": [
       "Water",
       "Ground",

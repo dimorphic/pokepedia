@@ -1,56 +1,46 @@
-// #!/usr/bin/env node
-// require('babel/register');
+'use strict';
 
-// deps
 import './polyfills';
 
-// magic app!
+import express from 'express';
+import bodyParser  from 'body-parser';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import path from 'path';
+import logger from 'morgan';
 import http from 'http';
-import app from './app';
 
-// settings
-import CONFIG from './config';
+import dbUrl from './config/database';
+import routes from './routes/routes';
+const mongoOptions = { db: { safe: true } };
 
-// settings
-const PORT = (process.env.PORT || CONFIG.get('PORT'));
+const app = express();
 
-// save port in app locals
-app.set('port', PORT);
+app.set('port', process.env.PORT || 8800);
 
-// create WEB server
-const webserver = http.createServer(app);
+app.use(cors());
 
-// bind on all interfaces
-webserver.listen(PORT); // 80 ?
+app.use(bodyParser.json());
 
-// WEB server error handler
-webserver.on('error', (error) => {
-  if (error.syscall !== 'listen') { throw error; }
+app.use(logger('dev'));
 
-  // get bind type
-  const bind = typeof PORT === 'string' ? `Pipe ${PORT}` : `Pipe ${PORT}`;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-
-    default:
-      throw error;
+app.db = mongoose.connect(dbUrl, mongoOptions, function (err, res) {
+  if (err) {
+    console.log('ERROR connecting to: ' + dbUrl + '. ' + err);
+  } else {
+    console.log('Successfully connected to: ' + dbUrl);
   }
 });
 
-// WEB server online event
-webserver.on('listening', () => {
-  const addr = webserver.address();
-  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-
-  console.log('Listening on ' + bind);
+app.get('/', function (req, res) {
+  res.send('Hello! The Pokemon API is at http://localhost:' + app.get('port'));
 });
+
+routes(app);
+
+var server = http.createServer(app);
+
+server.listen(app.get('port'), function () {
+  console.log('Express server listening on port ' + app.get('port'));
+});
+

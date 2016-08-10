@@ -1,7 +1,7 @@
 // deps
-import pokedex from './pokedex';
+import routes from './routes';
 
 // expose
 export default {
-  pokedex
+  routes
 };
