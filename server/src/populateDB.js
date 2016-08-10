@@ -11,10 +11,10 @@ mongoose.connect(dbUrl, mongoOptions, function (err, res) {
   if (err) {
     console.log('ERROR connecting to: ' + dbUrl + '. ' + err);
   } else {
-    console.log('Successfully connected to: ' + dbUrl);
     pokemonJSON.forEach((pokemon)=> {
       const PokemonModel = new Pokemon(pokemon);
       PokemonModel.save();
     });
   }
 });
+
