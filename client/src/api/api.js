@@ -8,8 +8,11 @@ import { store } from '../store';
 //
 //  Le API
 //
-const API_IP = 'api.pokepedia.fyi'; // '0.0.0.0';
-const API_PORT = 9090;
+// const API_IP = 'api.pokepedia.fyi'; // '0.0.0.0';
+// const API_PORT = 9090;
+
+const API_IP = 'localhost'; // '0.0.0.0';
+const API_PORT = 8800;
 
 const API = create({
   baseURL: `http://${API_IP}:${API_PORT}`,
