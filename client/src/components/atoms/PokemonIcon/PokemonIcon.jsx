@@ -5,7 +5,7 @@ const PokemonIcon = (props) => {
   const { pokemon, animated, ...otherProps } = props;
 
   // static PNG
-  const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemon.pokemonId}.png`;
+  const pokemonImage = `http://localhost:8800/assets/pokemons/${pokemon.pokemonId}.png`;
 
   // @TODO: add props.animated and switch to GIF ?
   // const pokemonImage = `http://www.pokestadium.com/sprites/xy/${pokemon.name.toLowerCase()}.gif`;

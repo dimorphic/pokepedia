@@ -12,7 +12,7 @@ const PokemonSchema = new Schema({
   weaknesses: { type: [String] },
   next_evolution: { type: [] },
   prev_evolution: { type: [] },
-  pokemonId: { type: Number },
+  pokemonId: { type: String },
 });
 
 export default mongoose.model('Pokemon', PokemonSchema);

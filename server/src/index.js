@@ -14,6 +14,10 @@ import dbUrl from './config/database';
 import routes from './routes/routes';
 const mongoOptions = { db: { safe: true } };
 
+import CONFIG from './config';
+// helpers
+const UTILS = CONFIG.get('utils');
+
 const app = express();
 
 app.set('port', process.env.PORT || 8800);
@@ -21,6 +25,9 @@ app.set('port', process.env.PORT || 8800);
 app.use(cors());
 
 app.use(bodyParser.json());
+
+app.use(express.static(UTILS.paths.assets()));
+app.use('/assets', express.static(UTILS.paths.assets()));
 
 app.use(logger('dev'));
 
