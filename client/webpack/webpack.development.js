@@ -28,7 +28,7 @@ module.exports = {
     host: HOST,
     port: PORT,
 
-    contentBase: common.PATHS.build,
+    contentBase: common.PATHS.src,
     historyApiFallback: true,
 
     hot: true,
@@ -67,9 +67,7 @@ module.exports = {
   },
 
   plugins: [
-    common.PLUGINS.definePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    }),
+    common.PLUGINS.definePlugin(CONFIG.get('globals')),
 
     common.PLUGINS.hotModulePlugin,
     common.PLUGINS.commonsChunkPlugin({

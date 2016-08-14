@@ -12,7 +12,11 @@ module.exports = exports = {
 
   extends: 'airbnb',
   parser: 'babel-eslint',
-  globals: {},
+  globals: {
+    __DEV__: true,
+    __PROD__: true,
+    NODE_ENV: true
+  },
 
   rules: {
     'global-require': WARN,

@@ -16,7 +16,7 @@ const APP_PACKAGE = jsonfile.readFileSync('package.json');
 const CONFIG = new Map();
 
 // environment
-CONFIG.set('env', process.env.NODE_ENV);
+CONFIG.set('env', process.env.NODE_ENV || 'development');
 CONFIG.set('HOST', '0.0.0.0'); // bind to all interfaces
 CONFIG.set('PORT', 8080); // webpack dev server
 
@@ -38,11 +38,9 @@ CONFIG.set('dependencies', {
 
 // globals
 CONFIG.set('globals', {
-  'process.env': {
-    'NODE_ENV': JSON.stringify(CONFIG.get('env'))
-  },
+  'NODE_ENV': JSON.stringify(CONFIG.get('env')),
+  'process.env': { 'NODE_ENV': JSON.stringify(CONFIG.get('env')) },
 
-  'NODE_ENV': CONFIG.get('env'),
   '__DEV__': (CONFIG.get('env') === 'development'),
   '__PROD__': (CONFIG.get('env') === 'production')
 });

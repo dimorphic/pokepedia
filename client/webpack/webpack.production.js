@@ -1,6 +1,9 @@
 // deps
 import * as common from './common';
 
+// app global config
+import CONFIG from '../config';
+
 //
 //  PRODUCTION config
 //
@@ -20,9 +23,7 @@ module.exports = {
     ]
   },
   plugins: [
-    common.PLUGINS.definePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
+    common.PLUGINS.definePlugin(CONFIG.get('globals')),
 
     common.PLUGINS.noErrorPlugin, // don't build on errors
     common.PLUGINS.occurenceOrderPlugin,
