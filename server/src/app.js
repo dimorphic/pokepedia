@@ -36,7 +36,10 @@ app.all('*', (req, res, next) => {
 });
 
 // add middleware enhancers
-app.use(logger('dev')); // http request logger
+// app.use(logger('dev')); // http request logger
+app.use(logger('[:date[clf]] [:method::status] :remote-addr @ :url [:response-time ms] (:res[content-length])'));
+
+// static assets
 // app.use(express.static(UTILS.paths.assets()));
 // app.use('/assets', express.static(UTILS.paths.assets()));
 
