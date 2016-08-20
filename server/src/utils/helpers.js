@@ -27,7 +27,7 @@ export const logger = tracer.colorConsole({
 //	Get URI file name helper
 //
 export const getFileName = (uri) => {
-  var fileName = url.parse(uri).pathname.split('/').pop().split('?').shift();
+  const fileName = url.parse(uri).pathname.split('/').pop().split('?').shift();
   return fileName;
 };
 
