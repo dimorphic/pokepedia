@@ -145,7 +145,7 @@ function patchItems() {
 // compose new pokemons dex
 const LOCALE = 'EN';
 const newPokemonsDex = patchPokedex(LOCALE);
-const newPokemonsDestination = `${PATHS.data()}/pokedex/pokedex.${LOCALE.toLowerCase()}.build.json`;
+const newPokemonsDestination = `${PATHS.data()}/pokedex/pokemons.${LOCALE.toLowerCase()}.build.json`;
 
 jsonfile.writeFile(newPokemonsDestination, newPokemonsDex, { spaces: 2 }, (err) => {
   if (err) console.error(err);

@@ -13,15 +13,7 @@ import Database from './db';
 const UTILS = CONFIG.get('utils');
 
 // @TODO
-const DB = new Database({ path: `${UTILS.paths.data()}/pokedex/pokedex.en.build.json` });
-
-// @DEBUG CONFIG
-// console.log(CONFIG.get('paths'));
-// Object.keys(utils.paths).forEach((path) => {
-//   const fn = utils.paths[path];
-//   console.log('path : ', fn());
-// });
-// process.exit(0);
+const DB = new Database({ path: `${UTILS.paths.data()}/pokedex/pokemons.en.build.json` });
 
 // create Express app <3
 const app = express();
