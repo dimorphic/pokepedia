@@ -1,56 +1,43 @@
-// #!/usr/bin/env node
-// require('babel/register');
-
 // deps
 import './polyfills';
-
-// magic app!
-import http from 'http';
-import app from './app';
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import compression from 'compression';
+import morgan from 'morgan';
 
 // settings
 import CONFIG from './config';
+import ROUTES from './routes';
 
-// settings
-const PORT = (process.env.PORT || CONFIG.get('PORT'));
+// helpers
+const UTILS = CONFIG.get('utils');
 
-// save port in app locals
-app.set('port', PORT);
+// sExpress <3
+const app = express();
 
-// create WEB server
-const webserver = http.createServer(app);
+// Config
+app.set('port', (process.env.PORT || CONFIG.get('PORT')));
+app.disable('x-powered-by');
+app.use(compression());
+app.use(cors());
 
-// bind on all interfaces
-webserver.listen(PORT); // 80 ?
+// Serve static assets
+app.use(express.static(UTILS.paths.assets()));
+app.use('/assets', express.static(UTILS.paths.assets()));
 
-// WEB server error handler
-webserver.on('error', (error) => {
-  if (error.syscall !== 'listen') { throw error; }
+// Middlewares
+app.use(bodyParser.json({ limit: '2mb' }));
+app.use(bodyParser.urlencoded({ limit: '2mb', extended: true }));
 
-  // get bind type
-  const bind = typeof PORT === 'string' ? `Pipe ${PORT}` : `Pipe ${PORT}`;
+// HTTP request logger
+// app.use(logger('dev')); // http request logger
+app.use(morgan('[:date[clf]] [:method::status] :remote-addr @ :url [:response-time ms] (:res[content-length])'));
 
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
+// Routes
+app.use(ROUTES);
 
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-
-    default:
-      throw error;
-  }
-});
-
-// WEB server online event
-webserver.on('listening', () => {
-  const addr = webserver.address();
-  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-
-  console.log('Listening on ' + bind);
+// Boot it up!
+app.listen(app.get('port'), () => {
+  console.log('Listening on ' + app.get('port'));
 });

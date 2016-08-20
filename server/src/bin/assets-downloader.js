@@ -1,5 +1,5 @@
 // deps
-import { downloadFile, logger, getFileName } from '../utils/helpers';
+import { downloadFile, logger, getFileName } from '../helpers/utils';
 import CONFIG from '../config';
 
 // other helpers

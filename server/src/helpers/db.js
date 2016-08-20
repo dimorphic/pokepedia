@@ -1,8 +1,16 @@
 // deps
-import { loadData } from './utils/helpers';
-// const DEBUG = require('debug')('pokepedia:wtf');
+import { loadData } from './utils';
+import CONFIG from '../config';
 
-// DB
+// helpers
+const UTILS = CONFIG.get('utils');
+
+// settings
+const DB_PATH = `${UTILS.paths.data()}/pokedex/pokemons.en.build.json`;
+
+//
+// Plain file DB
+//
 class Database {
   constructor(options = {}) {
     if (!options.path) {
@@ -42,5 +50,5 @@ class Database {
 }
 
 // expose
-// const DB = new Database({ path: DB_FILE });
-export default Database;
+const DB = new Database({ path: DB_PATH });
+export default DB;
