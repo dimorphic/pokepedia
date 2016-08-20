@@ -10,8 +10,13 @@ import PokemonIcon from 'components/atoms/PokemonIcon';
 // constants / models (prop types)
 import POKEMON_TYPES from 'constants/pokemon-types';
 
+const POKEMON_STATS_SCALE = {
+  height: 'm',
+  weight: 'kg'
+};
+
 // helpers
-const isNumber = /\d+/g;
+// const isNumber = /\d+/g;
 
 // style
 import './PokeCard.scss';
@@ -33,38 +38,46 @@ const css = {
 //
 // @DEBUG: Pokemon sample
 //
-// [
-//   {
-//     "id": 1,
-//     "name": "Bulbasaur",
-//     "type": [
-//       "Grass",
-//       "Poison"
-//     ],
-//     "height": "0.71 m",
-//     "weight": "6.9 kg",
-//     "candy": "25 Bulbasaur Candy",
-//     "egg": "2 km",
-//     "multipliers": 1.58,
-//     "weaknesses": [
-//       "Fire",
-//       "Ice",
-//       "Flying",
-//       "Psychic"
-//     ],
-//     "next_evolution": [
-//       {
-//         "name": "Ivysaur",
-//         "pokemonId": "002"
-//       },
-//       {
-//         "name": "Venusaur",
-//         "pokemonId": "003"
-//       }
-//     ],
-//     "pokemonId": "001"
-//   }
-// ]
+// {
+//   "id": 1,
+//   "pokemonId": "001",
+//   "name": "Bulbasaur",
+//   "capture_rate": 0.16,
+//   "flee_rate": 0.1,
+//   "candy_count": 25,
+//   "candy_name": "Bulbasaur Candy",
+//   "egg": 2,
+//   "multipliers": [
+//     1.58
+//   ],
+//   "stats": {
+//     "attack": 126,
+//     "defense": 126,
+//     "stamina": 90,
+//     "height": 0.71,
+//     "weight": 6.9
+//   },
+//   "type": [
+//     "Grass",
+//     "Poison"
+//   ],
+//   "weaknesses": [
+//     "Fire",
+//     "Ice",
+//     "Flying",
+//     "Psychic"
+//   ],
+//   "next_evolution": [
+//     {
+//       "name": "Ivysaur",
+//       "pokemonId": "002"
+//     },
+//     {
+//       "name": "Venusaur",
+//       "pokemonId": "003"
+//     }
+//   ]
+// }
 
 export default class PokeCard extends Component {
   static propTypes = {
@@ -77,25 +90,6 @@ export default class PokeCard extends Component {
     });
 
     return pokemonColors;
-  }
-
-  getPokemonCandies(candies) {
-    return candies.match(isNumber) || 'None';
-  }
-
-  getPokemonDetails(pokemon) {
-    const { height, weight, candy, egg } = pokemon;
-    const pokeDetails = { height, weight, candy, egg };
-
-    // format poke details keys to [value, type] format
-    // eg: {
-    //  height: ['0.41', 'm'],
-    //  weight: ['4.0', 'kg']
-    // }
-    return Object.keys(pokeDetails).reduce((acc, curr) => {
-      acc[curr] = this.formatPokeDetail(pokeDetails[curr]);
-      return acc;
-    }, {});
   }
 
   getHeaderStyle(types = []) {
@@ -112,14 +106,6 @@ export default class PokeCard extends Component {
     return {
       background: headerBackground
     };
-  }
-
-  formatPokeDetail(detail) {
-    if (detail.match(isNumber)) {
-      return detail.split(' ');
-    }
-
-    return detail;
   }
 
   renderTypeChips(types) {
@@ -145,21 +131,11 @@ export default class PokeCard extends Component {
   }
 
   renderPokeDetail(label, detail) {
-    let propValue;
-    let propScale;
+    // format poke stats detail
+    const propValue = detail;
+    const propScale = POKEMON_STATS_SCALE[label.toLowerCase()];
 
-    // format poke detail (eg: { height: ['0.41', 'm'] } )
-    const pokeDetail = this.formatPokeDetail(detail);
-
-    if (Array.isArray(pokeDetail)) {
-      [propValue, propScale] = pokeDetail;
-    } else {
-      propValue = pokeDetail;
-    }
-
-    propScale = null;
-
-    const pokeDetailValue = propScale ? (
+    const pokeStatsValue = propScale ? (
       <div className="PokeCard-Property-Value">
         {propValue}
         <span>{propScale}</span>
@@ -170,7 +146,7 @@ export default class PokeCard extends Component {
       <GridCell key={label} col={4}>
         <div className="PokeCard-Property-Name">{label}</div>
         <div className="PokeCard-Property-Value">
-          {pokeDetailValue}
+          {pokeStatsValue}
         </div>
       </GridCell>
     );
@@ -184,9 +160,9 @@ export default class PokeCard extends Component {
     const pokemonWeaknessesChips = this.renderTypeChips(pokemon.weaknesses);
 
     const pokemonDetails = [
-      this.renderPokeDetail('Weight', pokemon.weight),
-      this.renderPokeDetail('Height', pokemon.height),
-      this.renderPokeDetail('Candies', pokemon.candy)
+      this.renderPokeDetail('Weight', pokemon.stats.weight),
+      this.renderPokeDetail('Height', pokemon.stats.height),
+      this.renderPokeDetail('Candies', pokemon.candy_count)
     ];
 
     return (

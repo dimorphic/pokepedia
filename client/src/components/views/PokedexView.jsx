@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 @connect(mapStoreToProps, mapDispatchToProps)
-class PokedexContainer extends Component {
+class PokedexView extends Component {
   static propTypes = {
     actions: PropTypes.object.isRequired,
     pokedex: PropTypes.any.isRequired
@@ -42,7 +42,7 @@ class PokedexContainer extends Component {
   fetchData() {
     const { actions } = this.props;
 
-    // fetch list of available widget components for builder
+    // fetch pokemons list
     actions.getPokemons();
   }
 
@@ -55,4 +55,4 @@ class PokedexContainer extends Component {
   }
 }
 
-export default PokedexContainer;
+export default PokedexView;
