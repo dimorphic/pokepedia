@@ -1,0 +1,11 @@
+.link {
+  color: #00f;
+
+  a {
+    color: inherit;
+  }
+
+  &.active {
+    color: #f00;
+  }
+}
