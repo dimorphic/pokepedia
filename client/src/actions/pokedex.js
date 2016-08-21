@@ -6,10 +6,15 @@ import { POKEDEX_TYPES as TYPES } from 'constants/action-types';
 
 export const getPokemons = () => ({
   type: TYPES.POKEDEX_GET_POKEMONS,
-  payload: PokedexAPI.getAllPokemons()
+  payload: PokedexAPI.getPokemons()
 });
 
-export const getPokemonById = (pokemonId) => ({
-  type: TYPES.POKEDEX_GET_POKEMON_BY_ID,
-  payload: PokedexAPI.getPokemonById(pokemonId)
+export const getItems = () => ({
+  type: TYPES.POKEDEX_GET_ITEMS,
+  payload: PokedexAPI.getItems()
 });
+
+// export const getPokemonById = (pokemonId) => ({
+//   type: TYPES.POKEDEX_GET_POKEMON_BY_ID,
+//   payload: PokedexAPI.getPokemonById(pokemonId)
+// });

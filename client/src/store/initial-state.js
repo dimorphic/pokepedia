@@ -7,7 +7,9 @@ export const LOCATION_STATE = {
 };
 
 export const POKEDEX_STATE = {
-  pokemons: []
+  pokemons: [],
+  items: [],
+  rewards: []
 };
 
 export const FILTERS_STATE = {
