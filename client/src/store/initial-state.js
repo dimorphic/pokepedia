@@ -18,6 +18,6 @@ export const FILTERS_STATE = {
 
 // expose INITIAL state
 export default {
-  location: LOCATION_STATE,
-  pokedex: POKEDEX_STATE
+  pokedex: POKEDEX_STATE,
+  filters: FILTERS_STATE
 };

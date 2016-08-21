@@ -6,7 +6,6 @@ import { render } from 'react-dom';
 // container, store & actions
 import Root from './containers';
 import setupStore from './store';
-import * as LocationActions from './actions/location';
 
 // global style ? (demo)
 import './scss/main.scss';
