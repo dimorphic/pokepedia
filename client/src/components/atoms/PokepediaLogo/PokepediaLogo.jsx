@@ -1,14 +1,18 @@
 // deps
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 
 // style
 import './PokepediaLogo.scss';
 
-const PokepediaLogo = (props) => {
+const PokepediaLogo = () => {
   return (
     <div className="PokepediaLogo">
-      <div id="pikachu"></div>
-      <div id="ash"></div>
+      <div className="PokepediaLogo-ThxKevin">
+        <div className="pikachu"></div>
+        <div className="ash"></div>
+      </div>
+      <h1 className="PokepediaLogo-Name">Poképedia</h1>
+      <span className="PokepediaLogo-Version">Beta</span>
     </div>
   );
 };
