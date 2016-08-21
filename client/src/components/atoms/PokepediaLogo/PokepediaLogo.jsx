@@ -2,15 +2,15 @@
 import React, { Component, PropTypes } from 'react';
 
 // style
-import './PokeLoader.scss';
+import './PokepediaLogo.scss';
 
-const PokeLoader = (props) => {
+const PokepediaLogo = (props) => {
   return (
-    <div className="PokeLoader">
+    <div className="PokepediaLogo">
       <div id="pikachu"></div>
       <div id="ash"></div>
     </div>
   );
 };
 
-export default PokeLoader;
+export default PokepediaLogo;

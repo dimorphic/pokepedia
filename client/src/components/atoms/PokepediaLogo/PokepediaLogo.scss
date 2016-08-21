@@ -34,8 +34,8 @@ $pikachu-body: #fefe00;
 $pikachu-cheeck: #fe4100;
 $pikachu-tail: #823e00;
 
-#ash,
-#pikachu {
+.PokepediaLogo #ash,
+.PokepediaLogo #pikachu {
   position: relative;
   display: inline-block;
   margin: 0 10px;
@@ -59,7 +59,7 @@ $pikachu-tail: #823e00;
   }
 }
 
-#ash {
+.PokepediaLogo #ash {
   width: $size * 13;
   height: $size * 16;
 
@@ -417,7 +417,7 @@ $pikachu-tail: #823e00;
   }
 }
 
-#pikachu {
+.PokepediaLogo #pikachu {
   width: $size * 15;
   height: $size * 16;
 
@@ -789,26 +789,28 @@ $pikachu-tail: #823e00;
   }
 }
 
-#ash,
-#pikachu {
-  &:before,
-  &:after {
-    @include animation(the-animation .4s infinite steps(2));
+.PokepediaLogo {
+  #ash,
+  #pikachu {
+    &:before,
+    &:after {
+      @include animation(logo-animation .4s infinite steps(2));
+    }
+
+    &:after {
+      @include animation-direction(reverse);
+    }
   }
 
-  &:after {
-    @include animation-direction(reverse);
+  #pikachu {
+    &:after,
+    &:before {
+      @include animation-duration(.2s);
+    }
   }
 }
 
-#pikachu {
-  &:after,
-  &:before {
-    @include animation-duration(.2s);
-  }
-}
-
-@include keyframes(the-animation) {
+@include keyframes(logo-animation) {
   0% {
     margin-left: 0;
   }
