@@ -6,17 +6,26 @@ import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import { Grid, GridCell } from 'components/atoms/Grid';
 import PokemonIcon from 'components/atoms/PokemonIcon';
+import IconHeight from 'material-ui/svg-icons/editor/vertical-align-top';
+import IconWeight from 'material-ui/svg-icons/editor/vertical-align-bottom';
+
+// helpers
+// const isNumber = /\d+/g;
 
 // constants / models (prop types)
 import POKEMON_TYPES from 'constants/pokemon-types';
 
 const POKEMON_STATS_SCALE = {
-  height: 'm',
-  weight: 'kg'
-};
+  height: {
+    icon: IconHeight,
+    scale: 'm'
+  },
 
-// helpers
-// const isNumber = /\d+/g;
+  weight: {
+    icon: IconWeight,
+    scale: 'kg'
+  }
+};
 
 // style
 import './PokeCard.scss';
@@ -131,19 +140,30 @@ export default class PokeCard extends Component {
   }
 
   renderPokeDetail(label, detail) {
+    const pokemonStat = POKEMON_STATS_SCALE[label.toLowerCase()];
+
     // format poke stats detail
     const propValue = detail;
-    const propScale = POKEMON_STATS_SCALE[label.toLowerCase()];
+    let propScale = null;
+    // let propIcon = null;
+
+    if (pokemonStat) {
+      // const Icon = pokemonStat.icon;
+
+      propScale = (<span>{pokemonStat.scale}</span>);
+      // propIcon = (<Icon className="PokeCard-Property-Icon" />);
+    }
 
     const pokeStatsValue = propScale ? (
       <div className="PokeCard-Property-Value">
         {propValue}
-        <span>{propScale}</span>
+        {propScale}
       </div>
     ) : propValue;
 
     return (
       <GridCell key={label} col={4}>
+        {/* propIcon */}
         <div className="PokeCard-Property-Name">{label}</div>
         <div className="PokeCard-Property-Value">
           {pokeStatsValue}

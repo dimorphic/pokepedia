@@ -113,6 +113,10 @@ $pokecard-avatar-border-size: 10px;
   }
 }
 
+.PokeCard-Property-Icon {
+  fill: #ccc !important;
+}
+
 .PokeCard-Chips {
   display: flex;
   flex-flow: wrap;
