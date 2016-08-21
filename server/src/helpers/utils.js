@@ -83,13 +83,6 @@ export const renameProp = (obj = {}, oldName = null, newName = null) => {
 };
 
 //
-// @TODO: ??
-//
-export const loadData = (path) => {
-  return JSON.parse(fs.readFileSync(path, 'utf8'));
-};
-
-//
 //  object representation / stringify
 //
 export const inspect = (obj, depth = null) => {

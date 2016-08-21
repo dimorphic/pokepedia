@@ -1,12 +1,13 @@
 // deps
-import { loadData } from './utils';
+import fs from 'fs';
 import CONFIG from '../config';
 
 // helpers
 const UTILS = CONFIG.get('utils');
 
-// settings
-const DB_PATH = `${UTILS.paths.data()}/pokedex/pokemons.en.build.json`;
+// databases paths settings (plain storage / json for now)
+const DB_POKEMONS = `${UTILS.paths.data()}/pokedex/pokemons.en.build.json`;
+const DB_ITEMS = `${UTILS.paths.data()}/pokedex/items.en.build.json`;
 
 //
 // Plain file DB
@@ -30,7 +31,7 @@ class Database {
 
   load(path = this.path) {
     console.log('[DB] Loading data @ ', path);
-    return loadData(this.path);
+    return JSON.parse(fs.readFileSync(path, 'utf8'));
   }
 
   reload() {
@@ -38,17 +39,21 @@ class Database {
     this.data = this.load();
   }
 
-  getPokemons() {
+  getAll() {
     return this.data;
   }
 
-  getPokemonById(pokemonId) {
-    return this.data.filter((item) => {
-      return item.id == pokemonId;
+  getById(id) {
+    return this.data.find((item) => {
+      return item.id == id;
     });
   }
 }
 
 // expose
-const DB = new Database({ path: DB_PATH });
+const DB = {
+  pokemons: new Database({ path: DB_POKEMONS }),
+  items: new Database({ path: DB_ITEMS })
+};
+
 export default DB;

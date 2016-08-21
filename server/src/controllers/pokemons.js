@@ -2,7 +2,7 @@
 import DB from '../helpers/db';
 
 export function all(req, res) {
-  const pokemons = DB.getPokemons();
+  const pokemons = DB.pokemons.getAll();
 
   res.json(pokemons);
 }
@@ -10,7 +10,7 @@ export function all(req, res) {
 export function getById(req, res) {
   // find pokemon
   const pokemonId = req.params.id;
-  const findPokemon = DB.getPokemonById(pokemonId);
+  const findPokemon = DB.pokemons.getById(pokemonId);
 
   res.json(findPokemon);
 }
