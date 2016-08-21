@@ -1,13 +1,13 @@
 // deps
 import React from 'react';
-import { Route, IndexRoute, IndexRedirect } from 'react-router';
+import { Route, IndexRedirect } from 'react-router';
 
 // containers
 import App from 'containers/App';
-import HomeView from 'components/views/HomeView';
 import PokedexView from 'components/views/PokedexView';
-import LocationView from 'components/views/LocationView';
+import PokemonView from 'components/views/PokemonView';
 
+// @TODO
 const onCheckAuth = () => {
   console.log('ROUTE CHECK AUTH!!!');
   // const token = localStorage.getItem('authkey');
@@ -21,7 +21,16 @@ const routes = (
     <IndexRedirect to="/" />
 
     <Route path="/" component={PokedexView} />
-    <Route path="location" component={LocationView} />
+    <Route
+      path="pokemon"
+      onEnter={(nextState, replace) => {
+        if (nextState.location.pathname === '/pokemon') {
+          replace('/');
+        }
+      }}
+    >
+      <Route path=":pokemonId" component={PokemonView} />
+    </Route>
   </Route>
 );
 

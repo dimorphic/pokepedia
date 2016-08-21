@@ -1,5 +1,6 @@
 // deps
 import React, { Component, PropTypes } from 'react';
+// import { Link } from 'react-router';
 
 // components
 import Avatar from 'material-ui/Avatar';
@@ -196,7 +197,9 @@ export default class PokeCard extends Component {
 
           <article className="PokeCard-Content">
             <div className="PokeCard-Identity">
+              {/* <Link to={`/pokemon/${pokemon.id}`}> */}
               <h1 className="PokeCard-Name">{pokemon.name}</h1>
+              {/* </Link> */}
               <span className="PokeCard-No">#{pokemon.id}</span>
             </div>
             <div className="PokeCard-Chips">
