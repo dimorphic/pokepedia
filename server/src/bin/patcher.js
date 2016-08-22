@@ -4,14 +4,16 @@ import '../polyfills';
 import jsonfile from 'jsonfile';
 import { pokemon as POKEDEX } from 'pokemon-go-pokedex';
 import CONFIG from '../config';
-import { renameProp, getFileName } from '../helpers/utils';
+import { inspect, renameProp, getFileName } from '../helpers/utils';
 
 // helpers
 const UTILS = CONFIG.get('utils');
 const PATHS = UTILS.paths;
+const isNumber = /\d+/g;
 
 // raw data dir
 const rawData = `${PATHS.data()}/raw`;
+const pokedex = `${PATHS.data()}/pokedex`;
 
 function writeJson(savePath, file) {
   jsonfile.writeFile(savePath, file, { spaces: 2 }, (err) => {
@@ -140,10 +142,16 @@ function patchItems() {
   console.time('PATCHING ITEMS');
 
   const ITEMS_PATCH = ITEMS.map((item) => {
+    const filename = getFileName(item.img).replace('.png', '').toLowerCase();
+    const itemCode = item.name.replace(isNumber, '')
+                              .replace(/\W/g, '')
+                              .toLowerCase();
+
     return {
       id: item.id,
       name: item.name,
-      img: getFileName(item.img).replace('.png', '').toLowerCase()
+      code: itemCode,
+      img: filename
     };
   });
 
@@ -152,5 +160,56 @@ function patchItems() {
   writeJson(savePath, ITEMS_PATCH);
 }
 
+function patchLevelRewards() {
+  const LEVELS = require(`${rawData}/level-rewards.json`);
+  const ITEMS = require(`${pokedex}/items.en.build.json`);
+
+  const levelRewards = Object.keys(LEVELS).map((idx) => {
+    const level = LEVELS[idx];
+
+    const { Level, RequiredXP, TotalXP, Unlocks, Rewards, ...rest } = level;
+
+    let rewards = [];
+
+    Object.keys(rest).forEach((key) => {
+      const code = key.toLowerCase();
+      const value = rest[key];
+
+      if (value) {
+        // find item by code in pokedex
+        const item = ITEMS.find((it) => {
+          return it.code === code;
+        });
+
+        if (!item) { return; }
+
+        // add reward to list
+        rewards.push({
+          code: item.code,
+          count: value
+        });
+      }
+
+      // console.log('rest item @ ', rewards);
+    });
+
+    return {
+      level: idx,
+
+      xp: {
+        required: RequiredXP,
+        total: TotalXP
+      },
+
+      rewards
+    };
+  });
+
+  console.log(inspect(levelRewards));
+  console.log(' ')
+}
+
 // just do it!
-patchItems();
+// patchPokedex();
+// patchItems();
+patchLevelRewards();
