@@ -13,6 +13,12 @@ const PATHS = UTILS.paths;
 // raw data dir
 const rawData = `${PATHS.data()}/raw`;
 
+function writeJson(savePath, file) {
+  jsonfile.writeFile(savePath, file, { spaces: 2 }, (err) => {
+    if (err) console.error(err);
+  });
+}
+
 // @TODO
 const patchProps = (item) => {
   const patches = [
@@ -65,12 +71,14 @@ function batchRename(list, oldName, newName) {
 
 // @TODO: generalize this somehow ?
 function patchPokedex(language = 'EN') {
-  // names + types patch
+  // patch paths & save location for new pokedex
   const localePatchFile = `${rawData}/patches/pokemon-names+types.${language.toLowerCase()}.json`;
-  const LOCALE_PATCH = require(localePatchFile);
+  const baseStatsFile = `${rawData}/proto-baseStats.json`;
+  const savePath = `${PATHS.data()}/pokedex/pokemons.${language.toLowerCase()}.build.json`;
 
-  // base stats patch
-  const BASE_STATS_PATCH = require(`${rawData}/proto-baseStats.json`);
+  // load locale & stats patch
+  const LOCALE_PATCH = require(localePatchFile);
+  const BASE_STATS_PATCH = require(baseStatsFile);
 
   console.time('PATCHING DEX');
   const POKE_PATCH = POKEDEX.map((pokemon) => {
@@ -121,11 +129,13 @@ function patchPokedex(language = 'EN') {
   });
 
   console.timeEnd('PATCHING DEX');
-  return POKE_PATCH;
+
+  writeJson(savePath, POKE_PATCH);
 }
 
 function patchItems() {
   const ITEMS = require(`${rawData}/items.json`);
+  const savePath = `${PATHS.data()}/pokedex/items.en.build.json`;
 
   console.time('PATCHING ITEMS');
 
@@ -139,22 +149,8 @@ function patchItems() {
 
   console.timeEnd('PATCHING ITEMS');
 
-  return ITEMS_PATCH;
+  writeJson(savePath, ITEMS_PATCH);
 }
 
-// compose new pokemons dex
-const LOCALE = 'EN';
-const newPokemonsDex = patchPokedex(LOCALE);
-const newPokemonsDestination = `${PATHS.data()}/pokedex/pokemons.${LOCALE.toLowerCase()}.build.json`;
-
-jsonfile.writeFile(newPokemonsDestination, newPokemonsDex, { spaces: 2 }, (err) => {
-  if (err) console.error(err);
-});
-
-// compose new items dex
-const newItemsDex = patchItems();
-const newItemsDestination = `${PATHS.data()}/pokedex/items.en.build.json`;
-
-jsonfile.writeFile(newItemsDestination, newItemsDex, { spaces: 2 }, (err) => {
-  if (err) console.error(err);
-});
+// just do it!
+patchItems();
