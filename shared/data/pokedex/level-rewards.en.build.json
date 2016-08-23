@@ -1,0 +1,1069 @@
+[
+  {
+    "level": 1,
+    "cp": 0.094,
+    "xp": {
+      "required": "0",
+      "total": "0"
+    },
+    "rewards": []
+  },
+  {
+    "level": 2,
+    "cp": 0.16639787,
+    "xp": {
+      "required": "1000",
+      "total": "1000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "cp": 0.21573247,
+    "xp": {
+      "required": "2000",
+      "total": "3000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "cp": 0.25572005,
+    "xp": {
+      "required": "3000",
+      "total": "6000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "cp": 0.29024988,
+    "xp": {
+      "required": "4000",
+      "total": "10000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 20
+      },
+      {
+        "code": "potion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "cp": 0.3210876,
+    "xp": {
+      "required": "5000",
+      "total": "15000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 15
+      },
+      {
+        "code": "potion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      },
+      {
+        "code": "eggincubator",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "cp": 0.34921268,
+    "xp": {
+      "required": "6000",
+      "total": "21000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 15
+      },
+      {
+        "code": "potion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "cp": 0.37523559,
+    "xp": {
+      "required": "7000",
+      "total": "28000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 15
+      },
+      {
+        "code": "potion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      },
+      {
+        "code": "razzberry",
+        "count": 10
+      },
+      {
+        "code": "luremodule",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "cp": 0.39956728,
+    "xp": {
+      "required": "8000",
+      "total": "36000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 15
+      },
+      {
+        "code": "potion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      },
+      {
+        "code": "razzberry",
+        "count": 3
+      },
+      {
+        "code": "luckyegg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "cp": 0.42250001,
+    "xp": {
+      "required": "9000",
+      "total": "45000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 20
+      },
+      {
+        "code": "superpotion",
+        "count": 20
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 10
+      },
+      {
+        "code": "luremodule",
+        "count": 1
+      },
+      {
+        "code": "luckyegg",
+        "count": 1
+      },
+      {
+        "code": "eggincubator",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "level": 11,
+    "cp": 0.44310755,
+    "xp": {
+      "required": "10000",
+      "total": "55000"
+    },
+    "rewards": [
+      {
+        "code": "pokeball",
+        "count": 15
+      },
+      {
+        "code": "superpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 3
+      },
+      {
+        "code": "razzberry",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "cp": 0.46279839,
+    "xp": {
+      "required": "10000",
+      "total": "65000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 20
+      },
+      {
+        "code": "superpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 3
+      },
+      {
+        "code": "razzberry",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "cp": 0.48168495,
+    "xp": {
+      "required": "10000",
+      "total": "75000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 10
+      },
+      {
+        "code": "superpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 3
+      },
+      {
+        "code": "razzberry",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "level": 14,
+    "cp": 0.49985844,
+    "xp": {
+      "required": "10000",
+      "total": "85000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 10
+      },
+      {
+        "code": "superpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 3
+      },
+      {
+        "code": "razzberry",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "level": 15,
+    "cp": 0.51739395,
+    "xp": {
+      "required": "15000",
+      "total": "100000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 15
+      },
+      {
+        "code": "hyperpotion",
+        "count": 20
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 10
+      },
+      {
+        "code": "luremodule",
+        "count": 1
+      },
+      {
+        "code": "luckyegg",
+        "count": 1
+      },
+      {
+        "code": "eggincubator",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "level": 16,
+    "cp": 0.53435433,
+    "xp": {
+      "required": "20000",
+      "total": "120000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 10
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      },
+      {
+        "code": "razzberry",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "level": 17,
+    "cp": 0.55079269,
+    "xp": {
+      "required": "20000",
+      "total": "140000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 10
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      },
+      {
+        "code": "razzberry",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "level": 18,
+    "cp": 0.56675452,
+    "xp": {
+      "required": "20000",
+      "total": "160000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 10
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      },
+      {
+        "code": "razzberry",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "level": 19,
+    "cp": 0.58227891,
+    "xp": {
+      "required": "25000",
+      "total": "185000"
+    },
+    "rewards": [
+      {
+        "code": "greatball",
+        "count": 15
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 5
+      },
+      {
+        "code": "razzberry",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "level": 20,
+    "cp": 0.59740001,
+    "xp": {
+      "required": "25000",
+      "total": "210000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 20
+      },
+      {
+        "code": "hyperpotion",
+        "count": 20
+      },
+      {
+        "code": "revive",
+        "count": 20
+      },
+      {
+        "code": "razzberry",
+        "count": 20
+      },
+      {
+        "code": "luremodule",
+        "count": 2
+      },
+      {
+        "code": "luckyegg",
+        "count": 2
+      },
+      {
+        "code": "eggincubator",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "level": 21,
+    "cp": 0.61215729,
+    "xp": {
+      "required": "50000",
+      "total": "260000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "level": 22,
+    "cp": 0.62656713,
+    "xp": {
+      "required": "75000",
+      "total": "335000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "level": 23,
+    "cp": 0.64065295,
+    "xp": {
+      "required": "100000",
+      "total": "435000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "level": 24,
+    "cp": 0.65443563,
+    "xp": {
+      "required": "125000",
+      "total": "560000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 15
+      },
+      {
+        "code": "hyperpotion",
+        "count": 10
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "level": 25,
+    "cp": 0.667934,
+    "xp": {
+      "required": "150000",
+      "total": "710000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 25
+      },
+      {
+        "code": "maxpotion",
+        "count": 20
+      },
+      {
+        "code": "revive",
+        "count": 15
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      },
+      {
+        "code": "luremodule",
+        "count": 1
+      },
+      {
+        "code": "luckyegg",
+        "count": 1
+      },
+      {
+        "code": "eggincubator",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "level": 26,
+    "cp": 0.68116492,
+    "xp": {
+      "required": "190000",
+      "total": "900000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 27,
+    "cp": 0.69414365,
+    "xp": {
+      "required": "200000",
+      "total": "1100000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 28,
+    "cp": 0.70688421,
+    "xp": {
+      "required": "250000",
+      "total": "1350000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 29,
+    "cp": 0.71939909,
+    "xp": {
+      "required": "300000",
+      "total": "1650000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "revive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 30,
+    "cp": 0.7317,
+    "xp": {
+      "required": "350000",
+      "total": "2000000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 30
+      },
+      {
+        "code": "maxpotion",
+        "count": 20
+      },
+      {
+        "code": "maxrevive",
+        "count": 20
+      },
+      {
+        "code": "razzberry",
+        "count": 20
+      },
+      {
+        "code": "luremodule",
+        "count": 3
+      },
+      {
+        "code": "luckyegg",
+        "count": 3
+      },
+      {
+        "code": "eggincubator",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "level": 31,
+    "cp": 0.73776948,
+    "xp": {
+      "required": "500000",
+      "total": "2500000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 32,
+    "cp": 0.74378943,
+    "xp": {
+      "required": "500000",
+      "total": "3000000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 33,
+    "cp": 0.74976104,
+    "xp": {
+      "required": "750000",
+      "total": "3750000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 34,
+    "cp": 0.75568551,
+    "xp": {
+      "required": "1000000",
+      "total": "4750000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 10
+      },
+      {
+        "code": "maxpotion",
+        "count": 15
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "level": 35,
+    "cp": 0.76156384,
+    "xp": {
+      "required": "1250000",
+      "total": "6000000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 30
+      },
+      {
+        "code": "maxpotion",
+        "count": 20
+      },
+      {
+        "code": "maxrevive",
+        "count": 20
+      },
+      {
+        "code": "razzberry",
+        "count": 20
+      },
+      {
+        "code": "luremodule",
+        "count": 1
+      },
+      {
+        "code": "luckyegg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "level": 36,
+    "cp": 0.76739717,
+    "xp": {
+      "required": "1500000",
+      "total": "7500000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 20
+      },
+      {
+        "code": "maxpotion",
+        "count": 20
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "level": 37,
+    "cp": 0.7731865,
+    "xp": {
+      "required": "2000000",
+      "total": "9500000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 20
+      },
+      {
+        "code": "maxpotion",
+        "count": 20
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "level": 38,
+    "cp": 0.77893275,
+    "xp": {
+      "required": "2500000",
+      "total": "12000000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 20
+      },
+      {
+        "code": "maxpotion",
+        "count": 20
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "level": 39,
+    "cp": 0.78463697,
+    "xp": {
+      "required": "3000000",
+      "total": "15000000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 20
+      },
+      {
+        "code": "maxpotion",
+        "count": 20
+      },
+      {
+        "code": "maxrevive",
+        "count": 10
+      },
+      {
+        "code": "razzberry",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "level": 40,
+    "cp": 0.79030001,
+    "xp": {
+      "required": "5000000",
+      "total": "20000000"
+    },
+    "rewards": [
+      {
+        "code": "ultraball",
+        "count": 40
+      },
+      {
+        "code": "maxpotion",
+        "count": 40
+      },
+      {
+        "code": "maxrevive",
+        "count": 40
+      },
+      {
+        "code": "razzberry",
+        "count": 40
+      },
+      {
+        "code": "luremodule",
+        "count": 4
+      },
+      {
+        "code": "luckyegg",
+        "count": 4
+      },
+      {
+        "code": "eggincubator",
+        "count": 4
+      }
+    ]
+  }
+]

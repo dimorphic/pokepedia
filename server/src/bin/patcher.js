@@ -76,6 +76,8 @@ function patchPokedex(language = 'EN') {
   // patch paths & save location for new pokedex
   const localePatchFile = `${rawData}/patches/pokemon-names+types.${language.toLowerCase()}.json`;
   const baseStatsFile = `${rawData}/proto-baseStats.json`;
+
+  // save path
   const savePath = `${PATHS.data()}/pokedex/pokemons.${language.toLowerCase()}.build.json`;
 
   // load locale & stats patch
@@ -136,7 +138,10 @@ function patchPokedex(language = 'EN') {
 }
 
 function patchItems() {
+  // raw data
   const ITEMS = require(`${rawData}/items.json`);
+
+  // save path
   const savePath = `${PATHS.data()}/pokedex/items.en.build.json`;
 
   console.time('PATCHING ITEMS');
@@ -161,8 +166,15 @@ function patchItems() {
 }
 
 function patchLevelRewards() {
+  // pokedex / raw data
   const LEVELS = require(`${rawData}/level-rewards.json`);
+  const LEVELS_CP = require(`${rawData}/cp-by-level.json`);
   const ITEMS = require(`${pokedex}/items.en.build.json`);
+
+  // save path
+  const savePath = `${PATHS.data()}/pokedex/level-rewards.en.build.json`;
+
+  console.time('PATCHING LEVEL REWARDS');
 
   const levelRewards = Object.keys(LEVELS).map((idx) => {
     const level = LEVELS[idx];
@@ -194,7 +206,8 @@ function patchLevelRewards() {
     });
 
     return {
-      level: idx,
+      level: parseInt(idx, 10),
+      cp: LEVELS_CP[idx - 1],
 
       xp: {
         required: RequiredXP,
@@ -205,8 +218,10 @@ function patchLevelRewards() {
     };
   });
 
-  console.log(inspect(levelRewards));
-  console.log(' ')
+  console.timeEnd('PATCHING LEVEL REWARDS');
+
+  // console.log(inspect(levelRewards));
+  writeJson(savePath, levelRewards);
 }
 
 // just do it!
