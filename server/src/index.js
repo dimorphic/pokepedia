@@ -10,9 +10,11 @@ import path from 'path';
 import logger from 'morgan';
 import http from 'http';
 
+import fs from 'fs'
+
 import dbUrl from './config/database';
 import routes from './routes/routes';
-const mongoOptions = { db: { safe: true } };
+const mongoOptions = {db: {safe: true}};
 
 import CONFIG from './config';
 // helpers

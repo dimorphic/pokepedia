@@ -22,6 +22,19 @@ export const POKEDEX_TYPES = createConstants(
   'POKEDEX_GET_POKEMON_BY_ID_SUCCESS'
 );
 
+// auth
+export const AUTH_TYPES = createConstants(
+    'LOGIN',
+    'LOGIN_PENDING',
+    'LOGIN_SUCESS'
+);
+
+export const INVENTORY_TYPES = createConstants(
+    'INVENTORY',
+    'INVENTORY_PENDING',
+    'INVENTORY_SCCCESS'
+);
+
 // location
 export const LOCATION_TYPES = createConstants(
   'LOCATION_LOAD_MAP'

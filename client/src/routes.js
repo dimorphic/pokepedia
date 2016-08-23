@@ -7,6 +7,7 @@ import App from 'containers/App';
 import HomeView from 'components/views/HomeView';
 import PokedexView from 'components/views/PokedexView';
 import LocationView from 'components/views/LocationView';
+import LoginView from 'components/views/LoginView';
 
 const onCheckAuth = () => {
   console.log('ROUTE CHECK AUTH!!!');
@@ -22,6 +23,7 @@ const routes = (
 
     <Route path="/" component={PokedexView} />
     <Route path="location" component={LocationView} />
+    <Route path="login" component={LoginView} />
   </Route>
 );
 
