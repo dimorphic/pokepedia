@@ -172,7 +172,7 @@ function patchLevelRewards() {
   const ITEMS = require(`${pokedex}/items.en.build.json`);
 
   // save path
-  const savePath = `${PATHS.data()}/pokedex/level-rewards.en.build.json`;
+  const savePath = `${PATHS.data()}/pokedex/levels.en.build.json`;
 
   console.time('PATCHING LEVEL REWARDS');
 
@@ -206,7 +206,7 @@ function patchLevelRewards() {
     });
 
     return {
-      level: parseInt(idx, 10),
+      id: parseInt(idx, 10),
       cp: LEVELS_CP[idx - 1],
 
       xp: {

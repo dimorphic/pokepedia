@@ -8,6 +8,7 @@ const UTILS = CONFIG.get('utils');
 // databases paths settings (plain storage / json for now)
 const DB_POKEMONS = `${UTILS.paths.data()}/pokedex/pokemons.en.build.json`;
 const DB_ITEMS = `${UTILS.paths.data()}/pokedex/items.en.build.json`;
+const DB_LEVELS = `${UTILS.paths.data()}/pokedex/levels.en.build.json`;
 
 //
 // Plain file DB
@@ -53,7 +54,8 @@ class Database {
 // expose
 const DB = {
   pokemons: new Database({ path: DB_POKEMONS }),
-  items: new Database({ path: DB_ITEMS })
+  items: new Database({ path: DB_ITEMS }),
+  levels: new Database({ path: DB_LEVELS }),
 };
 
 export default DB;
