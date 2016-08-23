@@ -32,7 +32,8 @@ app.use(bodyParser.urlencoded({ limit: '2mb', extended: true }));
 
 // HTTP request logger
 // app.use(logger('dev')); // http request logger
-app.use(morgan('[:date[clf]] [:method::status] :remote-addr @ :url [:response-time ms] (:res[content-length])'));
+app.use(morgan('[:response-time ms] [:date[clf]] :remote-addr - :remote-user ":method @ :url HTTP/:http-version" :status :res[content-length]'));
+// app.use(morgan('[:date[clf]] [:method::status] :remote-addr @ :url [:response-time ms] (:res[content-length])'));
 
 // Routes
 app.use(ROUTES);
