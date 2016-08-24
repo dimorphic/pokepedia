@@ -31,6 +31,7 @@ export default class LoginView extends Component {
     };
 
     this.onClick = this.onClick.bind(this);
+    this.getUserInventories = this.getUserInventories.bind(this);
     this.getUserInventory = this.getUserInventory.bind(this);
     this.onUserChanged = this.onUserChanged.bind(this);
     this.onPasswordChanged = this.onPasswordChanged.bind(this);
@@ -42,9 +43,14 @@ export default class LoginView extends Component {
     this.props.actions.login(this.state.user, this.state.password);
   }
   //57bcbcd8d3678329946ac688
+  getUserInventories() {
+    console.log('this.props', this.props.user._id);
+    this.props.actions.getUserInventories(this.props.user._id);
+  }
+
   getUserInventory() {
     console.log('this.props', this.props.user._id);
-    this.props.actions.getUserInventory(this.props.user._id);
+    this.props.actions.getUserInventory(this.props.user._id, this.props.user.inventories[0]);
   }
 
   onUserChanged(ev) {
@@ -66,6 +72,7 @@ export default class LoginView extends Component {
         <input onChange={this.onUserChanged} />
         <input onChange={this.onPasswordChanged} type="password" />
         <button onClick={this.onClick}>Login</button>
+        <button onClick={this.getUserInventories}>GET USER INVENTORIES</button>
         <button onClick={this.getUserInventory}>GET USER INVENTORY</button>
       </div>
     );

@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const InventorySchema = new Schema({
+  user:  { type: Schema.Types.ObjectId, ref: 'User' },
   pokemon_id: { type: Number },
   cp: { type: Number },
   stamina: { type: Number },
@@ -24,6 +25,7 @@ const InventorySchema = new Schema({
   additional_cp_multiplier: { type: Number },
   from_fort: { type: Number },
   favorite: { type: Number },
+  pokemon: { type: Object },
   deployed_fort_id: { type: String, default: '', trim: true },
   owner_name: { type: String, default: '', trim: true },
   nickname: { type: String, default: '', trim: true },

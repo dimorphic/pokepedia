@@ -32,7 +32,10 @@ export const AUTH_TYPES = createConstants(
 export const INVENTORY_TYPES = createConstants(
     'INVENTORY',
     'INVENTORY_PENDING',
-    'INVENTORY_SCCCESS'
+    'INVENTORY_SUCCESS',
+    'INVENTORIES',
+    'INVENTORIES_PENDING',
+    'INVENTORIES_SUCCESS'
 );
 
 // location

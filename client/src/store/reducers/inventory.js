@@ -5,13 +5,13 @@ import createReducer from 'utils/createReducer';
 import { INVENTORY_TYPES } from 'constants/action-types';
 
 export default createReducer({}, {
-  [`${INVENTORY_TYPES.LOGIN}_SUCCESS`]: (state, action) => {
+  [`${INVENTORY_TYPES.INVENTORY}_SUCCESS`]: (state, action) => {
     const { payload } = action;
     const { data } = payload;
 
     return {
       ...state,
-      inventories: data
+      inventory: data
     };
   }
 });

@@ -7,6 +7,7 @@ import location from './location';
 import pokedex from './pokedex';
 import auth from './auth';
 import user from './user';
+import inventory from './inventory';
 import filters from './filters';
 
 export default combineReducers({
@@ -15,5 +16,6 @@ export default combineReducers({
   pokedex,
   auth,
   user,
+  inventory,
   filters
 });
