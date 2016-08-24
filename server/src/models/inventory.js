@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const InventorySchema = new Schema({
   user:  { type: Schema.Types.ObjectId, ref: 'User' },
   pokemon_id: { type: Number },
+  pokemonInfo: { type: Object },
   cp: { type: Number },
   stamina: { type: Number },
   stamina_max: { type: Number },

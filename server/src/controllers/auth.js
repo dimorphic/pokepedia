@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import User from '../models/user';
 import Inventory from '../models/inventory';
+import Pokemon from '../models/Pokemon';
 import pogobuf from 'pogobuf';
 
 /**
@@ -27,22 +28,31 @@ export function login(req, res) {
           password: password,
         });
       }
+
       inventory.inventory_delta.inventory_items
           .filter(inventory => inventory.inventory_item_data.pokemon_data && inventory.inventory_item_data.pokemon_data.pokemon_id)
           .map((inventory) => {
-            const _inventory = new Inventory(Object.assign({}, {user: user._id}, inventory.inventory_item_data.pokemon_data));
-            _inventory.save().then((inventory)=> {
-              user.inventories.push(inventory);
-            }).catch((err)=> {
-              throw new Error(err)
+            const pokemonData = inventory.inventory_item_data.pokemon_data;
+            const _inventory = new Inventory(Object.assign({}, {user: user._id}, pokemonData));
+            const pokemon_id = pokemonData.pokemon_id;
+            const pokemonQuery = Pokemon.findOne({pokemonId: pokemon_id});
+            pokemonQuery.exec().then((pokemon)=> {
+              _inventory.pokemonInfo = pokemon;
+              _inventory.save().then((inventory)=> {
+                user.inventories.push(inventory);
+
+                user.save(function (err, user) {
+                  if (err) console.log('error', err);
+                  console.log('USSER ID', user._id);
+                  console.log('User Updated!');
+                  return res.status(200).send({status: 'ok', user});
+                });
+
+              }).catch((err)=> {
+                throw new Error(err)
+              });
             });
           });
-      user.save(function (err, user) {
-        if (err) console.log('error', err);
-        console.log('USSER ID', user._id);
-        console.log('User Updated!');
-        return res.status(200).send({status: 'ok', user});
-      });
     });
 
   }).catch((err)=> {
@@ -56,7 +66,7 @@ export function inventories(req, res) {
       .exec(function (err, inventories) {
         if (err) return console.log('error', err)
         console.log('The inventories are an array: ', inventories);
-        return res.status(200).send({status: 'ok', inventories});
+        return res.send({status: 'ok', inventories});
       })
 }
 
@@ -66,7 +76,7 @@ export function inventory(req, res) {
       .exec(function (err, inventory) {
         if (err) return console.log('error', err)
         console.log('The inventory is: ', inventory);
-        return res.status(200).send({status: 'ok', inventory});
+        return res.send({status: 'ok', inventory});
       })
 }
 
