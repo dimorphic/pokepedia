@@ -2,26 +2,39 @@
 import React, { PropTypes } from 'react';
 
 const PokemonIcon = (props) => {
-  const { pokemon, animated, ...otherProps } = props;
+  // accept Pokemon or Item id
+  const { pokemon, item, animated, ...otherProps } = props;
+
+  let imgSrc = null;
+  let node = null;
 
   // static PNG
-  const pokemonImage = `http://www.serebii.net/pokemongo/pokemon/${pokemon.pokemonId}.png`;
+  if (pokemon) {
+    // @TODO: add props.animated and switch to GIF ?
+    // imgSrc = `http://www.pokestadium.com/sprites/xy/${pokemon.name.toLowerCase()}.gif`;
+    // imgSrc = `http://www.pkparaiso.com/imagenes/xy/sprites/animados/${pokemon.name.toLowerCase()}.gif`;
+    // imgSrc = `http://pokemon-online.eu/images/pokemon/x-y/animated/${pokemon.pokemonId}.gif`;
 
-  // @TODO: add props.animated and switch to GIF ?
-  // const pokemonImage = `http://www.pokestadium.com/sprites/xy/${pokemon.name.toLowerCase()}.gif`;
-  // const pokemonImage = `http://www.pkparaiso.com/imagenes/xy/sprites/animados/${pokemon.name.toLowerCase()}.gif`;
-  // const pokemonImage = `http://pokemon-online.eu/images/pokemon/x-y/animated/${pokemon.pokemonId}.gif`;
+    imgSrc = `http://www.serebii.net/pokemongo/pokemon/${pokemon.pokemonId}.png`;
+    node = (<img className="img-fluid" src={imgSrc} alt={pokemon.name} />);
+  }
+
+  if (item) {
+    imgSrc = `http://localhost:9090/assets/items/${item.img}.png`;
+    node = (<img className="img-fluid" src={imgSrc} alt={item.name} />);
+  }
 
   return (
     <div className="PokemonIcon" {...otherProps}>
-      <img className="img-fluid" src={pokemonImage} alt={pokemon.name} />
+      {node}
     </div>
   );
 };
 
 PokemonIcon.propTypes = {
-  pokemon: PropTypes.object,
-  animated: PropTypes.bool
+  animated: PropTypes.bool,
+  item: PropTypes.object,
+  pokemon: PropTypes.object
 };
 
 PokemonIcon.defaultProps = {
