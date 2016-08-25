@@ -1,0 +1,48 @@
+@import '~scss/tools/mixins/position.scss';
+
+.RewardsPage {}
+
+.RewardsList {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+.Reward {
+  margin-bottom: 20px;
+
+  &:hover {
+    .Reward-Level {
+      border-color: magenta;
+    }
+  }
+}
+
+.Reward-Level {
+  display: inline-block;
+  position: relative;
+
+  width: 50px;
+  height: 50px;
+  margin: 20px 0;
+
+  border: 3px solid #ccc;
+  border-radius: 50%;
+
+  transition: border-color 0.2s ease-out;
+
+  span {
+    @include translateCenter;
+  }
+}
+
+.Reward-Col {
+
+}
+
+.Reward-Item {
+  display: inline-block;
+  width: 30px;
+
+  margin-right: 5px;
+}

@@ -5,8 +5,8 @@ import { Route, IndexRedirect } from 'react-router';
 // containers
 import App from 'containers/App';
 import PokedexView from 'components/views/PokedexView';
-// import PokemonView from 'components/views/PokemonView';
-// import RewardsView from 'components/views/RewardsView';
+import PokemonView from 'components/views/PokemonView';
+import RewardsView from 'components/views/RewardsView';
 
 // @TODO
 const onCheckAuth = () => {
@@ -24,7 +24,6 @@ const routes = (
     <Route path="/" component={PokedexView} />
 
     {/* TODO */}
-    {/*
     <Route
       path="pokemon"
       onEnter={(nextState, replace) => {
@@ -37,7 +36,6 @@ const routes = (
     </Route>
 
     <Route path="/rewards" component={RewardsView} />
-    */}
   </Route>
 );
 
