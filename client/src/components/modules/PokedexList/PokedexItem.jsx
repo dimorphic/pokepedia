@@ -1,20 +1,11 @@
 // deps
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 // components
-import Paper from 'material-ui/Paper';
 import PokemonIcon from 'components/atoms/PokemonIcon';
 
 // style
 import './PokedexItem.scss';
-
-const paperStyle = {
-  // height: 100,
-  width: '100%',
-  // margin: 20,
-  textAlign: 'center',
-  display: 'inline-block'
-};
 
 const PokedexItem = (props) => {
   const { pokemon, ...otherProps } = props;
