@@ -8,3 +8,7 @@ export function getPokemons() {
 export function getItems() {
   return API.get('/items');
 }
+
+export function getLevels() {
+  return API.get('/levels');
+}

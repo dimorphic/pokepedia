@@ -14,6 +14,11 @@ export const getItems = () => ({
   payload: PokedexAPI.getItems()
 });
 
+export const getLevels = () => ({
+  type: TYPES.POKEDEX_GET_LEVELS,
+  payload: PokedexAPI.getLevels()
+});
+
 // export const getPokemonById = (pokemonId) => ({
 //   type: TYPES.POKEDEX_GET_POKEMON_BY_ID,
 //   payload: PokedexAPI.getPokemonById(pokemonId)
