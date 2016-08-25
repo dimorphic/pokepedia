@@ -1,15 +1,10 @@
 //
 //  APP INITIAL STATE
 //
-export const LOCATION_STATE = {
-  lat: null,
-  long: null
-};
-
 export const POKEDEX_STATE = {
   pokemons: [],
   items: [],
-  rewards: []
+  levels: []
 };
 
 export const FILTERS_STATE = {
