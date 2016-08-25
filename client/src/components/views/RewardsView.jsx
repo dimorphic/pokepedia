@@ -11,7 +11,8 @@ import * as PokedexActions from 'actions/pokedex';
 
 // map store
 const mapStoreToProps = (store) => ({
-  pokedex: store.pokedex
+  items: store.pokedex.items,
+  levels: store.pokedex.levels
 });
 
 // map actions
@@ -25,31 +26,29 @@ const mapDispatchToProps = (dispatch) => ({
 class RewardsView extends Component {
   static propTypes = {
     actions: PropTypes.object.isRequired,
-    pokedex: PropTypes.any.isRequired
+    items: PropTypes.array,
+    levels: PropTypes.array
   }
 
   componentDidMount() {
-    const { items } = this.props.pokedex;
-
-    if (!items.length) {
-      this.fetchData();
-    }
+    this.fetchData();
   }
 
   fetchData() {
     console.log('>> GO FETCH DATA');
 
-    const { actions } = this.props;
+    const { actions, items, levels } = this.props;
 
     // fetch rewards list
     actions.getItems();
+    actions.getLevels();
   }
 
   render() {
-    const { pokedex } = this.props;
+    const { items, levels } = this.props;
 
     return (
-      <RewardsPage pokedex={pokedex} />
+      <RewardsPage items={items} levels={levels} />
     );
   }
 }
