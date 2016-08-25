@@ -214,7 +214,8 @@ function patchLevelRewards() {
         total: TotalXP
       },
 
-      rewards
+      rewards,
+      unlocks: Unlocks || null
     };
   });
 
