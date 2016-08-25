@@ -4,8 +4,6 @@ import React, { Component, PropTypes } from 'react';
 // components
 import { Grid, GridCell } from 'components/atoms/Grid';
 import PokemonIcon from 'components/atoms/PokemonIcon';
-import Paper from 'material-ui/Paper';
-import Subheader from 'material-ui/Subheader';
 // import FontIcon from 'material-ui/FontIcon';
 
 // helpers
@@ -56,26 +54,25 @@ export default class LevelRewards extends Component {
             withGutter
             align="middle"
           >
-            <GridCell col={1}>
-              <div className="LevelReward-LevelNo">
+            <GridCell col={1} className="LevelReward-LevelNo">
+              <div className="LevelReward-LevelNo-Circle">
                 <span>{level.id}</span>
               </div>
             </GridCell>
 
-            <GridCell col={4}>
-              <div className="LevelReward-Unlocks">
-                {unlocks}
-              </div>
+            <GridCell col={4} className="LevelReward-Unlocks">
+              <div className="LevelReward-Label">Unlocks</div>
+              {unlocks}
             </GridCell>
 
-            <GridCell col={2}>
-              <div className="LevelReward-XP">
-                {level.xp.required} / {level.xp.total}
-              </div>
+            <GridCell col={2} className="LevelReward-XP">
+              <div className="LevelReward-Label">XP required / Total XP</div>
+              {level.xp.required} / {level.xp.total}
             </GridCell>
 
-            <GridCell col={5}>
+            <GridCell col={5} className="LevelReward-RewardList">
               <div className="LevelReward-List">
+                <div className="LevelReward-Label">Reward goodies</div>
                 {rewards}
               </div>
             </GridCell>
@@ -132,23 +129,25 @@ export default class LevelRewards extends Component {
     return (
       <div className="LevelRewards">
         {/* COLUMN HISTORY */}
-        <Grid>
-          <GridCell col={1}>
-            <Subheader>Level</Subheader>
-          </GridCell>
+        <div className="LevelRewards-History">
+          <Grid withGutter>
+            <GridCell col={1}>
+              <div className="LevelRewards-HistoryTitle">Level</div>
+            </GridCell>
 
-          <GridCell col={4}>
-            <Subheader>Unlocks</Subheader>
-          </GridCell>
+            <GridCell col={4}>
+              <div className="LevelRewards-HistoryTitle">Unlocks</div>
+            </GridCell>
 
-          <GridCell col={2}>
-            <Subheader>XP required / Total XP</Subheader>
-          </GridCell>
+            <GridCell col={2}>
+              <div className="LevelRewards-HistoryTitle">XP required / Total XP</div>
+            </GridCell>
 
-          <GridCell col={5}>
-            <Subheader>Reward goodies</Subheader>
-          </GridCell>
-        </Grid>
+            <GridCell col={5}>
+              <div className="LevelRewards-HistoryTitle">Reward goodies</div>
+            </GridCell>
+          </Grid>
+        </div>
 
         {/* LEVELS */}
         {node}

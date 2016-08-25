@@ -49,7 +49,7 @@ export default class PokemonPage extends Component {
 
     return (
       <div className="Page PokemonPage">
-        {links}
+        {null}
         {node}
       </div>
     );

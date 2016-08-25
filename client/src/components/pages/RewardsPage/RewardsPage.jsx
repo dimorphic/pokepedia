@@ -119,7 +119,7 @@ export default class RewardsPage extends Component {
       <div className="Page RewardsPage">
         <div className="Tag">
           <i className="fa fa-gift" />
-          <h1 className="Tag">Rewards</h1>
+          <h1 className="Tag">Level Rewards</h1>
         </div>
         {node}
       </div>

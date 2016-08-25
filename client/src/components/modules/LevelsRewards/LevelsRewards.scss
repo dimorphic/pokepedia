@@ -1,9 +1,23 @@
 @import '~scss/tools/mixins/position.scss';
+@import '~scss/tools/mixins/responsive.scss';
 
 .LevelRewards {}
 
+.LevelRewards-History {
+  padding: 0 30px;
+  margin: 20px 0;
+
+  color: #999;
+}
+
+.LevelReward-Label {
+  display: none;
+
+  color: #bbb;
+}
+
 .LevelReward {
-  padding: 5px 30px;
+  padding: 5px;
 
   background: #fff;
 
@@ -15,16 +29,35 @@
 
   transition: all 0.3s ease-out;
 
+  // STATE: hover
   &:hover {
     box-shadow: 0px 27px 30px -20px rgba(0, 0, 0, 0.3);
 
-    .LevelReward-LevelNo {
+    .LevelReward-LevelNo-Circle {
       border-color: magenta;
     }
   }
+
+  // responsiveness
+  @include toWidth(768px) {
+    .GridCell {
+      flex-basis: auto;
+      width: auto;
+    }
+
+    // .LevelReward-Unlocks,
+    // .LevelReward-RewardList {
+    //   order: 1;
+    // }
+  }
+
+
+  @include fromWidth(768px) {
+    padding: 5px 30px;
+  }
 }
 
-.LevelReward-LevelNo {
+.LevelReward-LevelNo-Circle {
   display: inline-block;
   position: relative;
 
