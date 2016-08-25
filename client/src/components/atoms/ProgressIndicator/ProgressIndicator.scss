@@ -1,0 +1,53 @@
+// settings
+$progress-bar-thickness: 3px;
+$progress-bar-width: 66%;
+
+$progress-color: #ffeb3b;
+$progress-background: #ddd;
+
+.ProgressIndicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  opacity: 0;
+  height: $progress-bar-thickness;
+
+  overflow: hidden;
+  transition: opacity 0.5s ease-in;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+
+    width: $progress-bar-width;
+    height: 100%;
+
+    margin: 0 auto;
+  }
+
+  &--loading {
+    opacity: 1;
+    background-color: $progress-background;
+
+    &:after {
+      background-color: $progress-color;
+      animation:
+        progressIndicatorLoading 2s ease-in-out infinite,
+        progressIndicatorColor 3s ease infinite alternate;
+    }
+  }
+}
+
+@keyframes progressIndicatorLoading {
+  0% { left: -$progress-bar-width; }
+  100% { left: 100%; }
+}
+
+@keyframes progressIndicatorColor {
+  0% { background-color: #ffeb3b; }
+  50% { background-color: #2196f3; }
+  100% { background-color: magenta; }
+}

@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 // components
 import IconButton from 'material-ui/IconButton';
 import IconInfo from 'material-ui/svg-icons/action/info-outline';
-
+import ProgressIndicator from 'components/atoms/ProgressIndicator';
 import PokepediaLogo from 'components/atoms/PokepediaLogo';
 import PokepediaDrawer from 'components/modules/PokepediaDrawer';
 
@@ -50,6 +50,7 @@ export default class App extends Component {
 
     return (
       <div className="App">
+        <ProgressIndicator />
         <div className="Pokepedia-Header">
           <PokepediaLogo />
           {infoButton}
