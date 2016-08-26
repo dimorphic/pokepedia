@@ -109,7 +109,7 @@ export default class RewardsPage extends Component {
 
     let node;
 
-    if (!items.length || !levels.length) {
+    if (!items || !levels) {
       node = (<PokepediaLoader />);
     } else {
       node = (<LevelsRewards levels={levels} items={items} />);
