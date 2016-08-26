@@ -8,16 +8,15 @@ import { create } from 'apisauce';
 //
 //  Le API
 //
-const API_URI = {
-  development: 'localhost',
+export const API_URI = {
+  development: 'localhost:9090',
   production: 'api.pokepedia.fyi'
 };
 
 const API_IP = API_URI[NODE_ENV];
-const API_PORT = 9090;
 
 const API = create({
-  baseURL: `http://${API_IP}:${API_PORT}`,
+  baseURL: `http://${API_IP}`,
   headers: {
     // 'Authorization': TOKEN, // @TODO
     'Content-Type': 'application/json',
