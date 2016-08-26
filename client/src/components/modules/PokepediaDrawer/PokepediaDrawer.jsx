@@ -21,7 +21,7 @@ const PokepediaDrawer = (props) => {
       <div className="PokepediaDrawer-Info">
         <div className="PokepediaDrawer-About">
           {/* <PokepediaLogo /> */}
-          <img className="img-fluid" src={'/assets/pokepedia-logo-ball.png'} alt="Pokepedia" />
+          <img className="img-fluid" src={'assets/pokepedia-logo-ball.png'} alt="Pokepedia" />
           <h2>pokepedia.fyi</h2>
           <h4>Your only Pokémon GO stop!</h4>
         </div>

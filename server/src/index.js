@@ -11,7 +11,7 @@ import CONFIG from './config';
 import ROUTES from './routes';
 
 // helpers
-const UTILS = CONFIG.get('utils');
+// const UTILS = CONFIG.get('utils');
 
 // sExpress <3
 const app = express();
@@ -23,8 +23,9 @@ app.use(compression());
 app.use(cors());
 
 // Serve static assets
-app.use(express.static(UTILS.paths.assets()));
-app.use('/assets', express.static(UTILS.paths.assets()));
+// NOTE: off for now. Apache will serve assets for the moment
+// app.use(express.static(UTILS.paths.assets()));
+// app.use('/assets', express.static(UTILS.paths.assets()));
 
 // Middlewares
 app.use(bodyParser.json({ limit: '2mb' }));
@@ -32,7 +33,7 @@ app.use(bodyParser.urlencoded({ limit: '2mb', extended: true }));
 
 // HTTP request logger
 // app.use(logger('dev')); // http request logger
-app.use(morgan('[:response-time ms] [:date[clf]] :remote-addr - :remote-user ":method @ :url HTTP/:http-version" :status :res[content-length]'));
+app.use(morgan('[:date[clf]] [:response-time ms] :remote-addr - :remote-user ":method @ :url HTTP/:http-version" :status :res[content-length]'));
 // app.use(morgan('[:date[clf]] [:method::status] :remote-addr @ :url [:response-time ms] (:res[content-length])'));
 
 // Routes

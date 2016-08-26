@@ -16,12 +16,12 @@ const PokemonIcon = (props) => {
     // imgSrc = `http://pokemon-online.eu/images/pokemon/x-y/animated/${pokemon.pokemonId}.gif`;
 
     imgSrc = `http://www.serebii.net/pokemongo/pokemon/${pokemon.pokemonId}.png`;
-    node = (<img className="img-fluid" src={imgSrc} alt={pokemon.name} />);
+    node = (<img className="img-fluid" src={imgSrc} title={pokemon.name} alt={pokemon.name} />);
   }
 
   if (item) {
-    imgSrc = `http://localhost:9090/assets/items/${item.img}.png`;
-    node = (<img className="img-fluid" src={imgSrc} alt={item.name} />);
+    imgSrc = `assets/items/${item.img}.png`;
+    node = (<img className="img-fluid" src={imgSrc} title={item.name} alt={item.name} />);
   }
 
   return (
