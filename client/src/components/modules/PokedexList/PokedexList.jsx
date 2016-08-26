@@ -110,36 +110,28 @@ export default class PokedexList extends Component {
     return pokeCards;
   }
 
-  renderPokeCards() {
-    const { pokemons } = this.props;
-
-    const testList = [
-      pokemons[5],
-      pokemons[98],
-      pokemons[69],
-      pokemons[55],
-      pokemons[100]
-    ];
-
-    const pokeCards = testList.map((pokemon) => {
-      return (
-        <GridCell key={pokemon.pokemonId} fit className="PokeCard-Cell">
-          <PokeCard key={pokemon.id} pokemon={pokemon} />
-        </GridCell>
-      );
-    });
-
-    return (
-      <Grid
-        flow="row"
-        align="center"
-        withGutter
-        equalHeight
-      >
-        {pokeCards}
-      </Grid>
-    );
-  }
+  // renderPokeCards() {
+  //   const { pokemons } = this.props;
+  //
+  //   const pokeCards = pokemons.map((pokemon) => {
+  //     return (
+  //       <GridCell key={pokemon.pokemonId} fit className="PokeCard-Cell">
+  //         <PokeCard key={pokemon.id} pokemon={pokemon} />
+  //       </GridCell>
+  //     );
+  //   });
+  //
+  //   return (
+  //     <Grid
+  //       flow="row"
+  //       align="center"
+  //       withGutter
+  //       equalHeight
+  //     >
+  //       {pokeCards}
+  //     </Grid>
+  //   );
+  // }
 
   render() {
     const { pokemons } = this.props;
