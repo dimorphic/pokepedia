@@ -32,7 +32,7 @@ const routes = (
         }
       }}
     >
-      <Route path=":pokemonId" component={PokemonView} />
+      {/* <Route path=":pokemonId" component={PokemonView} /> */}
     </Route>
 
     <Route path="/rewards" component={RewardsView} />
