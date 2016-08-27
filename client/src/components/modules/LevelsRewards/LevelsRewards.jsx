@@ -31,6 +31,30 @@ export default class LevelRewards extends Component {
     return items.find((it) => { return it.code === itemCode; });
   }
 
+  renderLevelsHistory() {
+    return (
+      <div className="LevelRewards-History">
+        <Grid withGutter>
+          <GridCell col={1}>
+            <div className="LevelRewards-HistoryTitle">Level</div>
+          </GridCell>
+
+          <GridCell col={2}>
+            <div className="LevelRewards-HistoryTitle">XP required / Total XP</div>
+          </GridCell>
+
+          <GridCell col={4}>
+            <div className="LevelRewards-HistoryTitle">Unlocks</div>
+          </GridCell>
+
+          <GridCell col={5}>
+            <div className="LevelRewards-HistoryTitle">Reward goodies</div>
+          </GridCell>
+        </Grid>
+      </div>
+    );
+  }
+
   renderLevels() {
     const { items, levels } = this.props;
 
@@ -60,14 +84,14 @@ export default class LevelRewards extends Component {
               </div>
             </GridCell>
 
-            <GridCell col={4} className="LevelReward-Unlocks">
-              <div className="LevelReward-Label">Unlocks</div>
-              {unlocks}
-            </GridCell>
-
             <GridCell col={2} className="LevelReward-XP">
               <div className="LevelReward-Label">XP required / Total XP</div>
               {level.xp.required} / {level.xp.total}
+            </GridCell>
+
+            <GridCell col={4} className="LevelReward-Unlocks">
+              <div className="LevelReward-Label">Unlocks</div>
+              {unlocks}
             </GridCell>
 
             <GridCell col={5} className="LevelReward-RewardList">
@@ -125,29 +149,12 @@ export default class LevelRewards extends Component {
 
   render() {
     const node = this.renderLevels();
+    const historyLabels = this.renderLevelsHistory();
 
     return (
       <div className="LevelRewards">
         {/* COLUMN HISTORY */}
-        <div className="LevelRewards-History">
-          <Grid withGutter>
-            <GridCell col={1}>
-              <div className="LevelRewards-HistoryTitle">Level</div>
-            </GridCell>
-
-            <GridCell col={4}>
-              <div className="LevelRewards-HistoryTitle">Unlocks</div>
-            </GridCell>
-
-            <GridCell col={2}>
-              <div className="LevelRewards-HistoryTitle">XP required / Total XP</div>
-            </GridCell>
-
-            <GridCell col={5}>
-              <div className="LevelRewards-HistoryTitle">Reward goodies</div>
-            </GridCell>
-          </Grid>
-        </div>
+        {historyLabels}
 
         {/* LEVELS */}
         {node}
