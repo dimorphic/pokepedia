@@ -7,9 +7,10 @@
 // deps
 import createConstants from 'utils/constants';
 
-// export const PROGRESS_TYPES = createConstants(
-//   'PROGRESS'
-// );
+export const GLOBAL_TYPES = createConstants(
+  'REQUEST_START',
+  'REQUEST_END'
+);
 
 // pokedex
 export const POKEDEX_TYPES = createConstants(
