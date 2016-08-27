@@ -25,9 +25,7 @@ export default class Root extends Component {
       <MuiThemeProvider>
         <Provider store={this.props.store}>
           <div>
-            <ReduxRouter>
-                {routes}
-            </ReduxRouter>
+            <ReduxRouter routes={routes} />
             {devTools}
           </div>
         </Provider>

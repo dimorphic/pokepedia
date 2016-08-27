@@ -4,8 +4,10 @@ import { Route, IndexRedirect } from 'react-router';
 
 // containers
 import App from 'containers/App';
+// import NotFound from 'containers/NotFound';
+
 import PokedexView from 'components/views/PokedexView';
-import PokemonView from 'components/views/PokemonView';
+// import PokemonView from 'components/views/PokemonView';
 import RewardsView from 'components/views/RewardsView';
 
 // @TODO
@@ -36,6 +38,15 @@ const routes = (
     </Route>
 
     <Route path="/rewards" component={RewardsView} />
+
+    {/* <Route path="*" component={NotFound} /> */}
+    <Route
+      path="*"
+      onEnter={(nextState, replace) => {
+        // redirect to index
+        replace('/');
+      }}
+    />
   </Route>
 );
 
