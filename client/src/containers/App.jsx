@@ -1,5 +1,6 @@
 // deps
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 // components
 import IconButton from 'material-ui/IconButton';
@@ -8,8 +9,17 @@ import ProgressIndicator from 'components/atoms/ProgressIndicator';
 import PokepediaLogo from 'components/atoms/PokepediaLogo';
 import PokepediaDrawer from 'components/modules/PokepediaDrawer';
 
-export default class App extends Component {
+// map store to props
+const mapStoreToProps = (store) => {
+  return {
+    appIsLoading: (store.global.requestsInProgress > 0)
+  };
+};
+
+@connect(mapStoreToProps, null)
+class App extends Component {
   static propTypes = {
+    appIsLoading: PropTypes.bool,
     children: PropTypes.node
   };
 
@@ -45,12 +55,14 @@ export default class App extends Component {
   }
 
   render() {
+    const { appIsLoading } = this.props;
     const { drawerOpened } = this.state;
+
     const infoButton = this.renderInfoButton();
 
     return (
       <div className="App">
-        <ProgressIndicator />
+        <ProgressIndicator loading={appIsLoading} />
         <div className="Pokepedia-Header">
           <PokepediaLogo />
           {infoButton}
@@ -64,3 +76,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;
