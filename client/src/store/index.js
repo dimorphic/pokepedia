@@ -15,34 +15,33 @@ import DevTools from '../containers/DevTools';
 // routes & reducers
 import STATE from './initial-state';
 import rootReducer from './reducers';
-
-// middlewares
-const middlewares = applyMiddleware(
-  thunkMiddleware,
-  promiseMiddleware({ promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILED'] }),
-  logger,
-  // Reactotron.reduxMiddleware
-);
-
-// enhance store creator
-const enhanceStore = compose(
-  reduxReactRouter({ createHistory }),
-  middlewares,
-  DevTools.instrument()
-);
+import routes from '../routes';
 
 // expose le store
 export let store;
+
 export default function setupStore(initialState = STATE) {
-  // store = createStore(rootReducer, initialState, applyMiddleware(...middlewares));
-  store = enhanceStore(createStore)(rootReducer, initialState);
+  // middleware ehancers
+  const enhancers = compose(
+    applyMiddleware(
+      thunkMiddleware,
+      promiseMiddleware({ promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILED'] }),
+      logger
+    ),
+
+    reduxReactRouter({ routes, createHistory }),
+    DevTools.instrument()
+  );
+
+  // create enhanced store
+  store = createStore(rootReducer, initialState, enhancers);
 
   // Enable Webpack hot module replacement for reducers
   if (module.hot) {
     console.log('!!! HOT RELOAD REDUCERS !!!');
 
     module.hot.accept('./reducers', () => {
-      const nextRootReducer = require('./reducers');
+      const nextRootReducer = require('./reducers/index');
       store.replaceReducer(nextRootReducer);
     });
   }
