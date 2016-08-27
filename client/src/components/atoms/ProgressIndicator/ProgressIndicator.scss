@@ -2,7 +2,7 @@
 $progress-bar-thickness: 3px;
 $progress-bar-width: 66%;
 
-$progress-color: #ffeb3b;
+$progress-color: magenta;
 $progress-background: #ddd;
 
 .ProgressIndicator {
@@ -15,7 +15,7 @@ $progress-background: #ddd;
   height: $progress-bar-thickness;
 
   overflow: hidden;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s;
 
   &:after {
     content: '';
@@ -36,7 +36,7 @@ $progress-background: #ddd;
       background-color: $progress-color;
       animation:
         progressIndicatorLoading 2s ease-in-out infinite,
-        progressIndicatorColor 3s ease infinite alternate;
+        progressIndicatorColor 2s ease infinite alternate;
     }
   }
 }
@@ -47,7 +47,7 @@ $progress-background: #ddd;
 }
 
 @keyframes progressIndicatorColor {
-  0% { background-color: #ffeb3b; }
-  50% { background-color: #2196f3; }
-  100% { background-color: magenta; }
+  0% { background-color: magenta; }
+  50% { background-color: #9416ff; }
+  100% { background-color: #ffeb3b; }
 }
