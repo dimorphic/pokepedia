@@ -1,9 +1,9 @@
 // deps
 import { create } from 'apisauce';
-// import { store } from '../store';
+import { store } from '../store';
 
-// @TODO
-// import RequestActions from './actions/request';
+// actions
+import * as RequestActions from 'actions/request';
 
 //
 //  Le API
@@ -29,17 +29,22 @@ const { interceptors } = API.axiosInstance;
 
 interceptors.request.use((config) => {
   // console.log('!!!! INTERCEPT BEFORE REQUEST !!!');
-  // store.dispatch(RequestActions.startLoad());
+  store.dispatch(RequestActions.startRequest());
+
   return config;
 });
 
 interceptors.response.use(
   (response) => {
-    // store.dispatch(RequestActions.endLoad());
+    // console.log('!!!! INTERCEPT RESPONSE END !!!', response);
+    store.dispatch(RequestActions.endRequest());
+
     return response;
   },
   (err) => {
-    // store.dispatch(RequestActions.errorLoad());
+    // console.log('!!!! INTERCEPT RESPONSE ERROR !!!', err);
+    // store.dispatch(RequestActions.endRequest());
+
     return Promise.reject(err);
   }
 );
