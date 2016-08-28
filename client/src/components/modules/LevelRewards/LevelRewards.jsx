@@ -154,16 +154,21 @@ export default class LevelRewards extends Component {
   }
 
   render() {
-    const node = this.renderLevels();
     const historyLabels = this.renderLevelsHistory();
+    const nodes = this.renderLevels();
 
     return (
       <div className="LevelRewards">
-        {/* COLUMN HISTORY */}
+        <div className="Tag">
+          <i className="Tag-Icon fa fa-gift" />
+          <h1 className="Tag-Title">Level Rewards</h1>
+        </div>
+
+        {/* COLUMNS HISTORY */}
         {historyLabels}
 
         {/* LEVELS */}
-        {node}
+        {nodes}
       </div>
     );
   }

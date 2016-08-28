@@ -25,42 +25,42 @@ export default class RewardsPage extends Component {
     pokemons: []
   };
 
-  renderRewardTitleTag(title, icon) {
-    const tagIcon = cx('Tag-Icon fa', {
-      [`fa-${icon}`]: icon
-    });
+  renderRewardModule(type) {
+    if (!type) { return null; }
 
-    const tagTitle = title.charAt(0).toUpperCase() + title.slice(1);
+    const { items, levels, pokemons } = this.props;
+    const showLoader = (<PokepediaLoader />);
 
-    return (
-      <div className="Tag">
-        <i className={tagIcon} />
-        <h1 className="Tag-Title">{tagTitle} Rewards</h1>
-      </div>
-    );
+    let node = null;
+
+    switch (type) {
+      case 'egg': {
+        const hasPokemons = (pokemons && pokemons.length);
+        node = hasPokemons ?
+              (<EggRewards pokemons={pokemons} />) : showLoader;
+
+        break;
+      }
+
+      case 'level':
+      default: {
+        const hasItems = (items && items.length);
+        const hasLevels = (levels && levels.length);
+
+        node = (hasItems && hasLevels) ?
+              (<LevelRewards levels={levels} items={items} />) : showLoader;
+      }
+    }
+
+    return node;
   }
 
   render() {
-    const { items, levels } = this.props;
-
-    console.log('!!! REWARDS PAGE PARAMS : ', this.props.params);
-
-    const hasItems = (items && items.length);
-    const hasLevels = (levels && levels.length);
-
-    let node;
-
-    if (!hasItems || !hasLevels) {
-      node = (<PokepediaLoader />);
-    } else {
-      node = (<LevelRewards levels={levels} items={items} />);
-    }
-
-    const tag = this.renderRewardTitleTag('level', 'gift');
+    const { type } = this.props.params;
+    const node = this.renderRewardModule(type);
 
     return (
       <div className="Page RewardsPage">
-        {tag}
         {node}
       </div>
     );
