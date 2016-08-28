@@ -35,13 +35,16 @@ class RewardsView extends Component {
   }
 
   fetchData() {
-    console.log('>> GO FETCH DATA');
+    // console.log('>> GO FETCH DATA');
 
     const { actions, items, levels } = this.props;
 
-    // fetch rewards list
-    actions.getItems();
-    actions.getLevels();
+    const hasItems = (items && items.length);
+    const hasLevels = (levels && levels.length);
+
+    // fetch data if needed
+    if (!hasItems) { actions.getItems(); }
+    if (!hasLevels) { actions.getLevels(); }
   }
 
   render() {
