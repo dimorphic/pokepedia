@@ -20,7 +20,7 @@ const PokemonIcon = (props) => {
   }
 
   if (item) {
-    imgSrc = `assets/items/${item.img}.png`;
+    imgSrc = `/assets/items/${item.img}.png`;
     node = (<img className="img-fluid" src={imgSrc} title={item.name} alt={item.name} />);
   }
 

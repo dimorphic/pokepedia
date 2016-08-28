@@ -12,7 +12,7 @@ const NAVIGATION = [
   },
   {
     name: 'Level Rewards',
-    to: '/rewards'
+    to: '/rewards/level'
   },
   {
     name: 'Egg Rewards',
