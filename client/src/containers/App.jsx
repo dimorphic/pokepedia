@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 // components
 import IconButton from 'material-ui/IconButton';
 import IconInfo from 'material-ui/svg-icons/action/info-outline';
+
 import ProgressIndicator from 'components/atoms/ProgressIndicator';
 import PokepediaLogo from 'components/atoms/PokepediaLogo';
 import PokepediaDrawer from 'components/modules/PokepediaDrawer';
+import NavigationMenu from 'components/modules/NavigationMenu';
 
 // map store to props
 const mapStoreToProps = (store) => {
@@ -71,6 +73,7 @@ class App extends Component {
           open={drawerOpened}
           onClickOut={this.toggleDrawer}
         />
+        <NavigationMenu />
         {this.props.children}
       </div>
     );
