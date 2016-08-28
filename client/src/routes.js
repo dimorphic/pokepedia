@@ -25,7 +25,8 @@ const routes = (
 
     <Route path="/" component={PokedexView} />
 
-    {/* TODO */}
+    {/* TODO: Pokemon detail view */}
+    {/*
     <Route
       path="pokemon"
       onEnter={(nextState, replace) => {
@@ -34,11 +35,14 @@ const routes = (
         }
       }}
     >
-      {/* <Route path=":pokemonId" component={PokemonView} /> */}
+      <Route path=":pokemonId" component={PokemonView} />
     </Route>
+    */}
 
-    <Route path="/rewards" component={RewardsView} />
+    {/* REWARDS */}
+    <Route path="rewards/:type" component={RewardsView} />
 
+    {/* FALLBACKS */}
     {/* <Route path="*" component={NotFound} /> */}
     <Route
       path="*"

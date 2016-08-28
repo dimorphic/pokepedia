@@ -12,7 +12,8 @@ import * as PokedexActions from 'actions/pokedex';
 // map store
 const mapStoreToProps = (store) => ({
   items: store.pokedex.items,
-  levels: store.pokedex.levels
+  levels: store.pokedex.levels,
+  pokemons: store.pokedex.pokemons
 });
 
 // map actions
@@ -25,9 +26,12 @@ const mapDispatchToProps = (dispatch) => ({
 @connect(mapStoreToProps, mapDispatchToProps)
 class RewardsView extends Component {
   static propTypes = {
+    params: PropTypes.object,
     actions: PropTypes.object.isRequired,
+
     items: PropTypes.array,
-    levels: PropTypes.array
+    levels: PropTypes.array,
+    pokemons: PropTypes.array
   }
 
   componentDidMount() {
@@ -35,23 +39,31 @@ class RewardsView extends Component {
   }
 
   fetchData() {
-    // console.log('>> GO FETCH DATA');
+    console.log('>> GO FETCH DATA');
 
-    const { actions, items, levels } = this.props;
+    const { actions, items, levels, pokemons } = this.props;
 
     const hasItems = (items && items.length);
     const hasLevels = (levels && levels.length);
+    const hasPokemons = (pokemons && pokemons.length);
 
     // fetch data if needed
     if (!hasItems) { actions.getItems(); }
     if (!hasLevels) { actions.getLevels(); }
+    if (!hasPokemons) { actions.getPokemons(); }
   }
 
   render() {
-    const { items, levels } = this.props;
+    const { params, items, levels, pokemons } = this.props;
 
     return (
-      <RewardsPage items={items} levels={levels} />
+      <RewardsPage
+        params={params}
+
+        items={items}
+        levels={levels}
+        pokemons={pokemons}
+      />
     );
   }
 }
