@@ -1,5 +1,6 @@
 // deps
 import React, { Component, PropTypes } from 'react';
+import numeral from 'numeral';
 
 // components
 import { Grid, GridCell } from 'components/atoms/Grid';
@@ -65,8 +66,11 @@ export default class LevelRewards extends Component {
     const noUnlocks = (<span className="LevelReward-Unlocks-None">:(</span>);
 
     const nodes = levels.map((level) => {
-      const rewards = level.rewards.map(this.renderRewards);
+      const rewards = level.rewards.length ? level.rewards.map(this.renderRewards) : noUnlocks;
       const unlocks = level.unlocks ? this.renderUnlocks(level.unlocks) : noUnlocks;
+
+      const xpRequired = numeral(level.xp.required).format('0,0');
+      const xpTotal = numeral(level.xp.total).format('0,0');
 
       return (
         <div
@@ -86,13 +90,15 @@ export default class LevelRewards extends Component {
 
             <GridCell col={2} className="LevelReward-XP">
               <div className="LevelReward-Label">XP required / Total XP</div>
-              {level.xp.required} / {level.xp.total}
+              {xpRequired} / {xpTotal}
             </GridCell>
 
+            <div className="Pokepedia-Sepa"></div>
             <GridCell col={4} className="LevelReward-Unlocks">
               <div className="LevelReward-Label">Unlocks</div>
               {unlocks}
             </GridCell>
+            <div className="Pokepedia-Sepa"></div>
 
             <GridCell col={5} className="LevelReward-RewardList">
               <div className="LevelReward-List">

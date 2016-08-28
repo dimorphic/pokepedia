@@ -31,6 +31,7 @@
     "history": "2.1.2",
     "material-ui": "^0.15.3",
     "normalize.css": "3.0.3",
+    "numeral": "^1.5.3",
     "react": "^15.3.0",
     "react-addons-shallow-compare": "^15.3.0",
     "react-dom": "^15.3.0",

@@ -1,7 +1,31 @@
 @import '~scss/tools/mixins/position.scss';
 @import '~scss/tools/mixins/responsive.scss';
 
-.LevelRewards {}
+.LevelRewards {
+  .Pokepedia-Sepa {
+    display: none;
+  }
+
+  @include toWidth(768px) {
+    padding: 0 10px;
+
+    text-align: center;
+
+    .LevelRewards-History {
+      display: none;
+    }
+
+    .LevelReward-Label {
+      display: block;
+    }
+  }
+
+  @include fromWidth(768px) {
+    .LevelReward-Item {
+      margin: 0 15px;
+    }
+  }
+}
 
 .LevelRewards-History {
   padding: 0 30px;
@@ -13,7 +37,10 @@
 .LevelReward-Label {
   display: none;
 
+  margin-bottom: 10px;
+
   color: #bbb;
+  font-style: italic;
 }
 
 .LevelReward {
@@ -40,15 +67,44 @@
 
   // responsiveness
   @include toWidth(768px) {
-    .GridCell {
-      flex-basis: auto;
-      width: auto;
+    padding: 30px 0;
+
+    .Grid {
+      flex-flow: column wrap;
+      margin: 0;
     }
 
-    // .LevelReward-Unlocks,
-    // .LevelReward-RewardList {
-    //   order: 1;
-    // }
+    .GridCell {
+      // make cells fill rows
+      flex-basis: auto;
+      width: 100%;
+
+      // remove gutters
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .Pokepedia-Sepa {
+      display: block;
+
+      width: 70%;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+
+    .LevelReward-LevelNo-Circle {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    &-XP {
+      // margin-bottom: 20px;
+    }
+
+    &-Unlocks {
+      // margin: 20px 0;
+      // padding: 20px 0;
+    }
   }
 
 
@@ -79,7 +135,7 @@
   display: inline-block;
   // width: 30px;
 
-  margin: 0 15px;
+  margin: 10px 15px;
 
   text-align: center;
 
