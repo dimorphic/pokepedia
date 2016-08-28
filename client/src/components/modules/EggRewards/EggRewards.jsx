@@ -76,7 +76,7 @@ export default class EggRewards extends Component {
     return (
       <div className="EggRewards">
         <div className="Tag">
-          <PokemonIcon item={{ img: 'eggincubator' }} />
+          <PokemonIcon item={{ img: 'egg' }} />
           <h1 className="Tag-Title">Egg Rewards</h1>
         </div>
 
