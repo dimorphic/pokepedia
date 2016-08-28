@@ -40,7 +40,19 @@ const routes = (
     */}
 
     {/* REWARDS */}
-    <Route path="rewards/:type" component={RewardsView} />
+    {/* <Route path="rewards/:type" component={RewardsView} /> */}
+    <Route
+      path="rewards"
+      onEnter={(nextState, replace) => {
+        const pathname = nextState.location.pathname.split('/');
+
+        if (!pathname.includes('level') && !pathname.includes('egg')) {
+          replace('/rewards/level');
+        }
+      }}
+    >
+      <Route path=":type" component={RewardsView} />
+    </Route>
 
     {/* FALLBACKS */}
     {/* <Route path="*" component={NotFound} /> */}
