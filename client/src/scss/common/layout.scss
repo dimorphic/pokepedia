@@ -56,19 +56,16 @@ body {
 // Facebook like box
 .FBLike {
   position: relative;
+  top: 20px;
+  left: 20px;
 
   max-width: 300px;
   max-height: 70px;
   overflow: hidden;
 
-  margin: 20px;
-
-  @include fromWidth(600px) {
-    // position: absolute;
+  @include fromWidth(500px) {
     top: 10px;
     left: 10px;
-
-    margin: 0;
   }
 }
 
@@ -76,7 +73,7 @@ body {
 //  Pokepedia common layout (@TODO: make a component?)
 //
 .Pokepedia-Header {
-  padding: 70px 0 50px;
+  padding-top: 70px;
   text-align: center;
 }
 
@@ -113,7 +110,7 @@ body {
   }
 
   // reponsiveness
-  @include fromWidth(600px) {
+  @include fromWidth(500px) {
     top: 10px;
   }
 }
