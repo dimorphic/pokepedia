@@ -11,7 +11,7 @@ import PokemonIcon from 'components/atoms/PokemonIcon';
 const isEmptySpace = /\s/g;
 
 // style
-import './LevelsRewards.scss';
+import './LevelRewards.scss';
 
 export default class LevelRewards extends Component {
   static propTypes = {
