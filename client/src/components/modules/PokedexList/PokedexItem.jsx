@@ -1,6 +1,6 @@
 // deps
 import React, { PropTypes } from 'react';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 
 // components
 import PokemonIcon from 'components/atoms/PokemonIcon';
@@ -15,9 +15,7 @@ const PokedexItem = (props) => {
     <div className="PokedexItem" {...otherProps}>
       <div className="PokedexItem-Wrapper">
         <div className="PokedexItem-Avatar">
-          <LazyLoad throttle={300} height={120} offset={300}>
-            <PokemonIcon pokemon={pokemon} />
-          </LazyLoad>
+          <PokemonIcon pokemon={pokemon} />
         </div>
         <h2 className="PokedexItem-Name">{pokemon.name}</h2>
         <span className="PokedexItem-No">#{pokemon.id}</span>
