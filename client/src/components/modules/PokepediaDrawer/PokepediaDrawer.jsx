@@ -21,7 +21,7 @@ const PokepediaDrawer = (props) => {
       <div className="PokepediaDrawer-Info">
         <div className="PokepediaDrawer-About">
           {/* <PokepediaLogo /> */}
-          <img className="img-fluid" src={'assets/pokepedia-logo-ball.png'} alt="Pokepedia" />
+          <img className="img-fluid" src={'/assets/pokepedia-logo-ball.png'} alt="Pokepedia" />
           <h2>pokepedia.fyi</h2>
           <h4>Your only Pokémon GO stop!</h4>
         </div>
@@ -35,12 +35,10 @@ const PokepediaDrawer = (props) => {
           <div className="Pokepedia-Sepa"></div>
           <p className="PokepediaDrawer-Soon">Coming soon:</p>
           <ul>
-            <li>Egg & level rewards charts</li>
             <li>Evolution calculator</li>
             <li>Battle simulator</li>
-            <li>Map of Pokemons locations</li>
           </ul>
-          <p>... and moar!</p>
+          <p>... and more! ;)</p>
           <div className="Pokepedia-Sepa"></div>
 
           {/* SOCIAL */}
