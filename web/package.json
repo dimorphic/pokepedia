@@ -18,7 +18,8 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config start.js --progress --colors",
+    "start": "npm run start:dev",
+    "start:dev": "cross-env NODE_ENV=development node ./start.js",
     "build": "npm run clean && NODE_ENV=production ./node_modules/.bin/webpack --config start.js --progress --colors",
     "clean": "rm -rf ./build",
     "lint": "./node_modules/.bin/eslint src --ext .js --ext .jsx"
@@ -27,9 +28,12 @@
     "apisauce": "^0.3.0",
     "babel-polyfill": "^6.9.1",
     "classnames": "^2.2.5",
+    "cross-env": "^2.0.1",
     "es6-promise": "^3.2.1",
+    "express": "^4.14.0",
     "history": "2.1.2",
     "material-ui": "^0.15.3",
+    "morgan": "^1.7.0",
     "normalize.css": "3.0.3",
     "numeral": "^1.5.3",
     "react": "^15.3.0",
@@ -74,6 +78,7 @@
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
+    "json-loader": "^0.5.4",
     "jsonfile": "^2.3.1",
     "node-sass": "^3.8.0",
     "postcss": "^5.1.1",
@@ -87,6 +92,8 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.12.2"
   }
 }

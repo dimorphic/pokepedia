@@ -10,6 +10,9 @@ import jsonfile from 'jsonfile';
 // get APP package.json config
 const APP_PACKAGE = jsonfile.readFileSync('package.json');
 
+console.log('DEPS @ ', APP_PACKAGE.dependencies);
+// process.exit(0);
+
 //
 //  CONFIG
 //
@@ -23,12 +26,11 @@ CONFIG.set('PORT', 8080); // webpack dev server
 // app paths
 CONFIG.set('paths', {
   project: path.resolve(__dirname, './'),
-  source: 'src',
+  source: 'src/client',
   build: 'build',
 
-  shared: '../shared',
-  assets: '../shared/assets',
-  data: '../shared/data'
+  shared: 'src/shared',
+  assets: 'src/assets'
 });
 
 // app dependencies
@@ -61,8 +63,7 @@ const paths = (() => {
 
     // @TODO: time to make this more dynamic?
     shared: project.bind(null, CONFIG.get('paths').shared),
-    assets: project.bind(null, CONFIG.get('paths').assets),
-    data: project.bind(null, CONFIG.get('paths').data)
+    assets: project.bind(null, CONFIG.get('paths').assets)
   };
 })();
 

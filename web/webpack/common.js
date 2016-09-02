@@ -18,8 +18,8 @@ const PLUGINS = exports.PLUGINS = require('./plugins');
 export const entry = {
   app: [
     `${PATHS.src}/index.js`
-  ],
-  vendor: CONFIG.get('dependencies').vendor
+  ]
+  // vendor: CONFIG.get('dependencies').vendor
 };
 
 // build output destination
