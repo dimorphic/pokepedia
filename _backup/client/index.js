@@ -4,4 +4,5 @@
 // import { render } from 'react-dom';
 
 // import { Router, RouterContext, browserHistory } from 'react-router'
-console.log('hello worldzy!');
+
+console.log('hello world!');

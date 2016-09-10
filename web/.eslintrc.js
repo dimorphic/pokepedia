@@ -13,6 +13,7 @@ module.exports = exports = {
   extends: 'airbnb',
   parser: 'babel-eslint',
   globals: {
+    __BROWSER__: true,
     __DEV__: true,
     __PROD__: true,
     NODE_ENV: true

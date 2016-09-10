@@ -1,19 +1,20 @@
 // deps
-const sourceMaps = require('source-map-support');
-sourceMaps.install();
-
-require('./src/shared/polyfills');
-require('./src/shared/console');
-
-// server rendereror!
+require('source-map-support').install();
 require('babel-core/register');
-require('./src/server/index');
 
-// process.on('unhandledRejection', console.error.bind(console));
+// @DEBUG
+const debug = require('debug');
+debug.enable(`
+  dev:*,
+  web:*,
+  server:*
+`);
 
-// Compile files on PROD or launch DEV server
-if (process.env.NODE_ENV === 'production') {
-  require('./webpack/webpack.production.js')
-} else {
-  require('./webpack/webpack.development.js')
+// Launch DEV server or compile files on PROD
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+  // start dev server
+  require('./webpack/dev-server.js');
 }
+ // else {
+//   require('./webpack/prod.config.js');
+// }

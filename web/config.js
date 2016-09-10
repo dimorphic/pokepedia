@@ -2,16 +2,8 @@
 import path from 'path';
 import jsonfile from 'jsonfile';
 
-// support .env ?
-// import dotenv from 'dotenv';
-// const dotenv = rquire('dotenv');
-// dotenv.load();
-
 // get APP package.json config
 const APP_PACKAGE = jsonfile.readFileSync('package.json');
-
-console.log('DEPS @ ', APP_PACKAGE.dependencies);
-// process.exit(0);
 
 //
 //  CONFIG
@@ -21,7 +13,7 @@ const CONFIG = new Map();
 // environment
 CONFIG.set('env', process.env.NODE_ENV || 'development');
 CONFIG.set('HOST', '0.0.0.0'); // bind to all interfaces
-CONFIG.set('PORT', 8080); // webpack dev server
+CONFIG.set('PORT', 8001); // webpack dev server
 
 // app paths
 CONFIG.set('paths', {
@@ -41,8 +33,12 @@ CONFIG.set('dependencies', {
 // globals
 CONFIG.set('globals', {
   'NODE_ENV': JSON.stringify(CONFIG.get('env')),
-  'process.env': { 'NODE_ENV': JSON.stringify(CONFIG.get('env')) },
+  'process.env': {
+    'NODE_ENV': JSON.stringify(CONFIG.get('env')),
+    'BROWSER': JSON.stringify(true)
+  },
 
+  '__BROWSER__': true,
   '__DEV__': (CONFIG.get('env') === 'development'),
   '__PROD__': (CONFIG.get('env') === 'production')
 });

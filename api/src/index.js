@@ -1,4 +1,5 @@
 // deps
+// require('source-map-support').install();
 import 'babel-polyfill';
 import express from 'express';
 import bodyParser from 'body-parser';
