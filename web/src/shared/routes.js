@@ -1,15 +1,11 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
+import Html from './containers/Html';
 import App from './containers/App';
-import Home from './containers/Home';
-import User from './containers/User';
-import NoMatch from './containers/NoMatch';
 
 export default (
-  <Route component={App}>
-    <Route path='/' component={Home} />
-    <Route path='user/:id' component={User} />
-    <Route path="*" component={NoMatch} />
+  <Route component={Html}>
+    <Route path="/" component={App} />
   </Route>
 );

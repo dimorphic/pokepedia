@@ -7,8 +7,8 @@ delete process.env.BROWSER; // if present
 
 // tell `require` calls to look into `/app`
 // also it will avoid `../../../../../` require strings
-// process.env.NODE_PATH = './src';
-// require('module').Module._initPaths();
+process.env.NODE_PATH = './src';
+require('module').Module._initPaths();
 
 // ES6 hook & other polyfills
 require('babel-core/register');

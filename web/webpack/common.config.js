@@ -35,6 +35,7 @@ export const entry = {
   app: [
     `${PATHS.src}/index.js`
   ],
+
   vendor: getAppVendorDeps()
 };
 

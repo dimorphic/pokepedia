@@ -50,12 +50,12 @@ app.use(devMiddleware(compiler, {
 }));
 
 app.use(hotMiddleware(compiler, {
-  path: '/build/__webpack_hmr',
+  path: '/__webpack_hmr',
   log: console.log
 }));
 
 // Launch DEV server
 app.listen(PORT, (err) => {
   if (err) { return console.error(err); }
-  debug('dev:webpack')(`Webpack dev server @ ${WEBPACK_CONFIG.output.publicPath}. Compiling...`);
+  debug('dev:webpack')(`Dev server @ ${WEBPACK_CONFIG.output.publicPath}. Compiling...`);
 });

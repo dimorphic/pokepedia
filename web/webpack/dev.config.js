@@ -8,10 +8,10 @@ import ENV_CONFIG from '../config';
 // web / dev server settings
 const HOST = ENV_CONFIG.get('HOST'); // bind on all interfaces (use 'localhost' for privacy)
 const PORT = ENV_CONFIG.get('PORT');
-const PUBLIC_PATH = `http://${HOST}:${PORT}/build/`;
+const PUBLIC_PATH = `http://${HOST}:${PORT}/`;
 
 // Add HMR to entry points
-const HMR = 'webpack-hot-middleware/client?path=//${HOST}:${PORT}/__webpack_hmr';
+const HMR = `webpack-hot-middleware/client?path=//${HOST}:${PORT}/__webpack_hmr`;
 common.entry.app.unshift(HMR);
 common.entry.vendor.unshift(HMR);
 

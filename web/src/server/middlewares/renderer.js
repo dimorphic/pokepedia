@@ -7,39 +7,25 @@ import { Provider } from 'react-redux';
 import createLocation from 'history/lib/createLocation';
 import createMemoryHistory from 'history/lib/createMemoryHistory';
 
-// import fetchData from '../../shared/fetchData';
-// import Context from '../../client/components/Common/Context'
 // import Html from '../../client/components/Common/Html'
 
+import routes from 'shared/routes';
 import setupStore from 'shared/store';
-// import routes from '../../client/routes';
 
-const App = (props) => {
-  return (
-    <div>
-      <div>hello world</div>
-      <div>{props.children}</div>
-    </div>
-  );
-};
-
-//
-const routes = (
-  <Route>
-    <Route path="/" component={App} />
-  </Route>
-);
+// const runRouter = (location, routes) => {
+//   new Promise((resolve) => {
+//     match({ routes, location }, (...args) => resolve(args));
+// };
 
 function renderComponent(renderProps, store) {
   const initialState = store.getState();
 
-  const initialView = (
+  const componentHTML = renderToString(
     <Provider store={store}>
       <RouterContext {...renderProps} />
     </Provider>
   );
 
-  const componentHTML = renderToString(initialView);
   const HTML = `
     <!DOCTYPE html>
     <html>
@@ -53,7 +39,9 @@ function renderComponent(renderProps, store) {
       </head>
       <body>
         <div id="root">${componentHTML}</div>
-        <script type="application/javascript" src="http://localhost:8888/build/app.bundle.js"></script>
+
+        <script type="application/javascript" src="build/vendor.bundle.js"></script>
+        <script type="application/javascript" src="build/app.bundle.js"></script>
       </body>
     </html>
   `;
@@ -67,17 +55,14 @@ function renderComponent(renderProps, store) {
 // @param res
 //
 export default function render(req, res) {
-  // create routing
+  // create routing, store
   const location = createLocation(req.url);
   const history = createMemoryHistory();
-
-  // Compile an initial state
-  // let preloadedState = { counter: 0 };
   const store = setupStore({ routes, history });
 
   // response send helper
   function sendResponse(statusCode, content) {
-    res.status(statusCode).send('<!DOCTYPE html>\n' + content);
+    res.status(statusCode).send(`<!DOCTYPE html>\n${content}`);
   }
 
   match({ routes, location }, (err, redirectLocation, renderProps) => {
@@ -85,18 +70,21 @@ export default function render(req, res) {
 
     if (err) {
       console.error(err);
-      return res.status(500).end('Internal server error');
+      res.status(500).end('Internal server error');
     }
 
     if (redirectLocation) {
-      return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     }
 
     if (!renderProps) {
-      return res.status(404).end('Not found');
+      console.warn('Not found ', location);
+      res.status(404).end('Not found');
     }
 
-    console.log('!! YOYO !!');
+    // ALL OK, RENDER REACT
+    console.log('!! YOYO !! all ok. go render!');
+    // return res.end('I ARE HERE!');
     sendResponse(200, renderComponent(renderProps, store));
   });
 }

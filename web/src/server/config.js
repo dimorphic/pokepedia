@@ -41,16 +41,17 @@ const CONFIG = {
       port: 8000,
 
       favicon: `${UTILS.paths.assets()}/pokepedia-favicon.png`,
-      static: [
-        {
+      static: {
+        assets: {
           url: '/assets',
           path: UTILS.paths.assets()
         },
-        {
+
+        build: {
           url: '/build',
           path: UTILS.paths.build()
         }
-      ]
+      }
     },
 
     // session: {

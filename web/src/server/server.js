@@ -7,7 +7,7 @@ import morgan from 'morgan';
 
 // settings
 import CONFIG from './config';
-// import renderer from './middlewares/renderer';
+import renderer from './middlewares/renderer';
 
 const HOST = (process.env.HOST || CONFIG.web.host);
 const PORT = (process.env.PORT || CONFIG.web.port);
@@ -25,72 +25,44 @@ app.disable('x-powered-by');
 app.use(compression());
 
 // Serve static assets
-// app.use(express.static(UTILS.paths.assets()));
-// app.use('/assets', express.static(UTILS.paths.assets()));
-// auto-mount static routes
-if (Array.isArray(CONFIG.web.static)) {
-  CONFIG.web.static.forEach(staticRoute => {
-    debug('web:static')(staticRoute.path);
-    app.use(staticRoute.url, express.static(staticRoute.path));
-  });
-}
-
-// Middlewares
+// app.use(CONFIG.web.static.assets);
+app.use('/assets', express.static(CONFIG.web.static.assets.path));
 app.use(favicon(CONFIG.web.favicon));
 
+// auto-mount static routes
+// if (Array.isArray(CONFIG.web.static)) {
+//   CONFIG.web.static.forEach(staticRoute => {
+//     debug('web:static')(staticRoute.path);
+//     app.use(staticRoute.url, express.static(staticRoute.path));
+//   });
+// }
+
+// Middlewares
+
 // HTTP request logger
-// app.use(logger('dev')); // http request logger
-app.use(morgan('[:date[clf]] [:response-time ms] :remote-addr - ":method @ :url HTTP/:http-version" :status :res[content-length]'));
+app.use(morgan('[:date[clf]] :remote-addr - ":method @ :url HTTP/:http-version" :status :res[content-length] [:response-time ms]'));
 
 // Proxy asset folder to webpack development server in development mode
 if (process.env.NODE_ENV === 'development') {
-  // const WEBPACK_CONFIG = require('../../webpack/dev.config');
+  const ENV_CONFIG = require('../../config');
+  const WEBPACK_SERVER = `http://0.0.0.0:${ENV_CONFIG.get('PORT')}`;
 
+  const proxy = require('proxy-middleware')(WEBPACK_SERVER);
+
+  debug('web:static-proxy')(`Proxy to webpack dev server @ ${WEBPACK_SERVER}`);
+  app.use('/build', proxy);
 }
-
-
-// if (process.env.NODE_ENV === 'development') {
-//   const webpackConfig = require('./../webpack/dev.config');
-//   const proxy = require('proxy-middleware')(`http://0.0.0.0:${webpackConfig.server.port}`);
-//
-//   app.use('/build', proxy);
 // } else {
 //   app.use('/build', express.static(path.join(__dirname, '../dist'), cacheOpts))))
 // }
 
-// if (process.env.NODE_ENV === 'development') {
-//   const compiler = webpack(config);
-//
-//   app.use(dev(compiler, {
-//     publicPath: WEBPACK_CONFIG.output.publicPath, // '/build/',
-//     historyApiFallback: true,
-//     hot: true,
-//
-//     stats: {
-//       colors: true,
-//       hash: true,
-//       timings: true,
-//       version: false,
-//       chunks: false,
-//       modules: false,
-//       children: false,
-//       chunkModules: true
-//     }
-//   }));
-//
-//   app.use(hot(compiler, {
-//     path: '/build/__webpack_hmr',
-//     log: console.log
-//   });
-// }
-
 // Routes
-app.use((req, res) => {
-  res.end('okzzy');
-});
+// app.use((req, res) => {
+//   res.end('okzzy');
+// });
 
 // React renderer
-// app.use('*', renderer);
+app.use('*', renderer);
 
 // Boot it up!
 app.listen(PORT, HOST, () => {

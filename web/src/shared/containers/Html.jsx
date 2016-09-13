@@ -1,7 +1,10 @@
 import React from 'react';
 
 export default function Html(props) {
-  return `
-    Hello world
-  `;
+  return (
+    <div>
+      <div>hello world</div>
+      <div>{props.children}</div>
+    </div>
+  );
 }
