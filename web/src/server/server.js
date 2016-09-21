@@ -69,7 +69,7 @@ app.use('*', renderer);
 
 // Boot it up!
 app.listen(PORT, HOST, () => {
-  debug('web:start')(`⚡⚡⚡  Listening @ http://${app.get('host')}:${app.get('port')}`);
+  debug('web:start')(`⚡⚡⚡  Development server @ http://${app.get('host')}:${app.get('port')}`);
 });
 
 // Tell parent process that we started

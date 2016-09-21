@@ -5,7 +5,7 @@ import debug from 'debug';
 
 // helpers
 const imagesRegex = /\.(jpe?g|png|gif|svg)$/;
-const STATS_PATH = path.resolve(__dirname, '../../src/webpack-stats.json');
+const STATS_PATH = path.resolve(__dirname, '../../src/client/webpack-stats.json');
 
 //
 //  Find compiled images in modules

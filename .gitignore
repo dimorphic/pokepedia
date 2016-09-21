@@ -20,4 +20,4 @@ node_modules/
 ###################
 build/
 dist/
-web/src/webpack-stats.json
+web/src/client/webpack-stats.json

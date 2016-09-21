@@ -10,8 +10,8 @@ import CONFIG from '../../config';
 
 // helpers
 function noop() {}
-const SERVER_SRC = path.join(__dirname, '../../src/server');
-const SERVER_APP = `${SERVER_SRC}/index`;
+const SERVER_SRC = path.join(__dirname, '../../src');
+const SERVER_APP = `${SERVER_SRC}/server/index`;
 
 //
 //  'Middleware' plugin to start our Express app
@@ -77,7 +77,10 @@ const startServer = () => {
         debug('dev:watcher')('?? START WATCHER ??');
 
         watch(
-          SERVER_SRC,
+          [
+            `${SERVER_SRC}/server`,
+            `${SERVER_SRC}/shared`
+          ],
           (file) => {
             debug('dev:watcher')('watch file @ ', file);
             return !file.match('webpack-stats.json') ? restartServer() : noop();

@@ -22,6 +22,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // };
 
 function renderReact(componentProps, store) {
+  // root component
   const componentHTML = renderToString(
     <Provider store={store}>
       <MuiThemeProvider>
@@ -30,14 +31,23 @@ function renderReact(componentProps, store) {
     </Provider>
   );
 
+  // assets are found in client 'webpack-stats.json'
+  const assets = require('client/webpack-stats.json');
+
+  // do NOT cache assets in dev mode
+  if (process.env.NODE_ENV === 'development') {
+    delete require.cache[require.resolve('client/webpack-stats.json')];
+  }
+
   const initialState = store.getState();
   const head = Helmet.rewind();
 
   return renderToStaticMarkup(
     <Html
-      initialState={initialState}
       head={head}
       body={componentHTML}
+      assets={assets}
+      initialState={initialState}
     />
   );
 }
@@ -85,16 +95,8 @@ export default function router(req, res) {
     //
     // ALL OK, RENDER REACT BRO !
     //
-    console.log('!! MATCHED !!', location);
-    console.log('\n');
-
-    // Assets name are found into `webpack-stats`
-    // const assets = require('./webpack-stats.json')
-
-    // Don't cache assets name on dev
-    // if (process.env.NODE_ENV === 'development') {
-    //   delete require.cache[require.resolve('./webpack-stats.json')]
-    // }
+    // console.log('!! MATCHED !!', location);
+    // console.log('\n');
 
     // Get the component tree
     // const { components } = renderProps;
