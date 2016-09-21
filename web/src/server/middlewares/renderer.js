@@ -1,6 +1,6 @@
 // deps
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import { Provider } from 'react-redux';
 import createLocation from 'history/lib/createLocation';
@@ -13,7 +13,7 @@ import setupStore from 'shared/store';
 
 // components
 import Html from 'shared/containers/Html';
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // const runRouter = (location, routes) => {
 //   return new Promise((resolve) => {
@@ -24,14 +24,16 @@ import Html from 'shared/containers/Html';
 function renderReact(componentProps, store) {
   const componentHTML = renderToString(
     <Provider store={store}>
-      <RouterContext {...componentProps} />
+      <MuiThemeProvider>
+        <RouterContext {...componentProps} />
+      </MuiThemeProvider>
     </Provider>
   );
 
   const initialState = store.getState();
   const head = Helmet.rewind();
 
-  return renderToString(
+  return renderToStaticMarkup(
     <Html
       initialState={initialState}
       head={head}
@@ -101,7 +103,7 @@ export default function router(req, res) {
     const store = setupStore({ history });
     const html = renderReact(renderProps, store);
 
-    console.debug('return html content', html);
+    // console.debug('return html content', html);
     sendResponse(200, html);
 
     // console.info('render store @ ', store.getState());

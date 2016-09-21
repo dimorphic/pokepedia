@@ -1,6 +1,6 @@
 // deps
 import { createStore, applyMiddleware, compose } from 'redux';
-// import { reduxReactRouter } from 'redux-router';
+import { reduxReactRouter } from 'redux-router';
 
 // middlewares
 import thunkMiddleware from 'redux-thunk';
@@ -10,12 +10,15 @@ import thunkMiddleware from 'redux-thunk';
 // routes & reducers
 import STATE from './initial-state';
 import rootReducer from './reducers';
-// import routes from '../routes';
+import routes from '../routes';
+
+const { BROWSER } = process.env;
+console.log('I ARE BROWSER @ ', BROWSER);
 
 // expose le store
 export let store;
 
-export default function setupStore({ initialState = STATE, routes, history }) {
+export default function setupStore({ initialState = STATE, history }) {
   // middleware ehancers
   const enhancers = compose(
     applyMiddleware(
@@ -24,7 +27,7 @@ export default function setupStore({ initialState = STATE, routes, history }) {
       // logger
     ),
 
-    // reduxReactRouter({ routes, history }),
+    reduxReactRouter({ routes, history }),
     // DevTools.instrument()
   );
 
