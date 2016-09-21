@@ -95,4 +95,4 @@ const WEBPACK_CONFIG = {
   postcss: common.PLUGINS.postcss
 };
 
-export default WEBPACK_CONFIG;
+module.exports = WEBPACK_CONFIG;

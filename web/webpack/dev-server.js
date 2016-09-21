@@ -57,5 +57,5 @@ app.use(hotMiddleware(compiler, {
 // Launch DEV server
 app.listen(PORT, (err) => {
   if (err) { return console.error(err); }
-  debug('dev:webpack')(`Dev server @ ${WEBPACK_CONFIG.output.publicPath}. Compiling...`);
+  debug('dev:webpack')(`Compiling client assets...`);
 });

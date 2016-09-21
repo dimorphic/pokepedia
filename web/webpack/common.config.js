@@ -33,7 +33,7 @@ function getAppVendorDeps() {
 // entry points
 export const entry = {
   app: [
-    `${PATHS.src}/index.js`
+    `${PATHS.src}/client/index.js`
   ],
 
   vendor: getAppVendorDeps()

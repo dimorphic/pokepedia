@@ -18,7 +18,7 @@ CONFIG.set('PORT', 8001); // webpack dev server
 // app paths
 CONFIG.set('paths', {
   project: path.resolve(__dirname, './'),
-  source: 'src/client',
+  source: 'src/',
   build: 'build',
 
   shared: 'src/shared',

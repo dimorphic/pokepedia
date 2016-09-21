@@ -32,6 +32,7 @@ export default function (stats) {
 
   const script = getChunks('app', /js/);
   const style = getChunks('app', /css/);
+  const vendor = getChunks('vendor', /js/);
 
   // find compiled images
   const images = json.modules
@@ -42,8 +43,15 @@ export default function (stats) {
     }));
 
   // write it!
-  const content = { script, style, images };
-  fs.writeFileSync(STATS_PATH, JSON.stringify(content));
+  const content = {
+    script: {
+      app: script,
+      vendor
+    },
+    style,
+    images
+  };
 
+  fs.writeFileSync(STATS_PATH, JSON.stringify(content));
   debug('dev:webpack')('`webpack-stats.json` updated');
 }

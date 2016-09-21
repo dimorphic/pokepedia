@@ -42,7 +42,7 @@ module.exports = exports = {
     'import/parser': 'babel-eslint',
     'import/resolver': {
       webpack: {
-        config: 'start.js'
+        config: 'webpack/dev.config.js'
       }
     }
   }
