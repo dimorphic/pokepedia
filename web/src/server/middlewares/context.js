@@ -4,24 +4,14 @@
 // @param res
 // @param next
 //
-// export default async function(req, res, next) {
-//     // Get our token from headers (server) or cookies (client)
-//     req.token = req.headers.token || req.cookies.token
-//
-//     // Add state & session data
-//     const state = createServerState()
-//     state.app.hostname = req.headers.host
-//
-//     // Check if logged in
-//     const account = await getAccount(req.token)
-//     if (account) {
-//         state.account = account
-//     }
-//
-//     // Create the context
-//     req.context = {
-//         state,
-//         store: actions(Object.assign({}, state, { token: req.token }))
-//     }
-//     next()
-// }
+export default async function context(req, res, next) {
+  // Get our token from headers (server) or cookies (client)
+  // req.token = req.headers.token || req.cookies.token;
+
+  // add navigator useragent for MUI provider
+  global.navigator = {
+    userAgent: req.headers['user-agent']
+  };
+
+  next();
+}
