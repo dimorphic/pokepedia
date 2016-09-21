@@ -7,15 +7,17 @@ import morgan from 'morgan';
 
 // settings
 import CONFIG from './config';
-import renderer from './middlewares/renderer';
 
-const HOST = (process.env.HOST || CONFIG.web.host);
-const PORT = (process.env.PORT || CONFIG.web.port);
+// middlewares
+import context from './middlewares/context';
+import renderer from './middlewares/renderer';
 
 // @DEBUG
 // debug.enable('*');
 
 // sExpress <3
+const HOST = (process.env.HOST || CONFIG.web.host);
+const PORT = (process.env.PORT || CONFIG.web.port);
 const app = express();
 
 // Config
@@ -62,6 +64,7 @@ if (process.env.NODE_ENV === 'development') {
 // });
 
 // React renderer
+app.use(context);
 app.use('*', renderer);
 
 // Boot it up!

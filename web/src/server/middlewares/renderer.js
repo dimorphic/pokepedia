@@ -1,52 +1,43 @@
 // deps
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { match, RouterContext, Route } from 'react-router';
+import { match, RouterContext } from 'react-router';
 import { Provider } from 'react-redux';
-
 import createLocation from 'history/lib/createLocation';
 import createMemoryHistory from 'history/lib/createMemoryHistory';
+import Helmet from 'react-helmet';
 
-// import Html from '../../client/components/Common/Html'
-
+// routes & store
 import routes from 'shared/routes';
 import setupStore from 'shared/store';
 
+// components
+import Html from 'shared/containers/Html';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 // const runRouter = (location, routes) => {
-//   new Promise((resolve) => {
-//     match({ routes, location }, (...args) => resolve(args));
+//   return new Promise((resolve) => {
+//     match({ routes, location }, (...args) => { resolve(args); });
+//   });
 // };
 
-function renderComponent(renderProps, store) {
-  const initialState = store.getState();
-
+function renderReact(componentProps, store) {
   const componentHTML = renderToString(
     <Provider store={store}>
-      <RouterContext {...renderProps} />
+      <RouterContext {...componentProps} />
     </Provider>
   );
 
-  const HTML = `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>Redux Demo</title>
+  const initialState = store.getState();
+  const head = Helmet.rewind();
 
-        <script>
-          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
-        </script>
-      </head>
-      <body>
-        <div id="root">${componentHTML}</div>
-
-        <script type="application/javascript" src="build/vendor.bundle.js"></script>
-        <script type="application/javascript" src="build/app.bundle.js"></script>
-      </body>
-    </html>
-  `;
-
-  return HTML;
+  return renderToString(
+    <Html
+      initialState={initialState}
+      head={head}
+      body={componentHTML}
+    />
+  );
 }
 
 //
@@ -54,37 +45,65 @@ function renderComponent(renderProps, store) {
 // @param req
 // @param res
 //
-export default function render(req, res) {
-  // create routing, store
-  const location = createLocation(req.url);
+export default function router(req, res) {
+  // create routing
+  const location = createLocation(req.originalUrl);
   const history = createMemoryHistory();
-  const store = setupStore({ routes, history });
 
   // response send helper
   function sendResponse(statusCode, content) {
     res.status(statusCode).send(`<!DOCTYPE html>\n${content}`);
   }
 
-  match({ routes, location }, (err, redirectLocation, renderProps) => {
-    console.log('!! HERE !!');
+  // @debug
+  // const [ error, redirect, renderProps ] = await runRouter(location, routes);
+  // console.log('>>>> ', error, redirect, renderProps);
+  // if (error || redirect) throw ({ error, redirect })
 
+
+  // GO MATCH ROUTE !
+  match({ routes, location }, (err, redirectLocation, renderProps) => {
+    // handle error
     if (err) {
       console.error(err);
       res.status(500).end('Internal server error');
     }
 
+    // handle redirect
     if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     }
 
+    // pass this to react routes 404 ?
     if (!renderProps) {
       console.warn('Not found ', location);
       res.status(404).end('Not found');
     }
 
-    // ALL OK, RENDER REACT
-    console.log('!! YOYO !! all ok. go render!');
-    // return res.end('I ARE HERE!');
-    sendResponse(200, renderComponent(renderProps, store));
+    //
+    // ALL OK, RENDER REACT BRO !
+    //
+    console.log('!! MATCHED !!', location);
+    console.log('\n');
+
+    // Assets name are found into `webpack-stats`
+    // const assets = require('./webpack-stats.json')
+
+    // Don't cache assets name on dev
+    // if (process.env.NODE_ENV === 'development') {
+    //   delete require.cache[require.resolve('./webpack-stats.json')]
+    // }
+
+    // Get the component tree
+    // const { components } = renderProps;
+
+    // setup Redux store
+    const store = setupStore({ history });
+    const html = renderReact(renderProps, store);
+
+    console.debug('return html content', html);
+    sendResponse(200, html);
+
+    // console.info('render store @ ', store.getState());
   });
 }
