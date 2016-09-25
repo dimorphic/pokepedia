@@ -1,0 +1,31 @@
+@mixin flexgrid($cols, $margin) {
+  $width: (100% / $cols);
+  $calc-margin: (($margin * $cols) - $margin) / $cols;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+  &:after {
+    content: "";
+    flex: auto;
+  }
+
+  > * {
+    width: calc( #{$width} - #{$calc-margin} );
+    margin: 0 $margin / 2;
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+
+    &:nth-child(#{$cols}n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(#{$cols}n + 1) {
+      margin-left: 0;
+    }
+  }
+}
