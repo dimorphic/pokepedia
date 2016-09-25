@@ -11,6 +11,8 @@ import Helmet from 'react-helmet';
 import routes from 'shared/routes';
 import setupStore from 'shared/store';
 
+import fetchComponentData from 'shared/utils/fetchComponentData';
+
 // components
 import Html from 'shared/containers/Html';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -95,18 +97,20 @@ export default function router(req, res) {
     //
     // ALL OK, RENDER REACT BRO !
     //
-    // console.log('!! MATCHED !!', location);
-    // console.log('\n');
-
-    // Get the component tree
-    // const { components } = renderProps;
 
     // setup Redux store
     const store = setupStore({ history });
-    const html = renderReact(renderProps, store);
 
-    // console.debug('return html content', html);
-    sendResponse(200, html);
+    // fetch all containers needs (action promises)
+    fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
+    .then(() => {
+      const html = renderReact(renderProps, store);
+      return html;
+    })
+    .then((html) => {
+      console.debug('return html content');
+      sendResponse(200, html);
+    });
 
     // console.info('render store @ ', store.getState());
   });
