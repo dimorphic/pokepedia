@@ -2,7 +2,7 @@ import debug from 'debug';
 import cp from 'child_process';
 import path from 'path';
 import watch from 'node-watch';
-// import browserSync from 'browser-sync';
+import browserSync from 'browser-sync';
 
 // config
 import SERVER_CONFIG from '../../src/server/config';
@@ -22,7 +22,7 @@ let serverReload;
 
 const WEBPACK_PORT = CONFIG.get('port'); // default: 8001
 const BROWSER_SYNC_CONFIG = {
-  port: WEBPACK_PORT + 2 || 8002,
+  port: 8080, // WEBPACK_PORT + 2 || 8002,
   proxy: `0.0.0.0:${SERVER_CONFIG.web.port}`
 };
 
@@ -53,7 +53,7 @@ const startServer = () => {
       if (serverReload) {
         serverReload = false;
         debug('dev:browsersync')('?? BROWSER SYNC RELOAD ??');
-        // browserSync.reload();
+        browserSync.reload();
       }
 
       if (!started) {
@@ -61,7 +61,7 @@ const startServer = () => {
 
         // Start browserSync
         debug('dev:browsersync')('!! START BROWSER SYNC !!');
-        // browserSync(BROWSER_SYNC_CONFIG);
+        browserSync(BROWSER_SYNC_CONFIG);
 
         // Listen for `rs` in stdin to restart server
         debug('dev')('type `rs` in console for restarting web application');
