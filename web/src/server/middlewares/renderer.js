@@ -17,11 +17,11 @@ import fetchComponentData from 'shared/utils/fetchComponentData';
 import Html from 'shared/containers/Html';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-// const runRouter = (location, routes) => {
-//   return new Promise((resolve) => {
-//     match({ routes, location }, (...args) => { resolve(args); });
-//   });
-// };
+function matchLocation(location) {
+  return new Promise((resolve) => {
+    match({ routes, location }, (...args) => { resolve(args); });
+  });
+}
 
 function renderReact(componentProps, store) {
   // root component
@@ -55,11 +55,11 @@ function renderReact(componentProps, store) {
 }
 
 //
-// Server-side renderer middleware
-// @param req
-// @param res
+//  Server-Side Renderer middleware
+//  @param req
+//  @param res
 //
-export default function router(req, res) {
+export default async function router(req, res) {
   // create routing
   const location = createLocation(req.originalUrl);
   const history = createMemoryHistory();
@@ -69,49 +69,37 @@ export default function router(req, res) {
     res.status(statusCode).send(`<!DOCTYPE html>\n${content}`);
   }
 
-  // @debug
-  // const [ error, redirect, renderProps ] = await runRouter(location, routes);
-  // console.log('>>>> ', error, redirect, renderProps);
-  // if (error || redirect) throw ({ error, redirect })
-
-
   // GO MATCH ROUTE !
-  match({ routes, location }, (err, redirectLocation, renderProps) => {
-    // handle error
-    if (err) {
-      console.error(err);
-      res.status(500).end('Internal server error');
-    }
+  const [err, redirectLocation, renderProps] = await matchLocation(location);
 
-    // handle redirect
-    if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    }
+  // handle error
+  if (err) {
+    console.error(err);
+    res.status(500).end('Internal server error');
+  }
 
-    // pass this to react routes 404 ?
-    if (!renderProps) {
-      console.warn('Not found ', location);
-      res.status(404).end('Not found');
-    }
+  // handle redirect
+  if (redirectLocation) {
+    res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+  }
 
-    //
-    // ALL OK, RENDER REACT BRO !
-    //
+  // pass this to react routes 404 ?
+  if (!renderProps) {
+    console.warn('Not found ', location);
+    res.status(404).end('Not found');
+  }
 
-    // setup Redux store
-    const store = setupStore({ history });
+  //
+  //  ALL OK, RENDER REACT BRO !
+  //
 
-    // fetch all containers needs (action promises)
-    fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
-    .then(() => {
-      const html = renderReact(renderProps, store);
-      return html;
-    })
-    .then((html) => {
-      console.debug('return html content');
-      sendResponse(200, html);
-    });
+  // setup store
+  const store = setupStore({ history });
 
-    // console.info('render store @ ', store.getState());
+  // fetch all containers needs (action promises)
+  fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
+  .then(() => {
+    const html = renderReact(renderProps, store);
+    sendResponse(200, html);
   });
 }
