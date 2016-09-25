@@ -2,7 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from 'shared/containers/App';
-import Home from 'shared/containers/Home';
+
+import Home from 'shared/components/views/Home';
 import Test from 'shared/components/views/Test';
 
 //
