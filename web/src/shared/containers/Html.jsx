@@ -28,8 +28,7 @@ export default class Html extends Component {
     // const stylez = assets.style.map((href, idx) => {
     //   return <link key={idx} rel="stylesheet" href={href} />;
     // });
-
-    console.log('html assets @ ', assets);
+    // console.log('html assets @ ', assets);
 
     return (
       <html>

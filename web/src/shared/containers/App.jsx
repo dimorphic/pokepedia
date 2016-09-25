@@ -8,6 +8,8 @@ export default class App extends Component {
   };
 
   render() {
+    // onChangeClientState={(newState) => console.log(newState)}
+
     return (
       <div>
         <Helmet
@@ -20,7 +22,6 @@ export default class App extends Component {
               'content': 'My super dooper SSR app!'
             }
           ]}
-          onChangeClientState={(newState) => console.log(newState)}
         />
         <div>hello from App container!?</div>
         {this.props.children}
