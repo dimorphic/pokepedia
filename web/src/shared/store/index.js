@@ -4,8 +4,8 @@ import { reduxReactRouter } from 'redux-router';
 
 // middlewares
 import thunkMiddleware from 'redux-thunk';
-// import promiseMiddleware from 'redux-promise-middleware';
-// import logger from './middlewares/logger';
+import promiseMiddleware from 'redux-promise-middleware';
+import logger from './middlewares/logger';
 import { DevTools } from 'client/devtools';
 
 // routes & reducers
@@ -14,23 +14,28 @@ import rootReducer from './reducers';
 import routes from '../routes';
 
 const { BROWSER } = process.env;
-console.log('I ARE BROWSER @ ', BROWSER);
 
 // expose le store
 export let store;
 
 export default function setupStore({ initialState = STATE, history }) {
   // middleware ehancers
-  const enhancers = compose(
+  const middlewares = compose(
     applyMiddleware(
       thunkMiddleware,
-      // promiseMiddleware({ promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILED'] }),
-      // logger
+      promiseMiddleware({ promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILED'] }),
+      logger
+      // Reactotron.reduxMiddleware
     ),
 
-    reduxReactRouter({ routes, history }),
-    DevTools.instrument()
+    reduxReactRouter({ routes, history })
   );
+
+  // devtools ?
+  const enhancers = BROWSER ? compose(
+    middlewares,
+    DevTools.instrument()
+  ) : middlewares;
 
   // create enhanced store
   store = createStore(rootReducer, initialState, enhancers);

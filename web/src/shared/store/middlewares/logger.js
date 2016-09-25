@@ -3,19 +3,12 @@
 //  @param  {Function} getState
 //  @return {Object} new state
 //
-function hasLocalStorage() {
-  return (typeof localStorage === 'undefined');
-}
-
-// const storage = setupStorage();
+const { BROWSER } = process.env;
 
 // use localStorage keys for toggling logger
 // ...this way we can debug in PRODUCTION mode also if needed
-// const isLogActive = hasLocalStorage() ? localStorage.getItem('logger-middleware') : false;
-// const isLogCollapsed = hasLocalStorage() ? localStorage.getItem('logger-middleware-collapsed') : false;
-
-const isLogActive = false;
-const isLogCollapsed = false;
+const isLogActive = BROWSER ? localStorage.getItem('logger-middleware') : false;
+const isLogCollapsed = BROWSER ? localStorage.getItem('logger-middleware-collapsed') : false;
 
 // helpers
 const formatTime = (time) => {

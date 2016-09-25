@@ -38,7 +38,7 @@ const WEBPACK_CONFIG = {
   cache: true,
 
   target: 'web',
-  devtool: 'cheap-inline-source-map', // 'eval-source-map'
+  devtool: 'inline-source-map', // 'eval-source-map'
 
   context: common.PATHS.src,
 
