@@ -35,10 +35,10 @@ common.entry.vendor.unshift(HMR);
 //  DEVELOPMENT config
 //
 const WEBPACK_CONFIG = {
-  // cache: true,
+  cache: true,
 
   target: 'web',
-  devtool: 'cheap-module-source-map', // 'eval-source-map'
+  devtool: 'cheap-inline-source-map', // 'eval-source-map'
 
   context: common.PATHS.src,
 
