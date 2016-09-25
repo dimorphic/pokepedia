@@ -1,0 +1,56 @@
+.PokepediaDrawer-Info {
+  padding: 20px;
+  text-align: center;
+}
+
+.PokepediaDrawer-About {
+  // padding-bottom: 10px;
+  // margin-bottom: 10px;
+
+  // border-bottom: 1px dashed #ccc;
+
+  // h4 { margin: 15px 0; }
+  h4 { font-style: italic; }
+}
+
+.PokepediaDrawer-Info-Content {
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+.PokepediaDrawer-Soon {
+  color: magenta;
+}
+
+.PokepediaDrawer-Social {
+  margin: 30px 0;
+}
+
+.PokepediaDrawer-SocialOr {
+  display: block;
+
+  margin: 5px 0;
+
+  font-style: italic;
+  color: #bbb;
+}
+
+.PokepediaDrawer-Coded {
+  padding: 20px;
+
+  font-size: 12px;
+
+  .fa { margin: 0 5px; }
+  .fa.fa-heart { color: #e74c3c; }
+}
+
+.PokepediaDrawer-Footer {
+  padding: 10px 0;
+
+  font-size: 12px;
+  font-style: italic;
+  color: #ccc;
+  // text-align: left;
+}

@@ -1,0 +1,15 @@
+@import '~client/scss/tools/mixins/responsive.scss';
+
+.RewardsPage {
+  max-width: 1280px;
+
+  .Tag {
+    @include toWidth(768px) {
+      font-size: 32px;
+    }
+
+    @include betweenWidth(768px, 1024px) {
+      font-size: 36px;
+    }
+  }
+}

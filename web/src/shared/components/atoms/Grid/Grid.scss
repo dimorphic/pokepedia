@@ -1,0 +1,63 @@
+$grid-space: 15px;
+$grid-gutter: $grid-space * 2;
+
+// Inspired by https://github.com/suitcss/components-grid
+// DO NOT apply dimension utilities to the `Grid` element. All cell
+// widths should be applied to child grid cells.
+
+// All content must be contained within child `GridCell` elements.
+
+.Grid {
+  display: flex;
+}
+
+// Flow order
+.Grid--flowRow {
+  flex-flow: row wrap;
+}
+
+.Grid--flowColumn {
+  flex-flow: column wrap;
+}
+
+// Alignment
+.Grid--alignCenter {
+  justify-content: center;
+}
+
+.Grid--alignRight {
+  justify-content: flex-end;
+}
+
+.Grid--spaceAround {
+  justify-content: space-around;
+}
+
+.Grid--alignMiddle {
+  align-items: center;
+}
+
+.Grid--alignBottom {
+  align-items: flex-end;
+}
+
+// Allow cells to equal distribute width
+.Grid--fit > .GridCell {
+  flex: 1 1 0%;
+}
+
+// All cells match height of tallest cell in a row
+.Grid--equalHeight > .GridCell {
+  display: flex;
+}
+
+// With gutters
+.Grid--withGutter {
+  margin-right: -($grid-gutter / 2);
+  margin-left: -($grid-gutter / 2);
+
+  > .GridCell {
+    padding-right: $grid-gutter / 2;
+    padding-left: $grid-gutter / 2;
+  }
+}

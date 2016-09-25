@@ -1,0 +1,133 @@
+@import '~scss/tools/mixins/position.scss';
+
+$pokecard-avatar-size: 120px;
+$pokecard-avatar-border-size: 10px;
+
+.PokeCard-Cell {
+  position: relative;
+  min-width: 300px;
+  width: 20%;
+
+  margin-bottom: 30px;
+}
+
+.PokeCard {
+  position: relative;
+  width: 100%;
+
+  // padding: 10px 30px;
+
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 23px 30px -16px rgba(#000, .2);
+
+  // force HA
+  @include noflicker();
+  transition: all 0.2s ease-in-out;
+
+  &-Wrapper {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  //
+  // &:hover {
+  //   cursor: pointer;
+  //   transform: translateY(-6px);
+  //   box-shadow: 0px 27px 30px -20px rgba(#000, .3);
+  // }
+}
+
+.PokeCard-Header {
+  position: relative;
+
+  width: 100%;
+  height: 120px;
+
+  background: #eee;
+  text-align: center;
+}
+
+.PokeCard-Name {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.PokeCard-No {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0, 0.6);
+}
+
+.PokeCard-Avatar {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
+  height: $pokecard-avatar-size + (2 * $pokecard-avatar-border-size);
+
+  background: none;
+
+  border-radius: 50%;
+  border: $pokecard-avatar-border-size solid rgba(255, 255, 255, 0.2);
+}
+
+.PokeCard-Content {
+  padding: 35px 20px;
+
+  background: #fff;
+  text-align: center;
+}
+
+.PokeCard-Properties {
+  padding: 20px;
+  margin: 40px 0;
+
+  color: #333;
+  border: 1px dashed #dcdcdc;
+  border-left: 0;
+  border-right: 0;
+}
+
+.PokeCard-Property-Name {
+  margin-bottom: 10px;
+  color: #bbb;
+}
+
+.PokeCard-Property-Value {
+  font-size: 20px;
+
+  span {
+    margin-left: 5px;
+
+    font-size: 14px;
+    color: #bbb;
+  }
+}
+
+.PokeCard-Property-Icon {
+  fill: #ccc !important;
+}
+
+.PokeCard-Chips {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+
+  text-align: center;
+
+  .PokeCard-Property-Name {
+    display: block;
+    width: 100%;
+  }
+}
+
+.PokeCard-Chip { margin: 4px; }

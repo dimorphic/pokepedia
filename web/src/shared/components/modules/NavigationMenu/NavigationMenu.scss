@@ -1,0 +1,69 @@
+.NavigationMenu {
+  width: 100%;
+
+  margin: 50px 0;
+
+  text-align: center;
+}
+
+.NavigationMenu-Item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 15px;
+
+  color: #969696;
+
+  transition: all 0.2s ease-out;
+
+  // link button
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .NavigationMenu-Link {
+    padding: 15px;
+    cursor: pointer;
+
+    transition: all 0.2s ease-out;
+  }
+
+  // link decorator
+  i {
+    display: block;
+
+    width: 0%;
+    height: 1px;
+    margin-top: 5px;
+
+    background: #5dd6ff;
+
+    transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  // state: HOVER
+  &:hover {
+    color: #00bcd4;
+
+    i {
+      width: 100%;
+      background: #00bcd4;
+    }
+  }
+
+
+  // state: ACTIVE
+  &--active,
+  &--active:hover {
+    color: magenta;
+
+    .NavigationMenu-Link {
+      cursor: default;
+    }
+
+    i {
+      width: 100%;
+      background: magenta;
+    }
+  }
+}
