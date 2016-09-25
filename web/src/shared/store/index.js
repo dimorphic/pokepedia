@@ -6,6 +6,7 @@ import { reduxReactRouter } from 'redux-router';
 import thunkMiddleware from 'redux-thunk';
 // import promiseMiddleware from 'redux-promise-middleware';
 // import logger from './middlewares/logger';
+import { DevTools } from 'client/devtools';
 
 // routes & reducers
 import STATE from './initial-state';
@@ -28,7 +29,7 @@ export default function setupStore({ initialState = STATE, history }) {
     ),
 
     reduxReactRouter({ routes, history }),
-    // DevTools.instrument()
+    DevTools.instrument()
   );
 
   // create enhanced store

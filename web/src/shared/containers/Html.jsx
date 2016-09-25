@@ -50,7 +50,7 @@ export default class Html extends Component {
           */}
           {head.script.toComponent()}
           <script type="application/javascript" src={assets.script.vendor} />
-          <script type="application/javascript" src={assets.script.app} />
+          <script type="application/javascript" src={assets.script.app[0]} />
         </body>
       </html>
     );

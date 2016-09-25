@@ -17,9 +17,17 @@ const history = createBrowserHistory();
 const preloadedState = window.__INITIAL_STATE__;
 const store = setupStore({ initialState: preloadedState, history });
 
-render(
+const app = (
   <Provider store={store}>
     <Root routes={routes} history={history} />
-  </Provider>,
+  </Provider>
+);
+
+render(
+  app,
   document.getElementById('root')
 );
+
+if (__DEV__) {
+  require('./devtools').default(store);
+}
