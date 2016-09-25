@@ -25,10 +25,13 @@ export default class Html extends Component {
 
   render() {
     const { head, body, assets } = this.props;
-    // const stylez = assets.style.map((href, idx) => {
-    //   return <link key={idx} rel="stylesheet" href={href} />;
-    // });
-    // console.log('html assets @ ', assets);
+
+    // map css assets
+    const cssStyles = assets.style.map((href, idx) => {
+      return <link key={idx} rel="stylesheet" href={href} />;
+    });
+
+    console.log('html assets @ ', assets);
 
     return (
       <html>
@@ -37,7 +40,11 @@ export default class Html extends Component {
           {head.meta.toComponent()}
           {head.link.toComponent()}
 
-          {/* stylez */}
+          {/* FONT */}
+          <link href="//fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+          <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+          {cssStyles}
         </head>
         <body>
           <div id="root" dangerouslySetInnerHTML={{ __html: body }} />

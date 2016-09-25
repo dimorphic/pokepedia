@@ -10,7 +10,7 @@ import { DevTools } from 'client/devtools';
 
 // routes & reducers
 import STATE from './initial-state';
-import rootReducer from './reducers';
+import rootReducer from './reducers/index';
 import routes from '../routes';
 
 const { BROWSER } = process.env;

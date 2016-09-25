@@ -12,22 +12,33 @@ import routes from 'shared/routes';
 // components
 import Root from 'shared/containers/Root';
 
+// global style ? (demo)
+if (process.env.BROWSER) require('./scss/main.scss');
+
 // setup
-const history = createBrowserHistory();
 const preloadedState = window.__INITIAL_STATE__;
+const history = createBrowserHistory();
 const store = setupStore({ initialState: preloadedState, history });
+const target = document.getElementById('root');
 
-const app = (
-  <Provider store={store}>
-    <Root routes={routes} history={history} />
-  </Provider>
-);
+function renderApp() {
+  render(
+    <Provider store={store}>
+      <Root routes={routes} history={history} />
+    </Provider>
+  , target);
+}
 
-render(
-  app,
-  document.getElementById('root')
-);
+// Render HTML on the browser
+renderApp();
 
+// Add redux devtools ?
 if (__DEV__) {
-  require('./devtools').default(store);
+  // require('./devtools').default(store);
+}
+
+// @TODO: not working for now ?
+// Use hot-reloading if available
+if (module.hot) {
+  module.hot.accept(() => renderApp());
 }

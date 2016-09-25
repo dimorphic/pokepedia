@@ -1,6 +1,6 @@
 // only in Node
 if (typeof window === 'undefined') {
-  console.log('CONSOLE SHIM! ');
+  // console.log('CONSOLE SHIM! ');
 
   // logging domain
   const APP_NAME = 'web';
