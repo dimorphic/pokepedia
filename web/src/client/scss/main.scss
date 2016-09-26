@@ -8,3 +8,13 @@
 // Common global + layout
 @import 'common/global';
 @import 'common/layout';
+
+.debug {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  padding: 20px;
+  color: #fff;
+  background: #f00;
+}
