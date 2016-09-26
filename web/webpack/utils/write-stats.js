@@ -13,7 +13,7 @@ const STATS_PATH = path.resolve(__dirname, '../../src/client/webpack-stats.json'
 //  for server side rendering
 //
 export default function (stats) {
-  const publicPath = this.options.output.publicPath;
+  const publicPath = '/'; // this.options.output.publicPath;
   const json = stats.toJson();
 
   // get chunks by name and extensions
@@ -30,9 +30,18 @@ export default function (stats) {
       .map(chunk => { return `${publicPath}${chunk}`; }); // add public path to it
   }
 
-  const script = getChunks('app', /js/);
-  const style = getChunks('app', /css/);
-  const vendor = getChunks('vendor', /js/);
+  // const script = getChunks('app', /js/);
+  // const style = getChunks('app', /css/);
+  // const vendor = getChunks('vendor', /js/);
+  const scripts = {
+    app: getChunks('app', /js/),
+    vendor: getChunks('vendor', /js/)
+  };
+
+  const styles = {
+    app: getChunks('app', /css/),
+    vendor: getChunks('vendor', /css/)
+  };
 
   // find compiled images
   const images = json.modules
@@ -44,12 +53,21 @@ export default function (stats) {
 
   // write it!
   const content = {
-    script: {
-      app: script,
-      vendor
+    // script: {
+    //   app: script,
+    //   vendor
+    // },
+    // style,
+    // images
+    app: {
+      css: styles.app,
+      js: scripts.app
     },
-    style,
-    images
+
+    vendor: {
+      css: styles.vendor,
+      js: scripts.vendor
+    }
   };
 
   fs.writeFileSync(STATS_PATH, JSON.stringify(content));

@@ -1,5 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 
+// helpers
+const { NODE_ENV } = process.env;
+
+// get asset files by type
+function getAssetsByType(assets, fileType) {
+  return Object.keys(assets).map((entry) => {
+    const asset = assets[entry];
+    let files = asset[fileType];
+
+    if (Array.isArray(asset[fileType])) {
+      files = asset[fileType].map((href) => { return href; });
+    }
+
+    return files;
+  });
+}
+
 export default class Html extends Component {
   static propTypes = {
     head: PropTypes.object.isRequired,
@@ -23,15 +40,35 @@ export default class Html extends Component {
     return (<script dangerouslySetInnerHTML={{ __html: html }} />);
   }
 
+  renderScripts(assets, baseHref = '') {
+    const scripts = getAssetsByType(assets, 'js').reduce((prev, current) => {
+      return current.concat(prev);
+    }).map((href, idx) => {
+      return <script key={idx} type="application/javascript" src={`${baseHref}${href}`} />;
+    });
+
+    return scripts;
+  }
+
+  renderStyles(assets, baseHref = '') {
+    const styles = getAssetsByType(assets, 'css').reduce((prev, current) => {
+      return current.concat(prev);
+    }).map((href, idx) => {
+      return <link key={idx} rel="stylesheet" href={`${baseHref}${href}`} />;
+    });
+
+    return styles;
+  }
+
   render() {
     const { head, body, assets } = this.props;
 
-    // map css assets
-    const cssStyles = assets.style.map((href, idx) => {
-      return <link key={idx} rel="stylesheet" href={href} />;
-    });
-
     console.log('html assets @ ', assets);
+
+    // map css assets
+    const assetsUrl = '/build';
+    const assetsCss = this.renderStyles(assets, assetsUrl);
+    const assetsScripts = this.renderScripts(assets, assetsUrl);
 
     return (
       <html>
@@ -44,19 +81,14 @@ export default class Html extends Component {
           <link href="//fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
           <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
 
-          {cssStyles}
+          {assetsCss}
         </head>
         <body>
           <div id="root" dangerouslySetInnerHTML={{ __html: body }} />
           {this.renderInitialState()}
 
-          {/*
-          <script type="application/javascript" src="build/vendor.bundle.js"></script>
-          <script type="application/javascript" src="build/app.bundle.js"></script>
-          */}
+          {assetsScripts}
           {head.script.toComponent()}
-          <script type="application/javascript" src={assets.script.vendor} />
-          <script type="application/javascript" src={assets.script.app[0]} />
         </body>
       </html>
     );
