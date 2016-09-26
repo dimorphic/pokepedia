@@ -7,7 +7,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // paths
-const PATHS = require('../common.config').PATHS;
+const ENV_CONFIG = require('../../config');
+const UTILS = ENV_CONFIG.get('utils');
+const PATHS = UTILS.paths;
 
 //
 //  DEFINE plugin
@@ -23,7 +25,7 @@ export const definePlugin = (options) => {
 //
 export const assetsPlugin = (options) => {
   return new AssetsPlugin(Object.assign({
-    path: PATHS.build,
+    path: PATHS.build(),
     filename: 'assets.json'
   }, options));
 };
@@ -34,7 +36,7 @@ export const assetsPlugin = (options) => {
 export const htmlPlugin = (options) => {
   return new HtmlWebpackPlugin(Object.assign({
     // title: 'Katalyst',
-    template: `${PATHS.src}/index.html`
+    template: `${PATHS.source()}/index.html`
   }, options));
 };
 

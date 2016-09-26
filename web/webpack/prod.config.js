@@ -2,12 +2,12 @@
 import webpack from 'webpack';
 import writeStats from './utils/write-stats';
 
+import ENV_CONFIG from '../config';
 import * as common from './common.config';
 
-// app global config
-import ENV_CONFIG from '../config';
-
-// console.log('ENV @ ', ENV_CONFIG);
+// helpers
+const UTILS = ENV_CONFIG.get('utils');
+const PATHS = UTILS.paths;
 
 //
 //  PRODUCTION config
@@ -23,7 +23,7 @@ const WEBPACK_CONFIG = {
 
   module: {
     loaders: [
-      common.LOADERS.jsLoader({ include: common.PATHS.src }),
+      common.LOADERS.jsLoader({ include: PATHS.source() }),
       common.LOADERS.sassLoader({ extract: true }),
       common.LOADERS.imagesLoader({ name: '[path][name]-[hash].[ext]' })
       // common.LOADERS.htmlLoader()
@@ -46,7 +46,7 @@ const WEBPACK_CONFIG = {
     common.PLUGINS.cssExtractPlugin('[name].bundle-[hash].css'),
     common.PLUGINS.copyPlugin([
       {
-        from: `${common.PATHS.src}/assets/`,
+        from: `${PATHS.source()}/assets/`,
         to: 'assets/'
       }
     ]),
@@ -55,11 +55,12 @@ const WEBPACK_CONFIG = {
     // common.PLUGINS.htmlPlugin()
 
     // write webpack stats
-    // function () { this.plugin('done', writeStats); }
+    function () { this.plugin('done', writeStats); }
   ],
 
   resolve: common.resolve,
   postcss: common.PLUGINS.postcss
 };
 
-webpack(WEBPACK_CONFIG);
+// webpack(WEBPACK_CONFIG);
+module.exports = WEBPACK_CONFIG;

@@ -1,18 +1,13 @@
 // app global config
-import CONFIG from '../config';
+import ENV_CONFIG from '../config';
 
 // helpers
-const UTILS = CONFIG.get('utils');
+const UTILS = ENV_CONFIG.get('utils');
+const PATHS = UTILS.paths;
 
 // loaders & plugins
 const LOADERS = exports.LOADERS = require('./modules/loaders');
 const PLUGINS = exports.PLUGINS = require('./modules/plugins');
-
-// path exporter
-const PATHS = exports.PATHS = {
-  src: UTILS.paths.source(),
-  build: UTILS.paths.build()
-};
 
 //
 // remove server (SSR) deps #HACK
@@ -22,38 +17,43 @@ const PATHS = exports.PATHS = {
 //  could move these deps to 'dev-deps' ?
 //  ...but then we will not be able to do `$ npm i --production` if ever needed ?
 //
-const serverDeps = ['cross-env', 'express', 'morgan', 'nodemon', 'serve-favicon'];
+const IGNORE_DEPS = [
+  'cross-env', 'express', 'morgan', 'nodemon', 'serve-favicon',
+  'normalize.css'
+];
 
 function getAppVendorDeps() {
-  return CONFIG.get('dependencies').vendor.filter((item) => {
-    return !serverDeps.includes(item);
+  return ENV_CONFIG.get('dependencies').vendor.filter((item) => {
+    return !IGNORE_DEPS.includes(item);
   });
 }
 
 // entry points
 export const entry = {
   app: [
-    `${PATHS.src}/client/index.js`
+    `${PATHS.source()}/client/index.js`
   ],
 
   vendor: getAppVendorDeps()
 };
 
+// console.log('WEBPACK COMMON ENTRY: ', entry);
+
 // build output destination
 export const createOutput = (options) => Object.assign({
-  path: PATHS.build,
+  path: PATHS.build(),
   filename: '[name].bundle.js',
   publicPath: '/'
 }, options);
 
 // modules resolves
 export const resolve = {
-  root: [`${PATHS.src}`],
+  root: [`${PATHS.source()}`],
 
   extensions: ['', '.js', '.jsx', '.css', '.scss'],
   modulesDirectories: [
-    `${PATHS.src}`,
-    // `${PATHS.src}/scss`,
+    `${PATHS.source()}`,
+    // `${PATHS.source()}/scss`,
 
     // fallback
     'node_modules'

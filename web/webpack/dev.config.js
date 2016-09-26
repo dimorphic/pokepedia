@@ -5,6 +5,10 @@ import writeStats from './utils/write-stats';
 // app global config
 import ENV_CONFIG from '../config';
 
+// helpers
+const UTILS = ENV_CONFIG.get('utils');
+const PATHS = UTILS.paths;
+
 // web / dev server settings
 const HOST = ENV_CONFIG.get('HOST'); // bind on all interfaces (use 'localhost' for privacy)
 const PORT = ENV_CONFIG.get('PORT');
@@ -40,7 +44,7 @@ const WEBPACK_CONFIG = {
   target: 'web',
   devtool: 'inline-source-map', // 'eval-source-map'
 
-  context: common.PATHS.src,
+  context: PATHS.source(),
 
   entry: common.entry,
   output: common.createOutput({
@@ -67,8 +71,8 @@ const WEBPACK_CONFIG = {
     ],
 
     loaders: [
-      common.LOADERS.jsLoader({ include: common.PATHS.src }),
-      common.LOADERS.jsonLoader({ include: common.PATHS.src }),
+      common.LOADERS.jsLoader({ include: PATHS.source() }),
+      common.LOADERS.jsonLoader({ include: PATHS.source() }),
       common.LOADERS.sassLoader({ extract: true }),
       common.LOADERS.imagesLoader()
       // common.LOADERS.htmlLoader()
