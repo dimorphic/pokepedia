@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { fetchNeeds } from 'shared/utils/fetchComponentData';
 
 // components
 import RaisedButton from 'material-ui/RaisedButton';
@@ -20,6 +21,7 @@ const mapStoreToProps = (store) => ({
 
 // map actions
 const mapDispatchToProps = (dispatch) => ({
+  dispatch,
   actions: bindActionCreators(
     PokedexActions
   , dispatch)
@@ -36,12 +38,18 @@ class Test extends Component {
     pokemons: PropTypes.array
   }
 
+  static defaultProps = {
+    items: [],
+    levels: [],
+    pokemons: []
+  };
+
   static needs = [
     PokedexActions.getPokemons
   ];
 
   componentDidMount() {
-    console.log('MOUNT TEST.jsx!');
+    console.log('MOUNT TEST.jsx !!', this.props);
     // console.log('TEST PROPS @ ', this.props);
     this.fetchData();
   }
@@ -50,18 +58,21 @@ class Test extends Component {
     const { actions } = this.props;
     console.log('>> GO FETCH DATA TEST.jSX');
 
-    actions.getPokemons();
+    // actions.getPokemons();
+    fetchNeeds(Test.needs, this.props);
   }
 
   render() {
+    const { items, levels, pokemons } = this.props;
+
     return (
       <div>
         <Helmet title="Test!" />
         <div>test.jsx here bro</div>
         <pre>
-          {this.props.items.length}
-          {this.props.levels.length}
-          {this.props.pokemons.length}
+          {items.length}
+          {levels.length}
+          {pokemons.length}
         </pre>
         <RaisedButton label="Sup" />
       </div>

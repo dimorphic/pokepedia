@@ -15,7 +15,8 @@ import NavigationMenu from 'shared/components/modules/NavigationMenu';
 // map store to props
 const mapStoreToProps = (store) => {
   return {
-    appIsLoading: (store.global.requestsInProgress > 0)
+    appIsLoading: (store.global.requestsInProgress > 0),
+    requestsInProgress: store.global.requestsInProgress
   };
 };
 
@@ -23,6 +24,7 @@ const mapStoreToProps = (store) => {
 export default class App extends Component {
   static propTypes = {
     appIsLoading: PropTypes.bool,
+    requestsInProgress: PropTypes.number,
     children: PropTypes.node
   };
 
@@ -58,7 +60,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { appIsLoading } = this.props;
+    const { appIsLoading, requestsInProgress } = this.props;
     const { drawerOpened } = this.state;
 
     const infoButton = this.renderInfoButton();
@@ -78,7 +80,7 @@ export default class App extends Component {
             }
           ]}
         />
-        <div>hello from App container!?</div>
+        <div className="debug">requests: {requestsInProgress}</div>
         <ProgressIndicator loading={appIsLoading} />
         <div className="Pokepedia-Header">
           <PokepediaLogo />

@@ -11,7 +11,7 @@ const PokepediaLoader = (props) => {
   const { showTip } = props;
 
   const tip = !showTip ? null : (
-    <div className="PokedexPage-Tip">
+    <div className="Pokepedia-Tip">
       Tip: {props.tip}
     </div>
   );

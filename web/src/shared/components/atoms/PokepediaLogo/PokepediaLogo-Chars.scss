@@ -795,18 +795,18 @@ $pikachu-tail: #823e00;
   .pikachu {
     &:before,
     &:after {
-      @include animation(logo-animation .4s infinite steps(2));
+      @include animation('logo-animation .4s infinite steps(2)');
     }
 
     &:after {
-      @include animation-direction(reverse);
+      @include animation-direction('reverse');
     }
   }
 
   .pikachu {
     &:after,
     &:before {
-      @include animation-duration(.2s);
+      @include animation-duration('.2s');
     }
   }
 }

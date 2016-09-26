@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from 'shared/containers/App';
-
 import Home from 'shared/components/views/Home';
 import Test from 'shared/components/views/Test';
+import RewardsView from 'shared/components/views/RewardsView';
 
 //
 // Asynchronously load a file
@@ -14,14 +14,34 @@ import Test from 'shared/components/views/Test';
 // function requireAsync(container) {
 //   return (location, cb) => {
 //     require.ensure([], (require) => {
-//       cb(null, require('shared/containers/' + container));
+//       cb(null, require(`shared/components/views/${container}`));
 //     });
-//   }
+//   };
+// }
+
+// function requireAsync(container) {
+//   return (location, cb) => {
+//     cb(null, require(`shared/components/views/${container}`));
+//   };
 // }
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="test" component={Test} />
+
+    {/* REWARDS */}
+    <Route
+      path="rewards"
+      onEnter={(nextState, replace) => {
+        const pathname = nextState.location.pathname.split('/');
+
+        if (!pathname.includes('level') && !pathname.includes('egg')) {
+          replace('/rewards/level');
+        }
+      }}
+    >
+      <Route path=":type" component={RewardsView} />
+    </Route>
   </Route>
 );
