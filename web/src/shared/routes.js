@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from 'shared/containers/App';
+import Error404 from 'shared/containers/404';
+
 import Home from 'shared/components/views/Home';
 import Test from 'shared/components/views/Test';
 import RewardsView from 'shared/components/views/RewardsView';
@@ -43,5 +45,17 @@ export default (
     >
       <Route path=":type" component={RewardsView} />
     </Route>
+
+    {/* FALLBACKS */}
+    <Route
+      path="*"
+      onEnter={(nextState, replace) => {
+        // redirect to index
+        console.warn(`No route : ${nextState.location.pathname}. Redirecting to / ...`);
+        // replace('/');
+      }}
+
+      component={Error404}
+    />
   </Route>
 );

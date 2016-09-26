@@ -58,14 +58,16 @@ if (process.env.NODE_ENV === 'development') {
 //   app.use('/build', express.static(path.join(__dirname, '../dist'), cacheOpts))))
 // }
 
-// Routes
-// app.use((req, res) => {
-//   res.end('okzzy');
-// });
-
 // React renderer
 app.use(context);
 app.use('*', renderer);
+
+// Global error catcher
+// app.use((err, req, res, next) => {
+//   console.error('Request error ', req.method, req.url);
+//   console.error(err.stack);
+//   res.status(500).send('Server ooops!');
+// });
 
 // Boot it up!
 app.listen(PORT, HOST, () => {

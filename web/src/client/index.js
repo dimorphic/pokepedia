@@ -34,7 +34,7 @@ renderApp();
 
 // Add redux devtools ?
 if (__DEV__) {
-  require('./utils/devtools').default(store);
+  // require('./utils/devtools').default(store);
 }
 
 // @TODO: not working for now ?

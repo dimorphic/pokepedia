@@ -59,7 +59,7 @@ function renderReact(componentProps, store) {
 //  @param req
 //  @param res
 //
-export default async function router(req, res) {
+export default function router(req, res) {
   // create routing
   const location = createLocation(req.originalUrl);
   const history = createMemoryHistory();
@@ -70,36 +70,42 @@ export default async function router(req, res) {
   }
 
   // GO MATCH ROUTE !
-  const [err, redirectLocation, renderProps] = await matchLocation(location);
+  // const [err, redirectLocation, renderProps] = await matchLocation(location);
 
-  // handle error
-  if (err) {
-    console.error(err);
-    res.status(500).end('Internal server error');
-  }
+  match({ routes, location }, (err, redirectLocation, renderProps) => {
+    // handle error
+    if (err) {
+      console.error('LOCATION MATCH ERROR');
+      console.error(err);
+      return res.status(500).end('Server oops!');
+    }
 
-  // handle redirect
-  if (redirectLocation) {
-    res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-  }
+    // handle redirect
+    if (redirectLocation) {
+      return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+    }
 
-  // pass this to react routes 404 ?
-  if (!renderProps) {
-    console.warn('Not found ', location);
-    res.status(404).end('Not found');
-  }
+    // handle 404 (either return for server error, or passthru to react-router?)
+    if (!renderProps) {
+      console.warn('No route for: ', location.pathname);
+      res.status(404).end('Not found');
+    }
 
-  //
-  //  ALL OK, RENDER REACT BRO !
-  //
+    //
+    //  ALL OK, RENDER REACT BRO !
+    //
+    // setup store
+    const store = setupStore({ history });
 
-  // setup store
-  const store = setupStore({ history });
-
-  // fetch all containers needs (action promises)
-  fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
-  .then(() => {
-    const html = renderReact(renderProps, store);
-    sendResponse(200, html);
+    // fetch all containers needs (action promises)
+    fetchComponentData(store.dispatch, renderProps.components, renderProps.params)
+    .then(() => {
+      const html = renderReact(renderProps, store);
+      sendResponse(200, html);
+    })
+    .catch(fetchError => {
+      console.warn('FETCH COMPONENT DATA ERROR');
+      res.end(fetchError.message);
+    });
   });
 }
