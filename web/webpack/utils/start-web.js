@@ -13,6 +13,11 @@ function noop() {}
 const SERVER_SRC = path.join(__dirname, '../../src');
 const SERVER_APP = `${SERVER_SRC}/server/index`;
 
+const WATCH_FILES = [
+  `${SERVER_SRC}/server`,
+  `${SERVER_SRC}/shared`
+];
+
 //
 //  'Middleware' plugin to start our Express app
 //
@@ -52,7 +57,7 @@ const startServer = () => {
     if (message.match(/^online$/)) {
       if (serverReload) {
         serverReload = false;
-        debug('dev:browsersync')('?? BROWSER SYNC RELOAD ??');
+        debug('dev:browsersync')('BROWSER SYNC: RELOAD');
         browserSync.reload();
       }
 
@@ -60,7 +65,7 @@ const startServer = () => {
         started = true;
 
         // Start browserSync
-        debug('dev:browsersync')('!! START BROWSER SYNC !!');
+        debug('dev:browsersync')('BROWSER SYNC: START');
         browserSync(BROWSER_SYNC_CONFIG);
 
         // Listen for `rs` in stdin to restart server
@@ -74,13 +79,10 @@ const startServer = () => {
 
         // Start watcher on server files
         // and reload browser on change
-        debug('dev:watcher')('?? START WATCHER ??');
+        debug('dev:watcher')('WATCHING @ ', WATCH_FILES);
 
         watch(
-          [
-            `${SERVER_SRC}/server`,
-            `${SERVER_SRC}/shared`
-          ],
+          WATCH_FILES,
           (file) => {
             debug('dev:watcher')('watch file @ ', file);
             return !file.match('webpack-stats.json') ? restartServer() : noop();
