@@ -1,5 +1,5 @@
 // deps
-import './polyfills';
+import './utils/polyfills';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -34,7 +34,7 @@ renderApp();
 
 // Add redux devtools ?
 if (__DEV__) {
-  // require('./devtools').default(store);
+  require('./utils/devtools').default(store);
 }
 
 // @TODO: not working for now ?

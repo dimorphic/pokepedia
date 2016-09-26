@@ -6,7 +6,7 @@ import { reduxReactRouter } from 'redux-router';
 import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
 import logger from './middlewares/logger';
-import { DevTools } from 'client/devtools';
+import { DevTools } from 'client/utils/devtools';
 
 // routes & reducers
 import STATE from './initial-state';

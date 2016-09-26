@@ -42,7 +42,7 @@ interceptors.response.use(
     return response;
   },
   (err) => {
-    // console.log('!!!! INTERCEPT RESPONSE ERROR !!!', err);
+    console.error('!!!! INTERCEPT RESPONSE ERROR !!!', err);
     // store.dispatch(RequestActions.endRequest());
 
     return Promise.reject(err);
