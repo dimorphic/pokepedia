@@ -14,7 +14,7 @@ export default function fetchComponentData(dispatch, components, params) {
   //   return (current.needs || []).concat(componentNeeds).concat(prev);
   // }, []);
 
-  console.debug('fetch needs @ ', needs);
+  // console.debug('fetch needs @ ', needs);
   const promises = needs.map(need => dispatch(need(params)));
 
   return Promise.all(promises);

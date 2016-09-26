@@ -15,5 +15,5 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   // start dev server
   require('./webpack/dev-server.js');
 } else {
-  require('./webpack/prod.config.js');
+  require('./src/server');
 }

@@ -24,7 +24,7 @@ const consoleRender = (msg, action, state) => {
 
   console.log('>> Action: ', action);
   console.log('<< Next state:', state);
-  console.groupEnd();
+  console.groupEnd(...msg);
 };
 
 // Logger

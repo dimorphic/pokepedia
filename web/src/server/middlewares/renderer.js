@@ -88,7 +88,7 @@ export default function router(req, res) {
     // handle 404 (either return for server error, or passthru to react-router?)
     if (!renderProps) {
       console.warn('No route for: ', location.pathname);
-      res.status(404).end('Not found');
+      return res.status(404).end('Not found');
     }
 
     //

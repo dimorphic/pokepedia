@@ -1,5 +1,6 @@
 // deps
 import debug from 'debug';
+import path from 'path';
 import express from 'express';
 import compression from 'compression';
 import favicon from 'serve-favicon';
@@ -44,19 +45,21 @@ app.use(favicon(CONFIG.web.favicon));
 // HTTP request logger
 app.use(morgan('[:date[clf]] :remote-addr - ":method @ :url HTTP/:http-version" :status :res[content-length] [:response-time ms]'));
 
-// Proxy asset folder to webpack development server in development mode
+// Proxy client build scripts to webpack development server in development mode
 if (process.env.NODE_ENV === 'development') {
   const ENV_CONFIG = require('../../config');
   const WEBPACK_SERVER = `http://0.0.0.0:${ENV_CONFIG.get('PORT')}`;
-
   const proxy = require('proxy-middleware')(WEBPACK_SERVER);
 
   debug('web:static-proxy')(`Proxy to webpack dev server @ ${WEBPACK_SERVER}`);
   app.use('/build', proxy);
+} else {
+  // ...or mount the /build dir
+  const assetsDir = path.join(__dirname, '../../build');
+
+  debug('web:static-assets')(`Serving assets from ${assetsDir} ...`);
+  app.use('/build', express.static(assetsDir));
 }
-// } else {
-//   app.use('/build', express.static(path.join(__dirname, '../dist'), cacheOpts))))
-// }
 
 // React renderer
 app.use(context);
@@ -71,7 +74,7 @@ app.use('*', renderer);
 
 // Boot it up!
 app.listen(PORT, HOST, () => {
-  debug('web:start')(`⚡⚡⚡  Development server @ http://${app.get('host')}:${app.get('port')}`);
+  debug('web:start')(`⚡⚡⚡  Express server @ http://${app.get('host')}:${app.get('port')}`);
 });
 
 // Tell parent process that we started
