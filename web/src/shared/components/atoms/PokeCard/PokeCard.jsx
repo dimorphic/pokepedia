@@ -102,19 +102,24 @@ export default class PokeCard extends Component {
     return pokemonColors;
   }
 
-  getHeaderStyle(types = []) {
+  getPokemonStyle(types = []) {
     const pokemonColors = this.getPokemonTypeColors(types);
 
+    const textColor = pokemonColors[0]; // first type color always
+    let textShadow = null;
     let headerBackground = pokemonColors[0];
 
     // generate gradient if more colors
     if (pokemonColors.length > 1) {
       const [fromColor, toColor] = pokemonColors;
       headerBackground = `-webkit-linear-gradient(top, ${toColor} 0%, ${fromColor} 100%)`;
+      textShadow = `1px 2px 0px ${toColor}`;
     }
 
     return {
-      background: headerBackground
+      background: headerBackground,
+      textColor,
+      textShadow
     };
   }
 
@@ -176,7 +181,7 @@ export default class PokeCard extends Component {
   render() {
     const { pokemon } = this.props;
 
-    const headerStyle = this.getHeaderStyle(pokemon.type);
+    const pokemonStyle = this.getPokemonStyle(pokemon.type);
     const pokemonTypeChips = this.renderTypeChips(pokemon.type);
     const pokemonWeaknessesChips = this.renderTypeChips(pokemon.weaknesses);
 
@@ -189,7 +194,7 @@ export default class PokeCard extends Component {
     return (
       <div className="PokeCard">
         <div className="PokeCard-Wrapper">
-          <header className="PokeCard-Header" style={headerStyle}>
+          <header className="PokeCard-Header" style={{ background: pokemonStyle.background }}>
             <div className="PokeCard-Avatar">
               <PokemonIcon pokemon={pokemon} />
             </div>
@@ -198,7 +203,15 @@ export default class PokeCard extends Component {
           <article className="PokeCard-Content">
             <div className="PokeCard-Identity">
               {/* <Link to={`/pokemon/${pokemon.id}`}> */}
-              <h1 className="PokeCard-Name">{pokemon.name}</h1>
+              <h1
+                className="PokeCard-Name"
+                style={{
+                  color: pokemonStyle.textColor,
+                  textShadow: pokemonStyle.textShadow
+                }}
+              >
+                {pokemon.name}
+              </h1>
               {/* </Link> */}
               <span className="PokeCard-No">#{pokemon.id}</span>
             </div>
