@@ -41,11 +41,12 @@ class RewardsView extends Component {
   ];
 
   componentDidMount() {
+    console.log('## MOUNT : REWARDS VIEW');
     // this.fetchData();
   }
 
   fetchData() {
-    console.log('>> GO FETCH DATA');
+    console.log('## FETCH DATA: REWARDS VIEW');
 
     const { actions, items, levels, pokemons } = this.props;
 

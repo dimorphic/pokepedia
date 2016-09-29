@@ -6,6 +6,8 @@ import Error404 from 'shared/containers/404';
 
 import Home from 'shared/components/views/Home';
 import Test from 'shared/components/views/Test';
+
+import PokedexView from 'shared/components/views/PokedexView';
 import RewardsView from 'shared/components/views/RewardsView';
 
 //
@@ -29,7 +31,10 @@ import RewardsView from 'shared/components/views/RewardsView';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={Home} />
+    <IndexRoute component={PokedexView} />
+
+    {/* TEST */}
+    <Route path="home" component={Home} />
     <Route path="test" component={Test} />
 
     {/* REWARDS */}
