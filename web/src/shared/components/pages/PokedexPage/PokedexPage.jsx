@@ -22,7 +22,7 @@ export default class PokedexPage extends Component {
     super(props);
 
     this.state = {
-      searchResults: []
+      searchResults: props.pokedex.pokemons
     };
 
     this.onSearchSelect = this.onSearchSelect.bind(this);
@@ -131,8 +131,7 @@ export default class PokedexPage extends Component {
     const { pokemons } = this.props.pokedex;
     const hasPokemons = (pokemons && pokemons.length);
 
-    // const node = !hasPokemons ? (<PokepediaLoader />) : this.renderPokedex();
-    const node = !hasPokemons ? (<PokepediaLoader />) : `list size : ${pokemons.length}`;
+    const node = !hasPokemons ? (<PokepediaLoader />) : this.renderPokedex();
 
     return (
       <div className="Page PokedexPage">

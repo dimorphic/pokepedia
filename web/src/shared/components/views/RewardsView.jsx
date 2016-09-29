@@ -42,7 +42,7 @@ class RewardsView extends Component {
 
   componentDidMount() {
     console.log('## MOUNT : REWARDS VIEW');
-    // this.fetchData();
+    this.fetchData();
   }
 
   fetchData() {

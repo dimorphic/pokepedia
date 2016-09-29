@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, IndexRedirect } from 'react-router';
 
 import App from 'shared/containers/App';
 import Error404 from 'shared/containers/404';
@@ -30,8 +30,9 @@ import RewardsView from 'shared/components/views/RewardsView';
 // }
 
 export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={PokedexView} />
+  <Route component={App}>
+    <IndexRedirect to="/" />
+    <Route path="/" component={PokedexView} />
 
     {/* TEST */}
     <Route path="home" component={Home} />
