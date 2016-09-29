@@ -98,6 +98,7 @@ export default class PokedexSearch extends Component {
     return (
       <div className="PokedexSearch-Input">
         <AutoComplete
+          id="PokeSearchInput"
           fullWidth
           floatingLabelText="Search Pokédex"
           hintText="Pokemon name, type or id (eg: electric)"
