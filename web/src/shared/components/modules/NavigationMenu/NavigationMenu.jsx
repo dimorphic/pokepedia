@@ -1,6 +1,6 @@
 // deps
 import React, { Component, PropTypes } from 'react';
-import RouterLink from '../../atoms/RouterLink';
+import RouterLink from 'shared/components/atoms/RouterLink';
 
 // style
 if (process.env.BROWSER) require('./NavigationMenu.scss');

@@ -67,7 +67,15 @@ class Test extends Component {
 
     return (
       <div>
-        <Helmet title="Test!" />
+        <Helmet
+          title="Test!"
+          meta={[
+            {
+              name: 'description',
+              content: 'dis is a test page'
+            }
+          ]}
+        />
         <div>test.jsx here bro</div>
         <pre>
           {items.length}

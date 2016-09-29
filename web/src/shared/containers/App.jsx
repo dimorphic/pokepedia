@@ -3,6 +3,9 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
+// settings
+import META_TAGS from 'shared/constants/meta';
+
 // components
 import IconButton from 'material-ui/IconButton';
 import IconInfo from 'material-ui/svg-icons/action/info-outline';
@@ -73,10 +76,13 @@ export default class App extends Component {
           title="App"
           titleTemplate="%s - SSR"
           meta={[
-            { 'char-set': 'utf-8' },
             {
-              'name': 'description',
-              'content': 'My super dooper SSR app!'
+              name: 'description',
+              content: META_TAGS.description
+            },
+            {
+              name: 'keywords',
+              content: META_TAGS.keywords.join(',')
             }
           ]}
         />
