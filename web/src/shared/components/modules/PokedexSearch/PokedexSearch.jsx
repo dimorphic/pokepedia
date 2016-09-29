@@ -3,12 +3,12 @@ import React, { Component, PropTypes } from 'react';
 import shallowCompare from 'react-addons-shallow-compare';
 
 // helpers
-import { isValidItem } from 'utils/filterList';
+import { isValidItem } from 'shared/utils/filterList';
 
 // components
 import AutoComplete from 'material-ui/AutoComplete';
 import MenuItem from 'material-ui/MenuItem';
-import PokemonIcon from 'components/atoms/PokemonIcon';
+import PokemonIcon from 'shared/components/atoms/PokemonIcon';
 
 // style
 if (process.env.BROWSER) require('./PokedexSearch.scss');

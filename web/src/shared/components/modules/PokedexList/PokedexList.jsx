@@ -4,9 +4,9 @@ import cx from 'classnames';
 
 // components
 import Popover from 'material-ui/Popover';
-import { Grid, GridCell } from 'components/atoms/Grid';
+import { Grid, GridCell } from 'shared/components/atoms/Grid';
 import PokedexItem from './PokedexItem';
-import PokeCard from 'components/atoms/PokeCard';
+import PokeCard from 'shared/components/atoms/PokeCard';
 
 // style
 if (process.env.BROWSER) require('./PokedexList.scss');

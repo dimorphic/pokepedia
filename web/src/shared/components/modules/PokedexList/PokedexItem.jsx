@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 // import LazyLoad from 'react-lazyload';
 
 // components
-import PokemonIcon from 'components/atoms/PokemonIcon';
+import PokemonIcon from 'shared/components/atoms/PokemonIcon';
 
 // style
 if (process.env.BROWSER) require('./PokedexItem.scss');
