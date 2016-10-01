@@ -40,7 +40,7 @@ import {
 //   'Fairy': purpleA100
 // };
 
-const POKEMON_TYPES = {
+const POKEMON_COLORS = {
   'Normal': {
     avatarColor: '#d8d8d8',
     backgroundColor: '#e7e7e7',
@@ -150,4 +150,4 @@ const POKEMON_TYPES = {
   }
 };
 
-export default POKEMON_TYPES;
+export default POKEMON_COLORS;

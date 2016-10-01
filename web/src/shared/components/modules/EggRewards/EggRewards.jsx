@@ -26,7 +26,7 @@ export default class EggRewards extends Component {
     });
 
     const nodes = filterPokemons.map((pokemon) => {
-      const nameStyle = pokeutils.getPokemonTypeBackground(pokemon.type);
+      const pokemonStyle = pokeutils.getPokemonStyles(pokemon.type);
 
       return (
         <GridCell key={pokemon.pokemonId} fit>
@@ -34,7 +34,7 @@ export default class EggRewards extends Component {
             <LazyLoad throttle={300} height={120} offset={200}>
               <PokemonIcon pokemon={pokemon} />
             </LazyLoad>
-            <span style={nameStyle}>{pokemon.name}</span>
+            <span style={{ background: pokemonStyle.background }}>{pokemon.name}</span>
           </div>
         </GridCell>
       );
