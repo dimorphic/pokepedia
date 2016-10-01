@@ -8,6 +8,7 @@ import Home from 'shared/components/views/Home';
 import Test from 'shared/components/views/Test';
 
 import PokedexView from 'shared/components/views/PokedexView';
+import PokemonView from 'shared/components/views/PokemonView';
 import RewardsView from 'shared/components/views/RewardsView';
 
 //
@@ -37,6 +38,19 @@ export default (
     {/* TEST */}
     <Route path="home" component={Home} />
     <Route path="test" component={Test} />
+
+    {/* POKEMON DETAILS */}
+    <Route
+      path="pokemon"
+      onEnter={(nextState, replace) => {
+        if (nextState.location.pathname === '/pokemon') {
+          // replace('/');
+          console.info('NO :pokemonId param. Redirect to / ?');
+        }
+      }}
+    >
+      <Route path=":pokemonId" component={PokemonView} />
+    </Route>
 
     {/* REWARDS */}
     <Route
