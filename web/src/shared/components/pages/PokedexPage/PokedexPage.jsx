@@ -22,7 +22,7 @@ export default class PokedexPage extends Component {
     super(props);
 
     this.state = {
-      searchResults: props.pokedex.pokemons
+      searchResults: props.pokedex.pokemons || []
     };
 
     this.onSearchSelect = this.onSearchSelect.bind(this);
@@ -37,7 +37,7 @@ export default class PokedexPage extends Component {
     // rebuild pokemons search list
     if (
       !this.state.searchResults.length ||
-      nextPokemons && (nextPokemons.length !== prevPokemons.length)
+      Array.isArray(nextPokemons) && (nextPokemons.length !== prevPokemons.length)
     ) {
       this.setState({
         searchResults: nextPokemons
