@@ -30,9 +30,6 @@ export default function (stats) {
       .map(chunk => { return `${publicPath}${chunk}`; }); // add public path to it
   }
 
-  // const script = getChunks('app', /js/);
-  // const style = getChunks('app', /css/);
-  // const vendor = getChunks('vendor', /js/);
   const scripts = {
     app: getChunks('app', /js/),
     vendor: getChunks('vendor', /js/)
@@ -46,22 +43,20 @@ export default function (stats) {
   // find compiled images
   const images = json.modules
     .filter(module => imagesRegex.test(module.name))
-    .map(image => ({
-      original: image.name,
-      compiled: `${publicPath}${image.assets[0]}`
-    }));
+    .map(image => {
+      // console.log('img @ ', image);
+      return {
+        original: image.name,
+        compiled: `${publicPath}${image.assets[0]}`
+      };
+    });
 
   // write it!
   const content = {
-    // script: {
-    //   app: script,
-    //   vendor
-    // },
-    // style,
-    // images
     app: {
       css: styles.app,
-      js: scripts.app
+      js: scripts.app,
+      images
     },
 
     vendor: {

@@ -18,7 +18,7 @@ const PLUGINS = exports.PLUGINS = require('./modules/plugins');
 //  ...but then we will not be able to do `$ npm i --production` if ever needed ?
 //
 const IGNORE_DEPS = [
-  'cross-env', 'express', 'morgan', 'nodemon', 'serve-favicon'
+  'cross-env', 'express', 'morgan', 'nodemon', 'serve-favicon', 'fs', 'path'
 ];
 
 function getAppVendorDeps() {
@@ -52,7 +52,7 @@ export const resolve = {
   extensions: ['', '.js', '.jsx', '.css', '.scss'],
   modulesDirectories: [
     `${PATHS.source()}`,
-    // `${PATHS.source()}/scss`,
+    // `${PATHS.source()}/assets`,
 
     // fallback
     'node_modules'

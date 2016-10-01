@@ -105,6 +105,7 @@ export default function router(req, res) {
     })
     .catch(fetchError => {
       console.warn('FETCH COMPONENT DATA ERROR');
+      console.error(fetchError);
       res.end(fetchError.message);
     });
   });
