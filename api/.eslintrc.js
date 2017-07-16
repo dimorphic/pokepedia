@@ -14,6 +14,7 @@ module.exports = exports = {
   globals: {},
 
   rules: {
+    'new-cap': OFF,
     'global-require': OFF,
     'camelcase': WARN,
     'import/imports-first': WARN,
@@ -21,6 +22,7 @@ module.exports = exports = {
     'no-void': WARN,
     'arrow-body-style': [WARN, 'always'],
     'comma-dangle': [ERROR, 'never'],
+    'import/no-named-as-default-member': WARN,
     'import/no-mutable-exports': WARN,
     'import/newline-after-import': WARN,
     'import/imports-first': OFF,
