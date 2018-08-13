@@ -1,17 +1,23 @@
 # Pokepedia
 Poke all the way!
 
+![](/client/src/assets/social-card-01.png?raw=true)
+
 ### Requirements
 Node `v6.3.1`
+
 Npm `v3.10`
 
 ### Getting started
 `$ npm i` (both in /client and /server)
+
 `$ npm start`
 
 #### Features:
 - [x] Pokemons card listing
 - [x] Pokemons search by name, type or id
+
+![](/client/src/assets/social-card-02.png?raw=true)
 
 #### TODO:
 - [ ] Better docs!
